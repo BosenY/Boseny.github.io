@@ -112,7 +112,9 @@
       </div>
     </div>
     <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
+    <div class="excerpt typo"><h1 id="输出output"><a href="#输出output" class="headerlink" title="输出output"></a>输出output</h1><p>output选项控制webpack如何向硬盘写入编译文件。注意，即使可以存在多个入口起点，但只指定一个输出配置</p>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>设置<code>output</code>属性，只需要在你的webpack配置简单的设置输出值：</p>
+<p>webpack.config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> config = &#123;</div><div class="line">  <span class="attr">output</span>: <span class="string">'bundle.js'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = config;</div></pre></td></tr></table></figure></p></div>
     <!-- Post Tags -->
     <div class="tags">
       
@@ -145,7 +147,10 @@
       </div>
     </div>
     <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
+    <div class="excerpt typo"><h1 id="entry入口起点"><a href="#entry入口起点" class="headerlink" title="entry入口起点"></a>entry入口起点</h1><h2 id="单入口写法"><a href="#单入口写法" class="headerlink" title="单入口写法"></a>单入口写法</h2><p>用法： <strong>entry： string|Array(string)</strong></p>
+<p>webpack.config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> config = &#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./path/to/my/entry/file.js'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = config;</div></pre></td></tr></table></figure></p>
+<p>entry 属性的单入口语法：</p>
+<p>webpack.config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> config = &#123;</div><div class="line">  <span class="attr">entry</span>:&#123;</div><div class="line">      <span class="attr">main</span>:<span class="string">'./path/to/my/entry/file.js'</span></div><div class="line">  &#125; </div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = config;</div></pre></td></tr></table></figure></p></div>
     <!-- Post Tags -->
     <div class="tags">
       
@@ -178,7 +183,14 @@
       </div>
     </div>
     <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
+    <div class="excerpt typo"><h1 id="webpack2学习（一）"><a href="#webpack2学习（一）" class="headerlink" title="webpack2学习（一）"></a>webpack2学习（一）</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>是一个现代JavaScript应用模块打包器</p>
+<h2 id="四个核心概念"><a href="#四个核心概念" class="headerlink" title="四个核心概念"></a>四个核心概念</h2><ol>
+<li><p>入口(Entry)  </p>
+<p> webpack 将创建所有应用程序依赖关系图表(dependency graph)。图表的起点被称之为入口起点(entry point)。入口起点告诉 webpack 从哪里开始，并遵循着依赖关系图表知道打包什么。可以将您的应用入口起点认为是根上下文(contextual root)或 app 第一个启动文件。<br> <br><br> 在webpack当中使用entry属性来定义入口  </p>
+<p> webpack.config.js：</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">entry</span>: <span class="string">'./path/to/my/entry/file.js'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ol></div>
     <!-- Post Tags -->
     <div class="tags">
       

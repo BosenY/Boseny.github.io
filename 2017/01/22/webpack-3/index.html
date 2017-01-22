@@ -101,7 +101,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2017-01-22</span>
-            <span class="time">14:11:38</span>
+            <span class="time">14:14:28</span>
           </span>
           
           <!--  Categories  -->
@@ -126,6 +126,7 @@
           <h1 id="输出output"><a href="#输出output" class="headerlink" title="输出output"></a>输出output</h1><p>output选项控制webpack如何向硬盘写入编译文件。注意，即使可以存在多个入口起点，但只指定一个输出配置</p>
 <h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>设置<code>output</code>属性，只需要在你的webpack配置简单的设置输出值：</p>
 <p>webpack.config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> config = &#123;</div><div class="line">  <span class="attr">output</span>: <span class="string">'bundle.js'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = config;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>下面是一些output的属性：</p>
 <h3 id="output-filename"><a href="#output-filename" class="headerlink" title="output.filename"></a>output.filename</h3><pre><code>指定硬盘每个输出文件的名称。在这里你不能指定绝对路径！ `output.path`选项规定了文件被写入硬盘的位置。 filename 仅用于命名每个文件。
 </code></pre><p>单个入口<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./src/app.js'</span>,</div><div class="line">  <span class="attr">output</span>: &#123;</div><div class="line">    <span class="attr">filename</span>: <span class="string">'bundle.js'</span>,</div><div class="line">    <span class="attr">path</span>: __dirname + <span class="string">'/build'</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 写入到硬盘：./build/bundle.js</span></div></pre></td></tr></table></figure></p>
