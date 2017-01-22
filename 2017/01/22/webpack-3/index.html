@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="BosenY">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="webpack2学习(三)"/>
+  <meta property="og:description" content="a simple blog，nothing to say~" />
+  <meta property="og:site_name" content="BosenYのblog"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://yoursite.comundefined"/>
+  
+    <link rel="alternate" href="/atom.xml" title="BosenYのblog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>BosenYのblog</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.dark.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">webpack2学习(三)</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/boseny">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:a707328818@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By BosenY</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2017-01-22</span>
+            <span class="time">14:11:38</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/webpack/">webpack</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/webpack/">#webpack</a> <a class="tag" href="/tags/node/">#node</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h1 id="输出output"><a href="#输出output" class="headerlink" title="输出output"></a>输出output</h1><p>output选项控制webpack如何向硬盘写入编译文件。注意，即使可以存在多个入口起点，但只指定一个输出配置</p>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>设置<code>output</code>属性，只需要在你的webpack配置简单的设置输出值：</p>
+<p>webpack.config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> config = &#123;</div><div class="line">  <span class="attr">output</span>: <span class="string">'bundle.js'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = config;</div></pre></td></tr></table></figure></p>
+<p>下面是一些output的属性：</p>
+<h3 id="output-filename"><a href="#output-filename" class="headerlink" title="output.filename"></a>output.filename</h3><pre><code>指定硬盘每个输出文件的名称。在这里你不能指定绝对路径！ `output.path`选项规定了文件被写入硬盘的位置。 filename 仅用于命名每个文件。
+</code></pre><p>单个入口<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./src/app.js'</span>,</div><div class="line">  <span class="attr">output</span>: &#123;</div><div class="line">    <span class="attr">filename</span>: <span class="string">'bundle.js'</span>,</div><div class="line">    <span class="attr">path</span>: __dirname + <span class="string">'/build'</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 写入到硬盘：./build/bundle.js</span></div></pre></td></tr></table></figure></p>
+<p>多个入口</p>
+<p>如果你的配置创建了多个<code>chunk</code>(例如使用多个入口点或使用类似CommonsChunkPlugin的插件)，<br>你应该使用以下的替换方式来确保每个文件名都不重复。</p>
+<ul>
+<li>[naem] 被chunk 的name 替换</li>
+<li>[hash] 被编译(compilation) 的hash替换</li>
+<li>[chunkhash] 被chunk 的hash 替换<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">entry</span>: &#123;</div><div class="line">    <span class="attr">app</span>: <span class="string">'./src/app.js'</span>,</div><div class="line">    <span class="attr">search</span>: <span class="string">'./src/search.js'</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">output</span>: &#123;</div><div class="line">    <span class="attr">filename</span>: <span class="string">'[name].js'</span>,</div><div class="line">    <span class="attr">path</span>: __dirname + <span class="string">'/build'</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 写入到硬盘：./build/app.js, ./build/search.js</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="output-hotUpdateChunkFilename"><a href="#output-hotUpdateChunkFilename" class="headerlink" title="output.hotUpdateChunkFilename"></a>output.hotUpdateChunkFilename</h3><p>热更新块(Hot Update Chunk)的文件名。 他们在<code>output.path</code> 目录中</p>
+<ul>
+<li>[id] 被chunk的id替换</li>
+<li><p>[hash] 被编译(compilation)的hash替换。 (最后一个hash存储在记录中)</p>
+<pre><code>默认值： &quot;[id].[hash].hot-update.js&quot;
+</code></pre></li>
+</ul>
+<h3 id="output-hotUpdateFunction"><a href="#output-hotUpdateFunction" class="headerlink" title="output.hotUpdateFunction"></a>output.hotUpdateFunction</h3><p>webpack 用于异步加载(async loading)热更新块(hot update chunk)的 JSONP 函数。</p>
+<p>….还有好多就不详细记录了，具体去官网看吧，下面记录一个重点的：</p>
+<h3 id="output-path"><a href="#output-path" class="headerlink" title="output.path"></a>output.path</h3><p>以绝对路径作为导出目录(必选项)</p>
+<p>[hash] 被编译(compilation)的 hash 替换。</p>
+<p>config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">output: &#123;</div><div class="line">    <span class="attr">path</span>: <span class="string">"/home/proj/public/assets"</span>,</div><div class="line">    <span class="attr">publicPath</span>: <span class="string">"/assets/"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>index.html<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"/assets/spinner.gif"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>接下来是一个更复杂的例子，来说明对资源使用 CDN 和 hash。</p>
+<p>config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">output: &#123;</div><div class="line">    <span class="attr">path</span>: <span class="string">"/home/proj/cdn/assets/[hash]"</span>,</div><div class="line">    <span class="attr">publicPath</span>: <span class="string">"http://cdn.example.com/assets/[hash]/"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="output-sourceMapFilename"><a href="#output-sourceMapFilename" class="headerlink" title="output.sourceMapFilename"></a>output.sourceMapFilename</h3><p>javascript文件SourceMap的文件名。 它们在output.path目录中。</p>
+<ul>
+<li>[file] 被JavaScript文件的文件名替换</li>
+<li>[id] 被chunk的id替换</li>
+<li><p>[hash] 被编译的(compilation)的hash替换</p>
+<pre><code>默认值：&quot;[file].map&quot;
+</code></pre></li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          ©2017 BosenY
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
