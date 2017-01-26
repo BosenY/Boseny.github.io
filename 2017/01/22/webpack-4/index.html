@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="BosenY">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="webpack2学习(四)"/>
+  <meta property="og:description" content="a simple blog，nothing to say~" />
+  <meta property="og:site_name" content="BosenYのblog"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://yoursite.comundefined"/>
+  
+    <link rel="alternate" href="/atom.xml" title="BosenYのblog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>BosenYのblog</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.dark.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">webpack2学习(四)</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/boseny">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:a707328818@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By BosenY</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2017-01-22</span>
+            <span class="time">11:20:05</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/webpack/">webpack</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/webpack/">#webpack</a> <a class="tag" href="/tags/node/">#node</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h1 id="加载器-loaders"><a href="#加载器-loaders" class="headerlink" title="加载器(loaders)"></a>加载器(loaders)</h1><p>loader 是对应用程序中资源文件进行转换。它们是(运行在node.js中的) 函数，可以将资源文件作为参数的来源，然后返回新的资源文件<br>例如，你可以使用loader告诉webpack加载css文件，或者将TypeScript转化为JavaScript</p>
+<h2 id="loader特性"><a href="#loader特性" class="headerlink" title="loader特性"></a>loader特性</h2><ul>
+<li>loader支持链式传递。能够对资源使用流水线(pipeline)。 loader链式按照时间先后顺序进行编译。<br>loader链中的第一个loader返回值给下一个loader，并且在最后一个loader，webpack按照预期的JavaScript返回</li>
+<li>loader可以是同步或者是异步函数。</li>
+<li>loader运行在node.js中，并且能够执行任何可能的操作。</li>
+<li>loader接受查询参数。用于loader间传递配置。</li>
+<li>loader也能够使用  <code>options</code>对象进行配置</li>
+<li>除了使用package.json的main属性，还可以将普通的npm模块导出为loader，做法是在package.json里定义一个loader字段</li>
+<li>插件可以给loader带来更多的功能</li>
+<li>loader能够产生额外的任意文件</li>
+</ul>
+<p>loader通过(loader)预处理函数，为JavaScript生态系统提供了更多有利功能。用户现在可以更加灵活的引入细粒度逻辑，例如压缩、打包、语言翻译和其他<br><a id="more"></a></p>
+<h2 id="解析loader"><a href="#解析loader" class="headerlink" title="解析loader"></a>解析loader</h2><p>loader解析类似于模块，loader模块需要导出一个函数，并且使用兼容node.js的JavaScript编写。在通常情况下，你可以使用npm管理loader，但是你也可以在应用程序中将loader作为文件去使用</p>
+<h2 id="引用loader"><a href="#引用loader" class="headerlink" title="引用loader"></a>引用loader</h2><p>loader通常被命名为xxx-loader ，xxx是上下文的名称  eg： json-loader</p>
+<p>load的名称约定和优先搜索顺序，由webpack配置API中的resolveLoader、moduleTemplates定义</p>
+<hr>
+<h1 id="插件-plugins"><a href="#插件-plugins" class="headerlink" title="插件(plugins)"></a>插件(plugins)</h1><p>webpack本身也是构建于同样的插件系统<br>插件的目的在于解决loader无法实现的事情</p>
+<h2 id="解剖"><a href="#解剖" class="headerlink" title="解剖"></a>解剖</h2><p>webpack插件是一个具有apply属性的JavaScript对象。apply属性会被webpack解析器(compiler)调用，并且可在整个编译生命周期(compilation lifecycle)访问。</p>
+<p>ConsoleLogOnBuildWebpackPlugin.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ConsoleLogOnBuildWebpackPlugin</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line">ConsoleLogOnBuildWebpackPlugin.prototype.apply = <span class="function"><span class="keyword">function</span>(<span class="params">compiler</span>) </span>&#123;</div><div class="line">  compiler.plugin(<span class="string">'run'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">compiler, callback</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"The webpack build process is starting!!!"</span>);</div><div class="line"></div><div class="line">    callback();</div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          ©2017 BosenY
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+

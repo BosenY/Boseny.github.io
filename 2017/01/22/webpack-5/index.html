@@ -8,10 +8,10 @@
   <meta name="description" content="">
   <meta name="author" content="BosenY">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="BosenYのblog"/>
+  <meta property="og:title" content="webpack2学习(五)"/>
   <meta property="og:description" content="a simple blog，nothing to say~" />
   <meta property="og:site_name" content="BosenYのblog"/>
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   <meta property="og:image" content="http://yoursite.comundefined"/>
   
     <link rel="alternate" href="/atom.xml" title="BosenYのblog" type="application/atom+xml">
@@ -35,8 +35,7 @@
 </head>
 
   <body>
-    <!-- Archive Header -->
-<!-- Page Header -->
+    <!-- Page Header -->
 
 
 <header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
@@ -44,7 +43,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">Blog Archives</p>
+          <p class="title">webpack2学习(五)</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -90,74 +89,55 @@
 </header>
 
 
-<!-- Archive List -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      
-        <div class="archive-item">
-  <a href="/2017/01/22/webpack-5/" class="post-title">
-    webpack2学习(五)
-  </a>
-  <div class="date text-muted">Posted on 2017-01-22 16:52:52</div>
-</div>
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By BosenY</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2017-01-22</span>
+            <span class="time">11:20:05</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
 
-      
-        <div class="archive-item">
-  <a href="/2017/01/22/webpack-4/" class="post-title">
-    webpack2学习(四)
-  </a>
-  <div class="date text-muted">Posted on 2017-01-22 14:42:52</div>
-</div>
+<a href="/categories/webpack/">webpack</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
 
-      
-        <div class="archive-item">
-  <a href="/2017/01/22/webpack-3/" class="post-title">
-    webpack2学习(三)
-  </a>
-  <div class="date text-muted">Posted on 2017-01-22 13:42:52</div>
-</div>
+<a class="tag" href="/tags/webpack/">#webpack</a> <a class="tag" href="/tags/node/">#node</a>
 
-      
-        <div class="archive-item">
-  <a href="/2017/01/22/webpack-2/" class="post-title">
-    webpack2学习(二)
-  </a>
-  <div class="date text-muted">Posted on 2017-01-22 11:06:00</div>
-</div>
 
-      
-        <div class="archive-item">
-  <a href="/2017/01/22/webpack-1/" class="post-title">
-    webpack2学习(一)
-  </a>
-  <div class="date text-muted">Posted on 2017-01-22 10:00:00</div>
-</div>
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h1 id="模块热替换-Hot-Module-Replacement"><a href="#模块热替换-Hot-Module-Replacement" class="headerlink" title="模块热替换(Hot Module Replacement)"></a>模块热替换(Hot Module Replacement)</h1><p>模块热替换功能会在应用程序运行过程中替换、添加或删除模块，而无需重新加载页面。这使得你可以在独立模块变更后，<br>无需刷新整个页面，就可以更新这些模块，极大地加速了开发时间。</p>
+<ul>
+<li>站在app角度<ol>
+<li>app代码要求HMR runtime检查更新</li>
+<li>HMR runtime(异步) 下载更新，然后通知app代码更新可用</li>
+<li>app代码要求HMR runtime 应用更新</li>
+</ol>
+</li>
+</ul>
 
-      
-        <div class="archive-item">
-  <a href="/2017/01/16/hello-world/" class="post-title">
-    Hello World
-  </a>
-  <div class="date text-muted">Posted on 2017-01-16 16:41:09</div>
-</div>
-
-      
-
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<!-- Pagination -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-10 col-md-10 col-md-offset-1">
-      <ul class="pagination">
-          
-          
-      </ul>
-    </div>
-  </div>
-</div>
+</article>
 
 
 
