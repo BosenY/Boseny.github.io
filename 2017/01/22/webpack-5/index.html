@@ -1,129 +1,89 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <!-- Html Head Tag-->
-  <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
+<head>
+  <meta charset="utf-8">
+  
+  <title>webpack2学习(五) | BosenYのblog</title>
+
+  
   <meta name="author" content="BosenY">
-  <!-- Open Graph Data -->
+  
+
+  
+  <meta name="description" content="a simple blog，nothing to say~">
+  
+
+  
+  
+  <meta name="keywords" content="node,webpack">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
   <meta property="og:title" content="webpack2学习(五)"/>
-  <meta property="og:description" content="a simple blog，nothing to say~" />
+
   <meta property="og:site_name" content="BosenYのblog"/>
-  <meta property="og:type" content="article" />
-  <meta property="og:image" content="http://yoursite.comundefined"/>
+
   
-    <link rel="alternate" href="/atom.xml" title="BosenYのblog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
+  <meta property="og:image" content="/favicon.ico"/>
   
 
-  <!-- Site Title -->
-  <title>BosenYのblog</title>
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <!-- Custom CSS -->
-  
-  <link rel="stylesheet" href="/css/style.dark.css">
-
-  <!-- Google Analytics -->
-  
-
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="BosenYのblog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 </head>
 
-  <body>
-    <!-- Page Header -->
 
+<body>
+<div class="blog">
+  <div class="content">
 
-<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">webpack2学习(五)</p>
-          <p class="subtitle"></p>
-        </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/">
-                  
-                  Home
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/archives">
-                  
-                  Archives
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://github.com/boseny">
-                  
-                  Github
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="mailto:a707328818@qq.com">
-                  
-                  Email
-                  
-                </a>
-              </li>
-            
-          </ul>
-        </div>
-      </div>
-    </div>
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">BosenYのblog</a>
+    </h1>
+    <p class="site-description"></p>
   </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
 </header>
 
+    <main class="site-main posts-loop">
+    <article>
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By BosenY</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2017-01-22</span>
-            <span class="time">13:55:38</span>
-          </span>
-          
-          <!--  Categories  -->
-            <span class="categories info">Under 
+  
+    
+    <h3 class="article-title"><span>webpack2学习(五)</span></h3>
+    
+  
 
-<a href="/categories/webpack/">webpack</a>
-</span>
-          
-        </div>
-        <!-- Tags -->
-        
-          <div class="post-tags text-muted">
-            Tags: 
-
-<a class="tag" href="/tags/node/">#node</a> <a class="tag" href="/tags/webpack/">#webpack</a>
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/01/22/webpack-5/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-01-22T08:52:52.000Z">
+          2017-01-22
+        </time>
+      </a>
+    </span>
+  </div>
 
 
-          </div>
-        
-        <!-- Post Main Content -->
-        <div class="post-content">
-          <h1 id="模块热替换-Hot-Module-Replacement"><a href="#模块热替换-Hot-Module-Replacement" class="headerlink" title="模块热替换(Hot Module Replacement)"></a>模块热替换(Hot Module Replacement)</h1><p>模块热替换功能会在应用程序运行过程中替换、添加或删除模块，而无需重新加载页面。这使得你可以在独立模块变更后，<br>无需刷新整个页面，就可以更新这些模块，极大地加速了开发时间。</p>
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="模块热替换-Hot-Module-Replacement"><a href="#模块热替换-Hot-Module-Replacement" class="headerlink" title="模块热替换(Hot Module Replacement)"></a>模块热替换(Hot Module Replacement)</h1><p>模块热替换功能会在应用程序运行过程中替换、添加或删除模块，而无需重新加载页面。这使得你可以在独立模块变更后，<br>无需刷新整个页面，就可以更新这些模块，极大地加速了开发时间。</p>
 <ul>
 <li>站在app角度<ol>
 <li>app代码要求HMR runtime检查更新</li>
@@ -133,41 +93,53 @@
 </li>
 </ul>
 
-        </div>
-      </div>
+      
     </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/webpack/">webpack</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/node/">node</a><a href="/tags/webpack/">webpack</a>
+    </span>
+    
+
+    </div>
+
+    
   </div>
 </article>
 
 
+    </main>
 
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          ©2017 BosenY
-        <p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
-    </div>
-  </div>
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 BosenY
+    
+  </p>
 </footer>
-
-
-    <!-- After Footer Scripts -->
-<script src="/js/highlight.pack.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
-</script>
-
-  </body>
+    
+  </div>
+</div>
+</body>
 </html>
-

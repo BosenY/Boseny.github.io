@@ -1,129 +1,89 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <!-- Html Head Tag-->
-  <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
+<head>
+  <meta charset="utf-8">
+  
+  <title>weex小记 | BosenYのblog</title>
+
+  
   <meta name="author" content="BosenY">
-  <!-- Open Graph Data -->
+  
+
+  
+  <meta name="description" content="a simple blog，nothing to say~">
+  
+
+  
+  
+  <meta name="keywords" content="vue,weex">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
   <meta property="og:title" content="weex小记"/>
-  <meta property="og:description" content="a simple blog，nothing to say~" />
+
   <meta property="og:site_name" content="BosenYのblog"/>
-  <meta property="og:type" content="article" />
-  <meta property="og:image" content="http://yoursite.comundefined"/>
+
   
-    <link rel="alternate" href="/atom.xml" title="BosenYのblog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
+  <meta property="og:image" content="/favicon.ico"/>
   
 
-  <!-- Site Title -->
-  <title>BosenYのblog</title>
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <!-- Custom CSS -->
-  
-  <link rel="stylesheet" href="/css/style.dark.css">
-
-  <!-- Google Analytics -->
-  
-
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="BosenYのblog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 </head>
 
-  <body>
-    <!-- Page Header -->
 
+<body>
+<div class="blog">
+  <div class="content">
 
-<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">weex小记</p>
-          <p class="subtitle"></p>
-        </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/">
-                  
-                  Home
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/archives">
-                  
-                  Archives
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://github.com/boseny">
-                  
-                  Github
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="mailto:a707328818@qq.com">
-                  
-                  Email
-                  
-                </a>
-              </li>
-            
-          </ul>
-        </div>
-      </div>
-    </div>
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">BosenYのblog</a>
+    </h1>
+    <p class="site-description"></p>
   </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
 </header>
 
+    <main class="site-main posts-loop">
+    <article>
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By BosenY</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2017-02-23</span>
-            <span class="time">13:55:38</span>
-          </span>
-          
-          <!--  Categories  -->
-            <span class="categories info">Under 
+  
+    
+    <h3 class="article-title"><span>weex小记</span></h3>
+    
+  
 
-<a href="/categories/vue/">vue</a>
-</span>
-          
-        </div>
-        <!-- Tags -->
-        
-          <div class="post-tags text-muted">
-            Tags: 
-
-<a class="tag" href="/tags/vue/">#vue</a> <a class="tag" href="/tags/weex/">#weex</a>
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/02/23/weex小记/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-02-23T06:19:24.000Z">
+          2017-02-23
+        </time>
+      </a>
+    </span>
+  </div>
 
 
-          </div>
-        
-        <!-- Post Main Content -->
-        <div class="post-content">
-          <h1 id="weex学习-一"><a href="#weex学习-一" class="headerlink" title="weex学习(一)"></a>weex学习(一)</h1><p>上个学期学校实验周要求做一个项目，就考虑做个native端的，当时weex还不怎么稳定，看了半天网上的资料还是研究不出到底如何从构建到编译、打包，<br>于是用了React Native，但是由于react本身学习成本的问题，做的并不精致，好多东西都没用进去。 在公司实习的这段时间，公司的新项目都使用vue，在这个3个多月的时间当中，基本<br>学会了vue的整个概念和它的一些生态库，比方说vue-router和vuex，然后自己也了解了webpack打包编译的机制<br>，还将nodejs后端的koa自己写到了一个个人的小项目里面： <a href="https://github.com/BosenY/koa2-vue2" target="_blank" rel="external">vue2-koa2的小demo</a><br>感觉使用vue要比react清爽多了(关键还是学习成本低，上限还高)，现在看weex官方已经支持了vue语法编译，所以就学一下，准备毕设就拿这个开题。  </p>
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="weex学习-一"><a href="#weex学习-一" class="headerlink" title="weex学习(一)"></a>weex学习(一)</h1><p>上个学期学校实验周要求做一个项目，就考虑做个native端的，当时weex还不怎么稳定，看了半天网上的资料还是研究不出到底如何从构建到编译、打包，<br>于是用了React Native，但是由于react本身学习成本的问题，做的并不精致，好多东西都没用进去。 在公司实习的这段时间，公司的新项目都使用vue，在这个3个多月的时间当中，基本<br>学会了vue的整个概念和它的一些生态库，比方说vue-router和vuex，然后自己也了解了webpack打包编译的机制<br>，还将nodejs后端的koa自己写到了一个个人的小项目里面： <a href="https://github.com/BosenY/koa2-vue2" target="_blank" rel="external">vue2-koa2的小demo</a><br>感觉使用vue要比react清爽多了(关键还是学习成本低，上限还高)，现在看weex官方已经支持了vue语法编译，所以就学一下，准备毕设就拿这个开题。  </p>
 <p>关于weex和vue： Vue.js 是 Evan You 开发的渐进式 JavaScript 框架，在易用性、灵活性和性能等方面都非常优秀。开发者能够通过撰写 *.vue 文件，基于 &lt;template&gt;, &lt;style&gt;, &lt;script&gt;   快速构建组件化的 web 应用。<br>Vue.js 在 2016 年 10 月正式发布了 2.0 版本，该版本加入了 Virtual-DOM 和预编译器的设计，使得该框架在运行时能够脱离 HTML 和 CSS 解析，只依赖 JavaScript；同时 Virtual-DOM 也使得 Vue 2.x 渲染成原生 UI 成为了可能。</p>
 <p>weex就相对于react 和react native ，它就是vue的native版本，同时更加强大的是，它可以同时编译渲染web、android、ios三端。    </p>
 <p>目前 Weex 与 Vue 正在展开官方合作，并将 Vue 2.x 作为内置的前端框架，Vue 也因此具备了开发原生应用的能力。</p>
@@ -134,41 +94,53 @@
 </ul>
 <p>我是直接把weex团队的weex-hacknews改了一下，就可以成为自己开发时候的一个基础架子了。<br>然后可以自己去配置一下router、vuex等等的东西，然后编译调试打包。。。</p>
 
-        </div>
-      </div>
+      
     </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/vue/">vue</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/vue/">vue</a><a href="/tags/weex/">weex</a>
+    </span>
+    
+
+    </div>
+
+    
   </div>
 </article>
 
 
+    </main>
 
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          ©2017 BosenY
-        <p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
-    </div>
-  </div>
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 BosenY
+    
+  </p>
 </footer>
-
-
-    <!-- After Footer Scripts -->
-<script src="/js/highlight.pack.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
-</script>
-
-  </body>
+    
+  </div>
+</div>
+</body>
 </html>
-
