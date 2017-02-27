@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>17年学习计划 | BosenYのblog</title>
+  <title>redux学习(1) | BosenYのblog</title>
 
   
   <meta name="author" content="BosenY">
@@ -15,14 +15,14 @@
 
   
   
-  <meta name="keywords" content="前端,后端">
+  <meta name="keywords" content="react">
   
 
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <meta property="og:title" content="17年学习计划"/>
+  <meta property="og:title" content="redux学习(1)"/>
 
   <meta property="og:site_name" content="BosenYのblog"/>
 
@@ -63,15 +63,15 @@
 
   
     
-    <h3 class="article-title"><span>17年学习计划</span></h3>
+    <h3 class="article-title"><span>redux学习(1)</span></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2017/01/27/17年计划/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-01-27T11:52:52.000Z">
-          2017-01-27
+      <a href="/2017/02/27/redux学习/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-02-27T12:22:04.000Z">
+          2017-02-27
         </time>
       </a>
     </span>
@@ -83,12 +83,10 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="16年成果"><a href="#16年成果" class="headerlink" title="16年成果"></a>16年成果</h1><p>今年总的来说已经达到了自己的目标，目前已经从一个只会一点前端发展到了前后端已经可以独立架构。<br>目前所学会的技术如下：</p>
-<ul>
-<li>前端： vue、react(尚未熟练)、react native、weex、各种库(vuex、vue-router、fetch、axios、lodash、d3)…</li>
-<li>后端： express、koa2、mongodb…</li>
-</ul>
-<h1 id="17年计划"><a href="#17年计划" class="headerlink" title="17年计划"></a>17年计划</h1><p>实习2个多月，感觉自己最薄弱的就是有关移动端的样式、事件等，准备加大力度学习移动端所有知识和框架，比如：react native、weex等等，然后vue的服务端渲染也要彻底掌握，还有那个新出的vuessr框架nuxt，感觉这个东西会火，然后就是各种后端的东西，虽然<br>说已经可以写一个完整的后端接口，但是还没有完善化，比方说加密方面和安全方面，都还是有待提高的，并且也不能仅限于nodejs，准备把php的thinkphp框架学起来，结合vue使用~</p>
+        <h1 id="Redux学习"><a href="#Redux学习" class="headerlink" title="Redux学习"></a>Redux学习</h1><p>因为我最先掌握的是vuex，反过头来去看学习成本相对较高的redux，可能效果会好一点。</p>
+<p>redux是JavaScript状态容器，提供了可预测化的状态管理</p>
+<p>redux由flux演变而来，但受elm的启发，避开了flux的复杂性</p>
+<h2 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h2><p>应用当中的所有<code>state</code>都是以一个对象树的形式存储在一个一个单一的<code>store</code>当中，唯一改变<code>state</code>的办法就是触发<code>action</code>，一个描述发生什么的对象，为了描述<code>action</code>如何改变<code>state</code>树，你需要去编写<code>reducers</code></p>
 
       
     </div>
@@ -103,7 +101,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/个人小纪/">个人小纪</a>
+        <a href="/categories/react/">react</a>
     </span>
     
 
@@ -112,7 +110,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/前端/">前端</a><a href="/tags/后端/">后端</a>
+        <a href="/tags/react/">react</a>
     </span>
     
 

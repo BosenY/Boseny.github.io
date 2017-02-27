@@ -47,9 +47,9 @@
   <nav class="site-navigation">
     <ul>
       
-        <li><a href="/">主页</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/archives">归档</a></li>
+        <li><a href="/archives">Archives</a></li>
       
     </ul>
   </nav>
@@ -57,6 +57,69 @@
 
     <main class="site-main posts-loop">
     
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/02/27/redux学习/"><span>redux学习(1)</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/02/27/redux学习/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-02-27T12:22:04.000Z">
+          2017-02-27
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="Redux学习"><a href="#Redux学习" class="headerlink" title="Redux学习"></a>Redux学习</h1><p>因为我最先掌握的是vuex，反过头来去看学习成本相对较高的redux，可能效果会好一点。</p>
+<p>redux是JavaScript状态容器，提供了可预测化的状态管理</p>
+<p>redux由flux演变而来，但受elm的启发，避开了flux的复杂性</p>
+<h2 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h2><p>应用当中的所有<code>state</code>都是以一个对象树的形式存储在一个一个单一的<code>store</code>当中，唯一改变<code>state</code>的办法就是触发<code>action</code>，一个描述发生什么的对象，为了描述<code>action</code>如何改变<code>state</code>树，你需要去编写<code>reducers</code></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/react/">react</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/react/">react</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
   <article>
 
   
@@ -81,7 +144,45 @@
   <div class="article-content">
     <div class="entry">
       
-        
+        <h1 id="react-router学习-2"><a href="#react-router学习-2" class="headerlink" title="react router学习(2)"></a>react router学习(2)</h1><h2 id="路由匹配原理"><a href="#路由匹配原理" class="headerlink" title="路由匹配原理"></a>路由匹配原理</h2><p>路由有三个属性来决定是否匹配一个url</p>
+<ol>
+<li>嵌套关系</li>
+<li>它的路径语法</li>
+<li>它的优先级</li>
+</ol>
+<h3 id="嵌套关系"><a href="#嵌套关系" class="headerlink" title="嵌套关系"></a>嵌套关系</h3><p>React Router 使用路由嵌套的概念来让你定义 view 的嵌套集合，当一个给定的 <code>URL</code><br> 被调用时，整个集合中（命中的部分）都会被渲染。嵌套路由被描述成一种树形结构。<br> <code>React Router</code> 会深度优先遍历整个路由配置来寻找一个与给定的 <code>URL</code> 相匹配的路由。</p>
+<h3 id="它的路径语法"><a href="#它的路径语法" class="headerlink" title="它的路径语法"></a>它的路径语法</h3><ul>
+<li>:paramName 匹配一段位于<code>/</code>、<code>?</code>、<code>#</code>之后的url，命中的部分将被作为参数</li>
+<li>()  在它内部的内容被认为是可选的</li>
+<li><ul>
+<li>匹配任意字符(非贪婪的)直到命中下一个字符或者整个url的末尾，并创建一个<code>splat</code>参数</li>
+</ul>
+</li>
+</ul>
+<h3 id="它的优先级"><a href="#它的优先级" class="headerlink" title="它的优先级"></a>它的优先级</h3><p>路由算法会根据定义的顺序自顶向下匹配路由。因此，当你拥有两个兄弟路由节点配置时，你必须确认前一个路由不会匹配后一个路由中的路径。 例如，千万不要这么做：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;Route path=<span class="string">"/comments"</span> ... /&gt;</div><div class="line">&lt;Redirect from="/comments" ... /&gt;</div></pre></td></tr></table></figure>
+<h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><p>History用来去监听浏览器地址栏的变化，并解析这个url转化为location对象，然后router使用它去匹配路由，然后渲染相应的组件</p>
+<h3 id="History的模式"><a href="#History的模式" class="headerlink" title="History的模式"></a>History的模式</h3><p>常用的有三种，当然你也可以去自定义</p>
+<ol>
+<li>browserHistory</li>
+<li>hashHistory</li>
+<li>createMemoryHistory</li>
+</ol>
+<p>用法：</p>
+<p>你先从react-router当中引用他们</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; browserHistory &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></div></pre></td></tr></table></figure>
+<p>然后将它们传递给<code>&lt;Router&gt;</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">render(</div><div class="line">  &lt;Router history=&#123;browserHistory&#125; routes=&#123;routes&#125; /&gt;,</div><div class="line">  document.getElementById('app')</div><div class="line">)</div></pre></td></tr></table></figure></p>
+<h2 id="browserHistory"><a href="#browserHistory" class="headerlink" title="browserHistory"></a>browserHistory</h2><p>browserHistory是用的比较多的一种模式 它使用浏览器中的historyAPI用于处理URL，创建一个真实的url</p>
+<p>看到这里正好还解决了我一个肯长时间百思不得其解的问题，就是我vue写的项目打包放到Nginx服务器上面后，路由匹配会报错，然后按照<br>这里给Nginx反向代理的方法重新配置了服务器，发现错误就解决了。</p>
+<h2 id="hashHistory"><a href="#hashHistory" class="headerlink" title="hashHistory"></a>hashHistory</h2><p>hashHistory 使用url中的hash(#)部分去创建形如 example.com/#/some/path 的路由。<br>但由于有一个<code>#</code>号 所以看起来会比较丑，所以不建议线上使用</p>
+<h2 id="createMemoryHistory"><a href="#createMemoryHistory" class="headerlink" title="createMemoryHistory"></a>createMemoryHistory</h2><p>Memory History不会在地址栏被操作或读取。</p>
+<p>它非常适合测试和其他的渲染环境(React Native)</p>
+<p>和另外两种history的一点不同的是你必须创建它，这种方式便于测试</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> history = createMemoryHistory(location)</div></pre></td></tr></table></figure>
+<h2 id="Index-Links"><a href="#Index-Links" class="headerlink" title="Index Links"></a>Index Links</h2><p>除了路由有默认的 link也有，如果你使用了<code>&lt;Link to=&quot;/&quot;&gt;Home&lt;/Link&gt;</code>,它会一直处于激活状态，<br>因为所以的url的开头都是<code>/</code>。这个确实是个问题，因为我们仅仅希望在<code>home</code>被渲染后，激发并链接到它</p>
+<p>如果需要在<code>home</code>路由被渲染后才激活 就用<code>&lt;IndexLink to=&quot;/&quot;&gt;Home&lt;/IndexLink&gt;</code></p>
+<p>就先记这么多，以后遇到坑在补</p>
+
       
     </div>
 
@@ -645,72 +746,11 @@
 
 
 
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2017/01/22/webpack-3/"><span>webpack2学习(三)</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/01/22/webpack-3/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-01-22T05:42:52.000Z">
-          2017-01-22
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="输出output"><a href="#输出output" class="headerlink" title="输出output"></a>输出output</h1><p>output选项控制webpack如何向硬盘写入编译文件。注意，即使可以存在多个入口起点，但只指定一个输出配置</p>
-<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>设置<code>output</code>属性，只需要在你的webpack配置简单的设置输出值：</p>
-<p>webpack.config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> config = &#123;</div><div class="line">  <span class="attr">output</span>: <span class="string">'bundle.js'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = config;</div></pre></td></tr></table></figure></p>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/webpack/">webpack</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/node/">node</a><a href="/tags/webpack/">webpack</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
 
 <nav class="pagination">
   
   
-  <a href="/page/2/" class="pagination-next">下一页</a>
+  <a href="/page/2/" class="pagination-next">Next</a>
   
 </nav>
     </main>
