@@ -61,6 +61,96 @@
 
   
     
+    <h3 class="article-title"><a href="/2017/03/03/redux学习2/"><span>redux学习2</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/03/03/redux学习2/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-03-03T00:52:52.000Z">
+          2017-03-03
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="react-redux学习"><a href="#react-redux学习" class="headerlink" title="react-redux学习"></a>react-redux学习</h1><p>react-redux是一个专门用于在react项目中使用redux的一个库，<br>而且还有一定的规范和写法的推荐。还有额外的api需要去学习。</p>
+<h2 id="组件规范"><a href="#组件规范" class="headerlink" title="组件规范"></a>组件规范</h2><h3 id="ui组件"><a href="#ui组件" class="headerlink" title="ui组件"></a>ui组件</h3><p>首先react-redux将所有的组件分成了两大类：ui组件和容器组件</p>
+<ul>
+<li>UI组件只负责样式和ui</li>
+<li>所有数据都由props来传递</li>
+<li>不使用任何的redux</li>
+</ul>
+<h3 id="容器组件"><a href="#容器组件" class="headerlink" title="容器组件"></a>容器组件</h3><ul>
+<li>管理所有的</li>
+<li>使用redux</li>
+</ul>
+<h3 id="connect"><a href="#connect" class="headerlink" title="connect()"></a>connect()</h3><p>react-redux提供了一个connect方法 ，用来从ui组件生成一个容器组件</p>
+<p>但是，如果只是简单的进行了对UI组件的包装的，并没有太多的作用，为了定义业务逻辑，需要给出下面两方面的信息。</p>
+<ol>
+<li>输入逻辑: 外部的数据(即state对象)如何转换为UI组件的参数</li>
+<li>输出逻辑: 用户发出的动作如何变为Action对象，从UI组件传出去</li>
+</ol>
+<p>完整的API如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> VisibleTodoList = connect(</div><div class="line">  mapStateToProps,</div><div class="line">  mapDispatchToProps</div><div class="line">)(TodoList)</div></pre></td></tr></table></figure>
+<p>上面两个参数就是对应了输入逻辑和输出逻辑</p>
+<p>前者负责输入逻辑，即将state映射到ui组件的参数(props)<br>后者负责输出逻辑，将用户对ui组件的操作映射成action</p>
+<h3 id="mapStateToProps"><a href="#mapStateToProps" class="headerlink" title="mapStateToProps()"></a>mapStateToProps()</h3><p><code>mapStateToProps</code> 是一个函数。它的作用就是像它的名字那样，建立一个从(外部的)<code>state</code>对象到 (UI组件的) <code>props</code>对象的映射关系</p>
+<p>看一个count的例子:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> mapStateToProps = <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">counter</span>: state.counter</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里的<code>mapStateToProps</code> 是一个fun ，它接收一个<code>state</code>作为参数，并且返回了一个obj，这个obj有一个counter属性，代表了ui组件当中的同名参数，然后这里也可以自己自定义一个fun去计算返回一个obj</p>
+<p><code>mapStateToProps</code>会订阅<code>store</code>，每当你的<code>state</code>更新的时候，就会自动执行，重新计算ui组件的参数，从而触发ui组件的重新渲染。而不需要使用<code>subscribe</code>这个方法了</p>
+<p>除了可以传一个参数state以外，还可以使用第二个参数，代表容器组件的props对象<br>然后容器组件的参数发生变化，也会引发UI组件的重新渲染</p>
+<h3 id="mapDispatchToProps"><a href="#mapDispatchToProps" class="headerlink" title="mapDispatchToProps()"></a>mapDispatchToProps()</h3><p><code>mapDispatchToProps</code>是connect的第二个参数，用来建立UI组件的参数到<code>store.dispatch</code>方法的映射，<br>定义了ui组件发出action的方法</p>
+<p>如果<code>mapDispatchToProps</code>是一个对象，它的每个键名也就是对应ui组件的同名参数，数值应该是一个函数，会被当做Action creator，返回的Action 会由redux自动发出，eg:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> mapDispatchToProps = &#123;</div><div class="line">  <span class="attr">onClick</span>: <span class="function">(<span class="params">filter</span>) =&gt;</span> &#123;</div><div class="line">    <span class="attr">type</span>: <span class="string">'SET_VISIBILITY_FILTER'</span>,</div><div class="line">    <span class="attr">filter</span>: filter</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的就是一个例子，上面的<code>mapDispatchToProps</code>这个对象当中的onClick这个键值其实就是一个UI组件的props</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/react/">react</a>, <a href="/categories/react/redux/">redux</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/react/">react</a><a href="/tags/redux/">redux</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2017/02/27/redux学习/"><span>redux学习(1)</span></a></h3>
     
   
@@ -84,8 +174,7 @@
         <h1 id="Redux学习"><a href="#Redux学习" class="headerlink" title="Redux学习"></a>Redux学习</h1><p>因为我最先掌握的是vuex，反过头来去看学习成本相对较高的redux，可能效果会好一点。</p>
 <p>redux是JavaScript状态容器，提供了可预测化的状态管理</p>
 <p>redux由flux演变而来，但受elm的启发，避开了flux的复杂性</p>
-<h2 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h2><p>应用当中的所有<code>state</code>都是以一个对象树的形式存储在一个一个单一的<code>store</code>当中，唯一改变<code>state</code>的办法就是触发<code>action</code>，一个描述发生什么的对象，为了描述<code>action</code>如何改变<code>state</code>树，你需要去编写<code>reducers</code></p>
-
+<h2 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h2><p>应用当中的所有<code>state</code>都是以一个对象树的形式存储在一个一个单一的<code>store</code>当中，唯一改变<code>state</code>的办法就是触发<code>action</code>，一个描述发生什么的对象，为了描述<code>action</code>如何改变<code>state</code>树，你需要去编写<code>reducers</code><br>
       
     </div>
 
@@ -99,7 +188,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/react/">react</a>
+        <a href="/categories/react/">react</a>, <a href="/categories/react/redux/">redux</a>
     </span>
     
 
@@ -108,7 +197,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/react/">react</a>
+        <a href="/tags/react/">react</a><a href="/tags/redux/">redux</a>
     </span>
     
 
@@ -642,76 +731,6 @@
 </li>
 </ul>
 
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/webpack/">webpack</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/node/">node</a><a href="/tags/webpack/">webpack</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2017/01/22/webpack-4/"><span>webpack2学习(四)</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/01/22/webpack-4/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-01-22T06:42:52.000Z">
-          2017-01-22
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="加载器-loaders"><a href="#加载器-loaders" class="headerlink" title="加载器(loaders)"></a>加载器(loaders)</h1><p>loader 是对应用程序中资源文件进行转换。它们是(运行在node.js中的) 函数，可以将资源文件作为参数的来源，然后返回新的资源文件<br>例如，你可以使用loader告诉webpack加载css文件，或者将TypeScript转化为JavaScript</p>
-<h2 id="loader特性"><a href="#loader特性" class="headerlink" title="loader特性"></a>loader特性</h2><ul>
-<li>loader支持链式传递。能够对资源使用流水线(pipeline)。 loader链式按照时间先后顺序进行编译。<br>loader链中的第一个loader返回值给下一个loader，并且在最后一个loader，webpack按照预期的JavaScript返回</li>
-<li>loader可以是同步或者是异步函数。</li>
-<li>loader运行在node.js中，并且能够执行任何可能的操作。</li>
-<li>loader接受查询参数。用于loader间传递配置。</li>
-<li>loader也能够使用  <code>options</code>对象进行配置</li>
-<li>除了使用package.json的main属性，还可以将普通的npm模块导出为loader，做法是在package.json里定义一个loader字段</li>
-<li>插件可以给loader带来更多的功能</li>
-<li>loader能够产生额外的任意文件</li>
-</ul>
-<p>loader通过(loader)预处理函数，为JavaScript生态系统提供了更多有利功能。用户现在可以更加灵活的引入细粒度逻辑，例如压缩、打包、语言翻译和其他<br>
       
     </div>
 
