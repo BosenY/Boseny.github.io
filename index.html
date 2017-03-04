@@ -47,9 +47,9 @@
   <nav class="site-navigation">
     <ul>
       
-        <li><a href="/">Home</a></li>
+        <li><a href="/">主页</a></li>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/archives">归档</a></li>
       
     </ul>
   </nav>
@@ -57,6 +57,71 @@
 
     <main class="site-main posts-loop">
     
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/03/04/redux学习-3/"><span>redux学习(3)</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/03/04/redux学习-3/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-03-04T07:07:56.000Z">
+          2017-03-04
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="redux学习-三"><a href="#redux学习-三" class="headerlink" title="redux学习(三)"></a>redux学习(三)</h1><p>基本快把react-redux都看完了，还差最后的几部。</p>
+<h2 id="lt-Provider-gt-组件"><a href="#lt-Provider-gt-组件" class="headerlink" title="&lt;Provider&gt;组件"></a><code>&lt;Provider&gt;</code>组件</h2><p>connect方法生成容器组件后，需要让容器组件拿到state对象，才能生成ui组件的参数</p>
+<p>一种解决方法就是将state对象作为参数，传入容器组件。但是，这样做比较麻烦，尤其是容器组件可能在很深的层级，一级<br>级将state传下去就很麻烦</p>
+<p>使用了provider组件后，可以让容器组件拿到state</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></div><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span></div><div class="line"><span class="keyword">import</span> todoApp <span class="keyword">from</span> <span class="string">'./reducers'</span></div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./components/App'</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> store = createStore(todoApp);</div><div class="line"></div><div class="line">render(</div><div class="line">  &lt;Provider store=&#123;store&#125;&gt;</div><div class="line">    &lt;App /&gt;</div><div class="line">  &lt;/Provider&gt;,</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</div><div class="line">)</div></pre></td></tr></table></figure>
+<p>上面的例子当中，使用<code>provider</code>组件在根组件外面包了一层，这样一来，app的所有组件就默认可以拿到state了</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/react/">react</a>, <a href="/categories/react/redux/">redux</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/react/">react</a><a href="/tags/redux/">redux</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
   <article>
 
   
@@ -552,7 +617,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/mongodb/">mongodb</a><a href="/tags/node/">node</a>
+        <a href="/tags/node/">node</a><a href="/tags/mongodb/">mongodb</a>
     </span>
     
 
@@ -697,79 +762,11 @@
 
 
 
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2017/01/22/webpack-5/"><span>webpack2学习(五)</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/01/22/webpack-5/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-01-22T08:52:52.000Z">
-          2017-01-22
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="模块热替换-Hot-Module-Replacement"><a href="#模块热替换-Hot-Module-Replacement" class="headerlink" title="模块热替换(Hot Module Replacement)"></a>模块热替换(Hot Module Replacement)</h1><p>模块热替换功能会在应用程序运行过程中替换、添加或删除模块，而无需重新加载页面。这使得你可以在独立模块变更后，<br>无需刷新整个页面，就可以更新这些模块，极大地加速了开发时间。</p>
-<ul>
-<li>站在app角度<ol>
-<li>app代码要求HMR runtime检查更新</li>
-<li>HMR runtime(异步) 下载更新，然后通知app代码更新可用</li>
-<li>app代码要求HMR runtime 应用更新</li>
-</ol>
-</li>
-</ul>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/webpack/">webpack</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/node/">node</a><a href="/tags/webpack/">webpack</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
 
 <nav class="pagination">
   
   
-  <a href="/page/2/" class="pagination-next">Next</a>
+  <a href="/page/2/" class="pagination-next">下一页</a>
   
 </nav>
     </main>
