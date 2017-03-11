@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>echarts学习 | BosenYのblog</title>
+
+  
+  <meta name="author" content="BosenY">
+  
+
+  
+  <meta name="description" content="a simple blog，nothing to say~">
+  
+
+  
+  
+  <meta name="keywords" content="JavaScript,echarts">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="echarts学习"/>
+
+  <meta property="og:site_name" content="BosenYのblog"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="BosenYのblog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">BosenYのblog</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>echarts学习</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/03/09/echarts学习/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-03-09T06:16:06.000Z">
+          2017-03-09
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="echarts-api学习"><a href="#echarts-api学习" class="headerlink" title="echarts api学习"></a>echarts api学习</h1><p>因为暂时项目当中使用的是echarts-for-react插件，所以暂时先不考虑了解echarts原生对象的一些方法，<br>先从配置项开始学习。</p>
+<p>首先是初始化一个echarts对象，然后这个对象去调用echarts的setOption方法，配置展示的信息。</p>
+<p>setOption用来写echarts图表的配置信息</p>
+<h3 id="title"><a href="#title" class="headerlink" title="title"></a>title</h3><p>标题组件，包含主标题和副标题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">title: &#123;</div><div class="line">    <span class="attr">show</span>: <span class="comment">//是否显示标题组件 默认是true</span></div><div class="line">    text:<span class="comment">//主标题文本</span></div><div class="line">    link: <span class="comment">//主标题的超文本链接，也可以用在react的路由跳转</span></div><div class="line">    target: <span class="comment">//指定打开超链接的方式 默认是新窗口</span></div><div class="line">    textStyle: &#123;</div><div class="line">        <span class="attr">color</span>: <span class="comment">// 主标题颜色</span></div><div class="line">        fontWeight: <span class="comment">//主标题文字字体粗细</span></div><div class="line">        fontFamily: <span class="comment">// 主标题文字字体</span></div><div class="line">        fontSize: <span class="comment">//主标题文字字体大小</span></div><div class="line"></div><div class="line">    &#125;</div><div class="line">    textAligin: <span class="comment">//标题文本水平对齐方式</span></div><div class="line">    textBaseline: <span class="comment">//标题文本垂直对齐方式</span></div><div class="line">    subtext: <span class="comment">//副标题文本  副标题也有主标题同样的配置，这里就不记录了</span></div><div class="line">    sublink: <span class="comment">//富文本超链接</span></div><div class="line">    </div><div class="line">&#125;,</div><div class="line"></div><div class="line"><span class="comment">//api太多啦，也不记载这么多了，具体的自己去官网看吧，自己就记录一些第一层的配置信息</span></div><div class="line"></div><div class="line">legend: <span class="comment">//图例组件，展现了不同系列的标记(symbol)，颜色和名字。可以通过点击图例控制哪些系列不显示</span></div><div class="line"></div><div class="line">grid: <span class="comment">//直角坐标系内绘图网格，单个grid内最多可以放置上下两个x轴，左右两个y轴。可以在网格上绘制折线图、柱状图、散点图(气泡图)，在echarts3当中可以存在任意多个grid组件</span></div><div class="line"></div><div class="line">xAxis: <span class="comment">// 直角坐标系grid中的x轴，一般情况下grid组件最多只能放左右两个x轴，多于两个x轴需要通过配置offset防止同个位置多个x轴的重叠</span></div><div class="line"></div><div class="line">yAxis: <span class="comment">//直角坐标系 grid 中的 y 轴，一般情况下单个 grid 组件最多只能放左右两个 y 轴，多于两个 y 轴需要通过配置 offset 属性防止同个位置多个 Y 轴的重叠。</span></div><div class="line"></div><div class="line">polar: <span class="comment">// 极坐标系，可以用于散点图和折线图，每个极坐标拥有一个角度轴和一个半径轴</span></div><div class="line"></div><div class="line">radiusAxis: <span class="comment">//极坐标系的径向轴</span></div><div class="line"></div><div class="line">angleAxis:  <span class="comment">//极坐标系的角度轴</span></div><div class="line"></div><div class="line">radar : <span class="comment">// 雷达坐标系组件</span></div><div class="line"></div><div class="line">dataZoom: <span class="comment">// 用于区域缩放，从而能自由关注细节的数据信息，或者概览数据整体，或者去除离群点的影响</span></div><div class="line"></div><div class="line">tooltip: <span class="comment">//提示框组件</span></div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/echarts/">echarts</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 BosenY
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
