@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+    
+    <entry>
+      <title><![CDATA[redux中间件-reduxsaga学习]]></title>
+      <url>%2F2017%2F03%2F11%2Fredux%E4%B8%AD%E9%97%B4%E4%BB%B6-reduxsaga%E5%AD%A6%E4%B9%A0%2F</url>
+      <content type="text"><![CDATA[redux-saga考虑到后期项目可能需要去异步对redux进行一些操作，看了react的生态圈，发现这个中间件比较火，就想学习一下，在这里做个简单的记录]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[echarts学习]]></title>
+      <url>%2F2017%2F03%2F09%2Fecharts%E5%AD%A6%E4%B9%A0%2F</url>
+      <content type="text"><![CDATA[echarts api学习因为暂时项目当中使用的是echarts-for-react插件，所以暂时先不考虑了解echarts原生对象的一些方法，先从配置项开始学习。 首先是初始化一个echarts对象，然后这个对象去调用echarts的setOption方法，配置展示的信息。 setOption用来写echarts图表的配置信息 title标题组件，包含主标题和副标题12345678910111213141516171819202122232425262728293031323334353637383940title: &#123; show: //是否显示标题组件 默认是true text://主标题文本 link: //主标题的超文本链接，也可以用在react的路由跳转 target: //指定打开超链接的方式 默认是新窗口 textStyle: &#123; color: // 主标题颜色 fontWeight: //主标题文字字体粗细 fontFamily: // 主标题文字字体 fontSize: //主标题文字字体大小 &#125; textAligin: //标题文本水平对齐方式 textBaseline: //标题文本垂直对齐方式 subtext: //副标题文本 副标题也有主标题同样的配置，这里就不记录了 sublink: //富文本超链接 &#125;,//api太多啦，也不记载这么多了，具体的自己去官网看吧，自己就记录一些第一层的配置信息legend: //图例组件，展现了不同系列的标记(symbol)，颜色和名字。可以通过点击图例控制哪些系列不显示grid: //直角坐标系内绘图网格，单个grid内最多可以放置上下两个x轴，左右两个y轴。可以在网格上绘制折线图、柱状图、散点图(气泡图)，在echarts3当中可以存在任意多个grid组件xAxis: // 直角坐标系grid中的x轴，一般情况下grid组件最多只能放左右两个x轴，多于两个x轴需要通过配置offset防止同个位置多个x轴的重叠yAxis: //直角坐标系 grid 中的 y 轴，一般情况下单个 grid 组件最多只能放左右两个 y 轴，多于两个 y 轴需要通过配置 offset 属性防止同个位置多个 Y 轴的重叠。polar: // 极坐标系，可以用于散点图和折线图，每个极坐标拥有一个角度轴和一个半径轴radiusAxis: //极坐标系的径向轴angleAxis: //极坐标系的角度轴radar : // 雷达坐标系组件dataZoom: // 用于区域缩放，从而能自由关注细节的数据信息，或者概览数据整体，或者去除离群点的影响tooltip: //提示框组件]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[redux学习(3)]]></title>
+      <url>%2F2017%2F03%2F04%2Fredux%E5%AD%A6%E4%B9%A0-3%2F</url>
+      <content type="text"><![CDATA[redux学习(三)基本快把react-redux都看完了，还差最后的几部。 &lt;Provider&gt;组件connect方法生成容器组件后，需要让容器组件拿到state对象，才能生成ui组件的参数 一种解决方法就是将state对象作为参数，传入容器组件。但是，这样做比较麻烦，尤其是容器组件可能在很深的层级，一级级将state传下去就很麻烦 使用了provider组件后，可以让容器组件拿到state12345678910111213import &#123; Provider &#125; from 'react-redux'import &#123; createStore &#125; from 'redux'import todoApp from './reducers'import App from './components/App'let store = createStore(todoApp);render( &lt;Provider store=&#123;store&#125;&gt; &lt;App /&gt; &lt;/Provider&gt;, document.getElementById('root')) 上面的例子当中，使用provider组件在根组件外面包了一层，这样一来，app的所有组件就默认可以拿到state了]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[redux学习2]]></title>
+      <url>%2F2017%2F03%2F03%2Fredux%E5%AD%A6%E4%B9%A02%2F</url>
+      <content type="text"><![CDATA[react-redux学习react-redux是一个专门用于在react项目中使用redux的一个库，而且还有一定的规范和写法的推荐。还有额外的api需要去学习。 组件规范ui组件首先react-redux将所有的组件分成了两大类：ui组件和容器组件 UI组件只负责样式和ui 所有数据都由props来传递 不使用任何的redux 容器组件 管理所有的 使用redux connect() react-redux提供了一个connect方法 ，用来从ui组件生成一个容器组件 但是，如果只是简单的进行了对UI组件的包装的，并没有太多的作用，为了定义业务逻辑，需要给出下面两方面的信息。 输入逻辑: 外部的数据(即state对象)如何转换为UI组件的参数 输出逻辑: 用户发出的动作如何变为Action对象，从UI组件传出去 完整的API如下： 123456import &#123; connect &#125; from 'react-redux'const VisibleTodoList = connect( mapStateToProps, mapDispatchToProps)(TodoList) 上面两个参数就是对应了输入逻辑和输出逻辑 前者负责输入逻辑，即将state映射到ui组件的参数(props)后者负责输出逻辑，将用户对ui组件的操作映射成action mapStateToProps()mapStateToProps 是一个函数。它的作用就是像它的名字那样，建立一个从(外部的)state对象到 (UI组件的) props对象的映射关系 看一个count的例子: 12345const mapStateToProps = (state) =&gt; &#123; return &#123; counter: state.counter &#125;&#125; 这里的mapStateToProps 是一个fun ，它接收一个state作为参数，并且返回了一个obj，这个obj有一个counter属性，代表了ui组件当中的同名参数，然后这里也可以自己自定义一个fun去计算返回一个obj mapStateToProps会订阅store，每当你的state更新的时候，就会自动执行，重新计算ui组件的参数，从而触发ui组件的重新渲染。而不需要使用subscribe这个方法了 除了可以传一个参数state以外，还可以使用第二个参数，代表容器组件的props对象然后容器组件的参数发生变化，也会引发UI组件的重新渲染 mapDispatchToProps()mapDispatchToProps是connect的第二个参数，用来建立UI组件的参数到store.dispatch方法的映射，定义了ui组件发出action的方法 如果mapDispatchToProps是一个对象，它的每个键名也就是对应ui组件的同名参数，数值应该是一个函数，会被当做Action creator，返回的Action 会由redux自动发出，eg: 123456const mapDispatchToProps = &#123; onClick: (filter) =&gt; &#123; type: 'SET_VISIBILITY_FILTER', filter: filter &#125;;&#125; 上面的就是一个例子，上面的mapDispatchToProps这个对象当中的onClick这个键值其实就是一个UI组件的props]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[redux学习(1)]]></title>
+      <url>%2F2017%2F02%2F27%2Fredux%E5%AD%A6%E4%B9%A0%2F</url>
+      <content type="text"><![CDATA[Redux学习因为我最先掌握的是vuex，反过头来去看学习成本相对较高的redux，可能效果会好一点。 redux是JavaScript状态容器，提供了可预测化的状态管理 redux由flux演变而来，但受elm的启发，避开了flux的复杂性 核心应用当中的所有state都是以一个对象树的形式存储在一个一个单一的store当中，唯一改变state的办法就是触发action，一个描述发生什么的对象，为了描述action如何改变state树，你需要去编写reducers 三大原则redux可以用这三个基本原则来描述： 1.单一数据源整个应用的state被存储在一棵 object tree中，并且这个object tree只存在于唯一一个store中。 2.state是只读的唯一改变state的方法就是触发action，action是一个用于描述已发生事件的普通对象 3.使用纯函数来执行修改为了描述action如何改变state tree ，你需要编写reducers。 reducer只是一些纯函数，它接收先前的state和action，并返回新的state。刚开始你可以只有一个reducer，随着应用的变大，你可以把它拆成多个小的reducers，分别独立操作state tree的不同部分 redux的一般写法层次: 首先一般的redux要分为component和reducer两部分 component当中只负责ui的设计，里面所有的方法和数据全部写成props，暴露给上层去调用 reducer负责接收state和action两个参数，然后根据action的type属性进行不同的操作，返回不同的state 最终使用redux当中的一个叫做createStore方法来生成store，参数就是上面的reducer 然后在给子component传props的时候，调用store当中的dispatch方法来改变state，参数需要传action(因为state的初始值已经给出，不需要传) 但是这种普通的redux写法只能运用于特别简单的应用当中，如果要用到一个大型的react项目当中配合react-router一起使用，就要用到react-redux了]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[react-router学习(2)]]></title>
+      <url>%2F2017%2F02%2F27%2Freact-router-2%2F</url>
+      <content type="text"><![CDATA[react router学习(2)路由匹配原理路由有三个属性来决定是否匹配一个url 嵌套关系 它的路径语法 它的优先级 嵌套关系React Router 使用路由嵌套的概念来让你定义 view 的嵌套集合，当一个给定的 URL 被调用时，整个集合中（命中的部分）都会被渲染。嵌套路由被描述成一种树形结构。 React Router 会深度优先遍历整个路由配置来寻找一个与给定的 URL 相匹配的路由。 它的路径语法 :paramName 匹配一段位于/、?、#之后的url，命中的部分将被作为参数 () 在它内部的内容被认为是可选的 匹配任意字符(非贪婪的)直到命中下一个字符或者整个url的末尾，并创建一个splat参数 它的优先级路由算法会根据定义的顺序自顶向下匹配路由。因此，当你拥有两个兄弟路由节点配置时，你必须确认前一个路由不会匹配后一个路由中的路径。 例如，千万不要这么做： 12&lt;Route path="/comments" ... /&gt;&lt;Redirect from="/comments" ... /&gt; HistoryHistory用来去监听浏览器地址栏的变化，并解析这个url转化为location对象，然后router使用它去匹配路由，然后渲染相应的组件 History的模式常用的有三种，当然你也可以去自定义 browserHistory hashHistory createMemoryHistory 用法： 你先从react-router当中引用他们 1import &#123; browserHistory &#125; from 'react-router' 然后将它们传递给&lt;Router&gt;1234render( &lt;Router history=&#123;browserHistory&#125; routes=&#123;routes&#125; /&gt;, document.getElementById('app')) browserHistorybrowserHistory是用的比较多的一种模式 它使用浏览器中的historyAPI用于处理URL，创建一个真实的url 看到这里正好还解决了我一个肯长时间百思不得其解的问题，就是我vue写的项目打包放到Nginx服务器上面后，路由匹配会报错，然后按照这里给Nginx反向代理的方法重新配置了服务器，发现错误就解决了。 hashHistoryhashHistory 使用url中的hash(#)部分去创建形如 example.com/#/some/path 的路由。但由于有一个#号 所以看起来会比较丑，所以不建议线上使用 createMemoryHistoryMemory History不会在地址栏被操作或读取。 它非常适合测试和其他的渲染环境(React Native) 和另外两种history的一点不同的是你必须创建它，这种方式便于测试 1const history = createMemoryHistory(location) Index Links除了路由有默认的 link也有，如果你使用了&lt;Link to=&quot;/&quot;&gt;Home&lt;/Link&gt;,它会一直处于激活状态，因为所以的url的开头都是/。这个确实是个问题，因为我们仅仅希望在home被渲染后，激发并链接到它 如果需要在home路由被渲染后才激活 就用&lt;IndexLink to=&quot;/&quot;&gt;Home&lt;/IndexLink&gt; 就先记这么多，以后遇到坑在补]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[react-router学习(1)]]></title>
+      <url>%2F2017%2F02%2F27%2Freact-router%E5%AD%A6%E4%B9%A0%2F</url>
+      <content type="text"><![CDATA[react-router学习关于配置什么的 请自行移至百度，下面就记录一下如何使用react-router 有关react-router的内容都是从这里学习和摘抄的： react中文文档 先写一个简单的例子来解释一下如何编写路由配置:1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950import React from 'react';import &#123; Router, Route, Link &#125; from 'react-router'const App = React.createClass(&#123; render() &#123; return ( &lt;div&gt; &lt;h1&gt;App&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;&lt;Link to="/about"&gt;About&lt;/Link&gt;&lt;/li&gt; &lt;li&gt;&lt;Link to="/inbox"&gt;Inbox&lt;/Link&gt;&lt;/li&gt; &lt;/ul&gt; &#123;this.props.children&#125; &lt;/div&gt; ) &#125;&#125;)const About = React.createClass(&#123; render() &#123; return &lt;h3&gt;About&lt;/h3&gt; &#125;&#125;)const Inbox = React.createClass(&#123; render() &#123; return ( &lt;div&gt; &lt;h2&gt;Inbox&lt;/h2&gt; &#123;this.props.children || "Welcome to your Inbox"&#125; &lt;/div&gt; ) &#125;&#125;)const Message = React.createClass(&#123; render() &#123; return &lt;h3&gt;Message &#123;this.props.params.id&#125;&lt;/h3&gt; &#125;&#125;)React.render(( &lt;Router&gt; &lt;Route path="/" component=&#123;App&#125;&gt; &lt;Route path="about" component=&#123;About&#125; /&gt; &lt;Route path="inbox" component=&#123;Inbox&#125;&gt; &lt;Route path="messages/:id" component=&#123;Message&#125; /&gt; &lt;/Route&gt; &lt;/Route&gt; &lt;/Router&gt;), document.body) 这里，最下面的render就是路由配置的一个具体的格式，其中主路由 &#39;/&#39; 是匹配的 App这个组件紧接着 about 和 inbox 是 App 的子组件 他们显示的位置就是 this.props.children的位置他们会在路由匹配成功后显示在对应的位置上面然后是inbox里面的又一个子路由，这个路由还待了一个参数id，会跟着路由传过来，就是说 我们匹配到/inbox/messages/xxx 的时候 message这个组件就会被渲染出来，而且对应的this.props.params.id也就是xxx 添加首页仅仅这样写是不够的，比方说我没有给出子路由的时候this.props.children就是undefined这个时候我们就应该加入一个默认的路由去渲染，我们可以使用IndexRouter 来设置默认的页面 1234567891011121314151617181920import &#123; IndexRoute &#125; from 'react-router'const Dashboard = React.createClass(&#123; render() &#123; return &lt;div&gt;Welcome to the app!&lt;/div&gt; &#125;&#125;)React.render(( &lt;Router&gt; &lt;Route path="/" component=&#123;App&#125;&gt; &#123;/* 当 url 为/时渲染 Dashboard */&#125; &lt;IndexRoute component=&#123;Dashboard&#125; /&gt; &lt;Route path="about" component=&#123;About&#125; /&gt; &lt;Route path="inbox" component=&#123;Inbox&#125;&gt; &lt;Route path="messages/:id" component=&#123;Message&#125; /&gt; &lt;/Route&gt; &lt;/Route&gt; &lt;/Router&gt;), document.body) 这样的话 当我们的url是/时，我们渲染的子路由 this.props.children的位置就是Dashboard 这个路由 如果我们想要将 /inbox 从 /inbox/messages/:id中去除，并且还能够让 Message 嵌套在 App -&gt; Inbox 中渲染，那会非常赞。绝对路径可以让我们做到这一点。 123456789101112React.render(( &lt;Router&gt; &lt;Route path="/" component=&#123;App&#125;&gt; &lt;IndexRoute component=&#123;Dashboard&#125; /&gt; &lt;Route path="about" component=&#123;About&#125; /&gt; &lt;Route path="inbox" component=&#123;Inbox&#125;&gt; &#123;/* 使用 /messages/:id 替换 messages/:id */&#125; &lt;Route path="/messages/:id" component=&#123;Message&#125; /&gt; &lt;/Route&gt; &lt;/Route&gt; &lt;/Router&gt;), document.body) 这样，我们的绝对路径就写好了，匹配/messages/:id 会依次渲染 App -&gt; Inbox -&gt; Message 但是，这时候又有了新的问题,当我们访问/inbox/messages/5的时候 我们就会看到错误，这个的解决办法就是路由的重定向，我们使用&lt;Redirect&gt;来使这个url重新工作 12345678910111213141516import &#123; Redirect &#125; from 'react-router'React.render(( &lt;Router&gt; &lt;Route path="/" component=&#123;App&#125;&gt; &lt;IndexRoute component=&#123;Dashboard&#125; /&gt; &lt;Route path="about" component=&#123;About&#125; /&gt; &lt;Route path="inbox" component=&#123;Inbox&#125;&gt; &lt;Route path="/messages/:id" component=&#123;Message&#125; /&gt; &#123;/* 跳转 /inbox/messages/:id 到 /messages/:id */&#125; &lt;Redirect from="messages/:id" to="/messages/:id" /&gt; &lt;/Route&gt; &lt;/Route&gt; &lt;/Router&gt;), document.body) 这样的话，无论任何人点击/inbox/messages/5这个链接，它最终都会被重定向到/messages/5这个url上面 进入和离开的钩子Router 可以定义 onEnter 和 onLeave 两个钩子 ，这两个钩子会在页面跳转时触发，在验证权限的时候特别有用，在路由跳转过程当中，onLeav 钩子会在所有将离开的路由中触发，从最下层的子路由开始直到最外层父路由结束。然后onEnter 钩子会从最外层的父路由开始直到最下层子路由结束 继续我们上面的例子，如果一个用户点击链接，从 /messages/5 跳转到 /about，下面是这些 hook 的执行顺序： /messages/:id 的 onLeave /inbox 的 onLeave /about 的 onEnter]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[weex小记]]></title>
+      <url>%2F2017%2F02%2F23%2Fweex%E5%B0%8F%E8%AE%B0%2F</url>
+      <content type="text"><![CDATA[weex学习(一)上个学期学校实验周要求做一个项目，就考虑做个native端的，当时weex还不怎么稳定，看了半天网上的资料还是研究不出到底如何从构建到编译、打包，于是用了React Native，但是由于react本身学习成本的问题，做的并不精致，好多东西都没用进去。 在公司实习的这段时间，公司的新项目都使用vue，在这个3个多月的时间当中，基本学会了vue的整个概念和它的一些生态库，比方说vue-router和vuex，然后自己也了解了webpack打包编译的机制，还将nodejs后端的koa自己写到了一个个人的小项目里面： vue2-koa2的小demo感觉使用vue要比react清爽多了(关键还是学习成本低，上限还高)，现在看weex官方已经支持了vue语法编译，所以就学一下，准备毕设就拿这个开题。 关于weex和vue： Vue.js 是 Evan You 开发的渐进式 JavaScript 框架，在易用性、灵活性和性能等方面都非常优秀。开发者能够通过撰写 *.vue 文件，基于 &lt;template&gt;, &lt;style&gt;, &lt;script&gt; 快速构建组件化的 web 应用。Vue.js 在 2016 年 10 月正式发布了 2.0 版本，该版本加入了 Virtual-DOM 和预编译器的设计，使得该框架在运行时能够脱离 HTML 和 CSS 解析，只依赖 JavaScript；同时 Virtual-DOM 也使得 Vue 2.x 渲染成原生 UI 成为了可能。 weex就相对于react 和react native ，它就是vue的native版本，同时更加强大的是，它可以同时编译渲染web、android、ios三端。 目前 Weex 与 Vue 正在展开官方合作，并将 Vue 2.x 作为内置的前端框架，Vue 也因此具备了开发原生应用的能力。 关于起步由于我也是刚起步，不太能说明白，我是看的饿了么前端的一个妹子大神的教程才跟着一步一步配置出来的，链接在此: 快速开始weex之旅 Weex 入坑指南：手把手编译 Playground 我是直接把weex团队的weex-hacknews改了一下，就可以成为自己开发时候的一个基础架子了。然后可以自己去配置一下router、vuex等等的东西，然后编译调试打包。。。]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[vue组件]]></title>
+      <url>%2F2017%2F02%2F22%2Fvue%E7%BB%84%E4%BB%B6%2F</url>
+      <content type="text"><![CDATA[vue组件开发-轮播图今天自己写了一个轮播图的组件，在这里记录一下开发的具体流程 开始首先轮播图的一个关键就是定位和布局，如下图： 这里就是分几个部分： 图片 左右的按钮 底部的定位按钮 首先是图片，图片的写法是将所有的图片放在一个父级div当中，然后使用flex布局使他们处于同一排，然后图片的显示区域只有一个图片的大小，这样处于试图当中就只有一张图 接下来是左右的按钮，左右的按钮布局是用到了position:absolute 只要给父元素的div的样式当中加入相对布局,然后根据上下左右的定位和transform定位同时去控制，这样就保证了位置 底部的定位按钮的写法也是一样的 逻辑和功能的实现]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[mongodb存图片]]></title>
+      <url>%2F2017%2F02%2F21%2Fmonggo%2F</url>
+      <content type="text"><![CDATA[mongodb存储图片]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[eggjs学习(一)]]></title>
+      <url>%2F2017%2F02%2F16%2Feggjs-1%2F</url>
+      <content type="text"><![CDATA[eggjs什么是eggjseggjs 是一个企业级的koa框架，相对于普通的koa，他有以下的一些优势： 深度框架定制 高度可扩展的插件机制 内置多进程管理 基于koa开发，性能优异 框架稳定，测试覆盖率高 渐进式开发 注意：是基于koa1的未完待续]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[17年学习计划]]></title>
+      <url>%2F2017%2F01%2F27%2F17%E5%B9%B4%E8%AE%A1%E5%88%92%2F</url>
+      <content type="text"><![CDATA[16年成果今年总的来说已经达到了自己的目标，目前已经从一个只会一点前端发展到了前后端已经可以独立架构。目前所学会的技术如下： 前端： vue、react(尚未熟练)、react native、weex、各种库(vuex、vue-router、fetch、axios、lodash、d3)… 后端： express、koa2、mongodb… 17年计划实习2个多月，感觉自己最薄弱的就是有关移动端的样式、事件等，准备加大力度学习移动端所有知识和框架，比如：react native、weex等等，然后vue的服务端渲染也要彻底掌握，还有那个新出的vuessr框架nuxt，感觉这个东西会火，然后就是各种后端的东西，虽然说已经可以写一个完整的后端接口，但是还没有完善化，比方说加密方面和安全方面，都还是有待提高的，并且也不能仅限于nodejs，准备把php的thinkphp框架学起来，结合vue使用~]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[webpack2学习(五)]]></title>
+      <url>%2F2017%2F01%2F22%2Fwebpack-5%2F</url>
+      <content type="text"><![CDATA[模块热替换(Hot Module Replacement)模块热替换功能会在应用程序运行过程中替换、添加或删除模块，而无需重新加载页面。这使得你可以在独立模块变更后，无需刷新整个页面，就可以更新这些模块，极大地加速了开发时间。 站在app角度 app代码要求HMR runtime检查更新 HMR runtime(异步) 下载更新，然后通知app代码更新可用 app代码要求HMR runtime 应用更新]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[webpack2学习(四)]]></title>
+      <url>%2F2017%2F01%2F22%2Fwebpack-4%2F</url>
+      <content type="text"><![CDATA[加载器(loaders)loader 是对应用程序中资源文件进行转换。它们是(运行在node.js中的) 函数，可以将资源文件作为参数的来源，然后返回新的资源文件例如，你可以使用loader告诉webpack加载css文件，或者将TypeScript转化为JavaScript loader特性 loader支持链式传递。能够对资源使用流水线(pipeline)。 loader链式按照时间先后顺序进行编译。loader链中的第一个loader返回值给下一个loader，并且在最后一个loader，webpack按照预期的JavaScript返回 loader可以是同步或者是异步函数。 loader运行在node.js中，并且能够执行任何可能的操作。 loader接受查询参数。用于loader间传递配置。 loader也能够使用 options对象进行配置 除了使用package.json的main属性，还可以将普通的npm模块导出为loader，做法是在package.json里定义一个loader字段 插件可以给loader带来更多的功能 loader能够产生额外的任意文件 loader通过(loader)预处理函数，为JavaScript生态系统提供了更多有利功能。用户现在可以更加灵活的引入细粒度逻辑，例如压缩、打包、语言翻译和其他 解析loaderloader解析类似于模块，loader模块需要导出一个函数，并且使用兼容node.js的JavaScript编写。在通常情况下，你可以使用npm管理loader，但是你也可以在应用程序中将loader作为文件去使用 引用loaderloader通常被命名为xxx-loader ，xxx是上下文的名称 eg： json-loader load的名称约定和优先搜索顺序，由webpack配置API中的resolveLoader、moduleTemplates定义 插件(plugins)webpack本身也是构建于同样的插件系统插件的目的在于解决loader无法实现的事情 解剖webpack插件是一个具有apply属性的JavaScript对象。apply属性会被webpack解析器(compiler)调用，并且可在整个编译生命周期(compilation lifecycle)访问。 ConsoleLogOnBuildWebpackPlugin.js1234567891011function ConsoleLogOnBuildWebpackPlugin() &#123;&#125;;ConsoleLogOnBuildWebpackPlugin.prototype.apply = function(compiler) &#123; compiler.plugin('run', function(compiler, callback) &#123; console.log("The webpack build process is starting!!!"); callback(); &#125;);&#125;;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[webpack2学习(三)]]></title>
+      <url>%2F2017%2F01%2F22%2Fwebpack-3%2F</url>
+      <content type="text"><![CDATA[输出outputoutput选项控制webpack如何向硬盘写入编译文件。注意，即使可以存在多个入口起点，但只指定一个输出配置 用法设置output属性，只需要在你的webpack配置简单的设置输出值： webpack.config.js12345const config = &#123; output: 'bundle.js'&#125;;module.exports = config; 下面是一些output的属性： output.filename指定硬盘每个输出文件的名称。在这里你不能指定绝对路径！ `output.path`选项规定了文件被写入硬盘的位置。 filename 仅用于命名每个文件。 单个入口123456789&#123; entry: './src/app.js', output: &#123; filename: 'bundle.js', path: __dirname + '/build' &#125;&#125;// 写入到硬盘：./build/bundle.js 多个入口 如果你的配置创建了多个chunk(例如使用多个入口点或使用类似CommonsChunkPlugin的插件)，你应该使用以下的替换方式来确保每个文件名都不重复。 [naem] 被chunk 的name 替换 [hash] 被编译(compilation) 的hash替换 [chunkhash] 被chunk 的hash 替换123456789101112&#123; entry: &#123; app: './src/app.js', search: './src/search.js' &#125;, output: &#123; filename: '[name].js', path: __dirname + '/build' &#125;&#125;// 写入到硬盘：./build/app.js, ./build/search.js output.hotUpdateChunkFilename热更新块(Hot Update Chunk)的文件名。 他们在output.path 目录中 [id] 被chunk的id替换 [hash] 被编译(compilation)的hash替换。 (最后一个hash存储在记录中) 默认值： &quot;[id].[hash].hot-update.js&quot; output.hotUpdateFunctionwebpack 用于异步加载(async loading)热更新块(hot update chunk)的 JSONP 函数。 ….还有好多就不详细记录了，具体去官网看吧，下面记录一个重点的： output.path以绝对路径作为导出目录(必选项) [hash] 被编译(compilation)的 hash 替换。 config.js1234output: &#123; path: "/home/proj/public/assets", publicPath: "/assets/"&#125; index.html123&lt;head&gt; &lt;link href="/assets/spinner.gif"/&gt;&lt;/head&gt; 接下来是一个更复杂的例子，来说明对资源使用 CDN 和 hash。 config.js1234output: &#123; path: "/home/proj/cdn/assets/[hash]", publicPath: "http://cdn.example.com/assets/[hash]/"&#125; output.sourceMapFilenamejavascript文件SourceMap的文件名。 它们在output.path目录中。 [file] 被JavaScript文件的文件名替换 [id] 被chunk的id替换 [hash] 被编译的(compilation)的hash替换 默认值：&quot;[file].map&quot;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[webpack2学习(二)]]></title>
+      <url>%2F2017%2F01%2F22%2Fwebpack-2%2F</url>
+      <content type="text"><![CDATA[entry入口起点单入口写法用法： entry： string|Array(string) webpack.config.js12345const config = &#123; entry: './path/to/my/entry/file.js'&#125;;module.exports = config; entry 属性的单入口语法： webpack.config.js1234567const config = &#123; entry:&#123; main:'./path/to/my/entry/file.js' &#125; &#125;;module.exports = config; 对象语法用法：entry: {[entryChunkName: string]: string|Array(string)} webpack.config.js 123456const config = &#123; entry: &#123; app: './src/app.js', vendors: './src/vendors.js' &#125;&#125;; 这是应用程序中定义入口的最可扩展的方式 webpack的可扩展配置是可重用的，并且可以与其他配置组合使用，这是一种流行的技术，用于将关注点从环境、构建目标、运行时中分离，然后使用专门的工具把它们合并在一起 常见场景入口分离 应用(app) 和 公共库(vendor)webpack.config.js 123456const config = &#123; entry: &#123; app: './src/app.js', vendors: './src/vendors.js' &#125;&#125;; 这告诉了我们webpack从app.js和vendors.js开始创建依赖图表。这些图表是完全分离的、互相独立的。在只有一个入口起点(不包括公共库)的单页面应用(spa)当中比较常见 此设置允许你使用CommonsChunkPlugin并从 app 包 提取 公共引用(vendor reference) 到 vendor 包，并把公共引用的部分替换为 webpack_require()调用。如果应用包中了没有公共代码，那么你可以在 webpack 中实现被称为 长效缓存的通用模式。 多页应用webpack.config.js 1234567const config = &#123; entry: &#123; pageOne: './src/pageOne/index.js', pageTwo: './src/pageTwo/index.js', pageThree: './src/pageThree/index.js' &#125;&#125;; 这里webpack 需要3个独立分离的依赖图表 在多页面应用中，服务器将为您获取一个新的html文档，页面重新加载新文档，并且资源被重新下载。然而，这给了我们独特的机会去做很多事： 使用 CommonsChunkPlugin 为每个页面间的应用共享代码创建 bundle。由于入口起点增多，多页应用能够在入口起点重用大量代码/模块，这样可以极大的从这些新技术受益。 根据经验：每个 HTML 文档只使用一个入口起点。]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[webpack2学习(一)]]></title>
+      <url>%2F2017%2F01%2F22%2Fwebpack-1%2F</url>
+      <content type="text"><![CDATA[webpack2学习（一）概念是一个现代JavaScript应用模块打包器 四个核心概念 入口(Entry) webpack 将创建所有应用程序依赖关系图表(dependency graph)。图表的起点被称之为入口起点(entry point)。入口起点告诉 webpack 从哪里开始，并遵循着依赖关系图表知道打包什么。可以将您的应用入口起点认为是根上下文(contextual root)或 app 第一个启动文件。 在webpack当中使用entry属性来定义入口 webpack.config.js： 123module.exports = &#123; entry: './path/to/my/entry/file.js'&#125;; 出口(Output) webpack 的output属性描述了如何处理打包代码 webpack.config.js 123456789var path = require('path');module.exports = &#123; entry: './path/to/my/entry/file.js', output: &#123; path: path.resolve(__dirname, 'dist'), filename: 'my-first-webpack.bundle.js' &#125;&#125;; 这里的__dirname是指当前模块文件所在目录的完整绝对路径,path定义了打包后出口对应的就是当前目录下的dist文件夹,而打包出来的名字就是底下filename来控制的 加载器(Loader) webpack 的目标是，让项目中的所有资源都成为 webpack 的关注点，而浏览器不需要考虑这些（这并不意味着资源都必须打包在一起）。 webpack 把 每个文件(.css, .html, .scss, .jpg, etc.) 都作为模块 处理。然而 webpack 只了解 JavaScript。 webpack会自己识别出应该被特定的加载器转换的文件 转换能够被添加到依赖图表的文件(并且最终打包) (use属性) webpack.config.js 12345678910111213141516var path = require('path');const config = &#123;entry: './path/to/my/entry/file.js',output: &#123; path: path.resolve(__dirname, 'dist'), filename: 'my-first-webpack.bundle.js'&#125;,module: &#123; rules: [ &#123;test: /\.(js|jsx)$/, use: 'babel-loader'&#125; ]&#125;&#125;;module.exports = config; module当中定义了rules属性,里面必须包含两个属性：test和use，test告诉了webpack编译器在模块被解析为js或者jsx路径时候，你需要把他们先使用babel-loader转换再去打包 注意：在 webpack 配置中定义 loader 时，要定义在 module.rules 中，而不是 rules。在定义错时 webpack 会提出严重的警告。 插件 由于加载器仅基于单个文件执行转换，插件最常用(但不限于)在打包模块的编译和分块时执行操作和自定义功能。 插件的目的是为了解决loader无法实现的其他事情 使用时，只需要require他们，并且把他们添加到plugins数组。由于会出现多次使用插件，因此要使用new来创建插件的实例，并且调用插件。 webpack.config.js 123456789101112131415161718192021const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via npmconst webpack = require('webpack'); //to access built-in pluginsconst config = &#123;entry: './path/to/my/entry/file.js',output: &#123; filename: 'my-first-webpack.bundle.js', path: './dist'&#125;,module: &#123; rules: [ &#123;test: /\.(js|jsx)$/, use: 'babel-loader'&#125; ]&#125;,plugins: [ new webpack.optimize.UglifyJsPlugin(), new HtmlWebpackPlugin(&#123;template: './src/index.html'&#125;)]&#125;;module.exports = config;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>%2F2017%2F01%2F16%2Fhello-world%2F</url>
+      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    </entry>
+
+    
+  
+  
+</search>
