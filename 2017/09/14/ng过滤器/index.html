@@ -65,13 +65,13 @@
           <div class="navbar-collapse" id="bs-example-navbar-collapse-6">
             <ul class="nav navbar-nav navbar-right">
             
-              <li><a href="/">Home</a></li>
+              <li><a href="/">主页</a></li>
             
-              <li><a href="/archives">Archives</a></li>
+              <li><a href="/archives">归档</a></li>
             
-              <li><a href="/about">About</a></li>
+              <li><a href="/about">关于</a></li>
             
-              <li><a href="/tags">Tags</a></li>
+              <li><a href="/tags">标签</a></li>
             
             </ul>
           </div>
@@ -120,7 +120,7 @@
 <p>多个过滤器，不带参数的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;expression | filter1 | filter2 | ...&#125;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>先学习自定义的，现找出来10个：</p>
 <h2 id="1-currency"><a href="#1-currency" class="headerlink" title="1. currency"></a>1. currency</h2><p>顾名思义，用于将数字转换为货币的<br>默认的话，是将数字转化成了当前使用语言环境的符号<br>当然也可以设置自定义符号，格式：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; currency_expression | currency : symbol : fractionSize&#125;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>其中symbol代表你要自定义的货币符号，fractionSize代表小数位的取舍量</p>
+<p>其中symbol代表你要自定义的货币符号，fractionSize代表小数位的取舍量</p>
 <h2 id="2-date"><a href="#2-date" class="headerlink" title="2. date"></a>2. date</h2><p>根据要求将时间转换成字符串，开发当中经常用到，<br>格式化的字符串可以由以下原件组成：</p>
 <ul>
 <li>‘yyyy’: 年份用4位数字表示(e.g. AD 1 =&gt; 0001, AD 2010 =&gt; 2010)</li>
@@ -162,7 +162,6 @@
 <li>‘shortTime’: en_US 地区的形式，等同于 ‘h:mm a’ (e.g. 12:05 PM)</li>
 </ul>
 <p>格式字符串可以包含文字。但是需要使用 ‘ 包裹进行转义 (e.g. “h ‘in the morning’”).<br>如果想使用单引号,则需要转义 - 举个例子, 在一行里有两个单引号 (e.g. “h ‘o’’clock’”).</p>
-<p></p>
 
       
     </div>
