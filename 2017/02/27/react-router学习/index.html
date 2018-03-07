@@ -1,439 +1,129 @@
-<!doctype html>
-
-
+<!DOCTYPE HTML>
+<html>
+<head >
+  <meta charset="utf-8">
+  
+  <title>react-router学习(1) | BosenYのblog</title>
 
   
-
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
+  <meta name="author" content="BosenY">
   
 
   
-    
-    
+  <meta name="description" content="菜">
   
 
   
-
+  
+  <meta name="keywords" content="react">
   
 
-  
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="react-router学习(1)"/>
+
+  <meta property="og:site_name" content="BosenYのblog"/>
 
   
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  <meta property="og:image" content="/favicon.ico"/>
   
 
+  <link href="/favicon.ico" rel="icon">
+
+  <link rel="alternate" href="/atom.xml" title="BosenYのblog" type="application/atom+xml">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 
 
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="react," />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-
-
-
-
-
-<meta name="description" content="react-router学习关于配置什么的 请自行移至百度，下面就记录一下如何使用react-router
-有关react-router的内容都是从这里学习和摘抄的：   react中文文档 
-先写一个简单的例子来解释一下如何编写路由配置:">
-<meta property="og:type" content="article">
-<meta property="og:title" content="react-router学习(1)">
-<meta property="og:url" content="http://yoursite.com/2017/02/27/react-router学习/index.html">
-<meta property="og:site_name" content="BosenYのblog">
-<meta property="og:description" content="react-router学习关于配置什么的 请自行移至百度，下面就记录一下如何使用react-router
-有关react-router的内容都是从这里学习和摘抄的：   react中文文档 
-先写一个简单的例子来解释一下如何编写路由配置:">
-<meta property="og:updated_time" content="2017-02-27T06:01:38.197Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react-router学习(1)">
-<meta name="twitter:description" content="react-router学习关于配置什么的 请自行移至百度，下面就记录一下如何使用react-router
-有关react-router的内容都是从这里学习和摘抄的：   react中文文档 
-先写一个简单的例子来解释一下如何编写路由配置:">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"right","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2017/02/27/react-router学习/"/>
-
-
-
-
-
-  <title> react-router学习(1) | BosenYのblog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
+<body>
+<div class="blog">
+  <div class="content">
 
-
-
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?0264e5b7313574b2fce233d4f39e64af";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container one-collumn sidebar-position-right page-post-detail ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
     
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">BosenYのblog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益404
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
+    <header style="background-image: url('/images/blog-bg.jpg');">
 
 
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header page-scroll">
+          <button type="button" id="tglBtn" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">BosenY</a>
+        </div>
+        <div id="bosenyblog-navbar">
+          <div class="navbar-collapse" id="bs-example-navbar-collapse-6">
+            <ul class="nav navbar-nav navbar-right">
+            
+              <li><a href="/">Home</a></li>
+            
+              <li><a href="/archives">Archives</a></li>
+            
+              <li><a href="/about">About</a></li>
+            
+              <li><a href="/tags">Tags</a></li>
+            
+            </ul>
+          </div>
+        </div>
 
     </div>
-  
-</nav>
-
-
+ </nav>
+ <div class="gotop-btn">
 
  </div>
-    </header>
+</header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
+        
+          <div class="container ">
+          <div class="row">
+            <main class="site-main posts-loop">
+            <article>
 
-  <div id="posts" class="posts-expand">
+  
     
-
+    <h3 class="article-title"><span>react-router学习(1)</span></h3>
+    
   
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/27/react-router学习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="BosenY">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/timg.jpg">
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/02/27/react-router学习/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-02-27T02:42:12.000Z">
+          2017-02-27
+        </time>
+      </a>
     </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BosenYのblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                react-router学习(1)
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-27T10:42:12+08:00">
-                2017-02-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/02/27/react-router学习/" class="leancloud_visitors" data-flag-title="react-router学习(1)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
+  </div>
 
 
-    <div class="post-body" itemprop="articleBody">
+  
 
-      
-      
-
+  <div class="article-content">
+    <div class="entry">
       
         <h1 id="react-router学习"><a href="#react-router学习" class="headerlink" title="react-router学习"></a>react-router学习</h1><p>关于配置什么的 请自行移至百度，下面就记录一下如何使用react-router</p>
-<p>有关react-router的内容都是从这里学习和摘抄的：   <a href="http://www.uprogrammer.cn" target="_blank" rel="external">react中文文档</a> </p>
-<p>先写一个简单的例子来解释一下如何编写路由配置:<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Router, Route, Link &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></div><div class="line"><span class="keyword">const</span> App = React.createClass(&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;h1&gt;App&lt;/h1&gt;</div><div class="line">        &lt;ul&gt;</div><div class="line">          &lt;li&gt;&lt;Link to="/about"&gt;About&lt;/Link&gt;&lt;/li&gt;</div><div class="line">          &lt;li&gt;&lt;Link to="/inbox"&gt;Inbox&lt;/Link&gt;&lt;/li&gt;</div><div class="line">        &lt;/ul&gt;</div><div class="line">        &#123;this.props.children&#125;</div><div class="line">      &lt;/div&gt;</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">const</span> About = React.createClass(&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> &lt;h3&gt;About&lt;/h3&gt;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">const</span> Inbox = React.createClass(&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;h2&gt;Inbox&lt;/h2&gt;</div><div class="line">        &#123;this.props.children || "Welcome to your Inbox"&#125;</div><div class="line">      &lt;/div&gt;</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">const</span> Message = React.createClass(&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> &lt;h3&gt;Message &#123;this.props.params.id&#125;&lt;/h3&gt;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">React.render((</div><div class="line">  &lt;Router&gt;</div><div class="line">    &lt;Route path="/" component=&#123;App&#125;&gt;</div><div class="line">      &lt;Route path="about" component=&#123;About&#125; /&gt;</div><div class="line">      &lt;Route path="inbox" component=&#123;Inbox&#125;&gt;</div><div class="line">        &lt;Route path="messages/:id" component=&#123;Message&#125; /&gt;</div><div class="line">      &lt;/Route&gt;</div><div class="line">    &lt;/Route&gt;</div><div class="line">  &lt;/Router&gt;</div><div class="line">), document.body)</div></pre></td></tr></table></figure></p>
+<p>有关react-router的内容都是从这里学习和摘抄的：   <a href="http://www.uprogrammer.cn" target="_blank" rel="noopener">react中文文档</a> </p>
+<p>先写一个简单的例子来解释一下如何编写路由配置:<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Router, Route, Link &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br><span class="line"><span class="keyword">const</span> App = React.createClass(&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;App&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">        &lt;ul&gt;</span></span><br><span class="line"><span class="regexp">          &lt;li&gt;&lt;Link to="/</span>about<span class="string">"&gt;About&lt;/Link&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">          &lt;li&gt;&lt;Link to="</span>/inbox<span class="string">"&gt;Inbox&lt;/Link&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;/ul&gt;</span></span><br><span class="line"><span class="string">        &#123;this.props.children&#125;</span></span><br><span class="line"><span class="string">      &lt;/div&gt;</span></span><br><span class="line"><span class="string">    )</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">const About = React.createClass(&#123;</span></span><br><span class="line"><span class="string">  render() &#123;</span></span><br><span class="line"><span class="string">    return &lt;h3&gt;About&lt;/h3&gt;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">const Inbox = React.createClass(&#123;</span></span><br><span class="line"><span class="string">  render() &#123;</span></span><br><span class="line"><span class="string">    return (</span></span><br><span class="line"><span class="string">      &lt;div&gt;</span></span><br><span class="line"><span class="string">        &lt;h2&gt;Inbox&lt;/h2&gt;</span></span><br><span class="line"><span class="string">        &#123;this.props.children || "</span>Welcome to your Inbox<span class="string">"&#125;</span></span><br><span class="line"><span class="string">      &lt;/div&gt;</span></span><br><span class="line"><span class="string">    )</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">const Message = React.createClass(&#123;</span></span><br><span class="line"><span class="string">  render() &#123;</span></span><br><span class="line"><span class="string">    return &lt;h3&gt;Message &#123;this.props.params.id&#125;&lt;/h3&gt;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">React.render((</span></span><br><span class="line"><span class="string">  &lt;Router&gt;</span></span><br><span class="line"><span class="string">    &lt;Route path="</span>/<span class="string">" component=&#123;App&#125;&gt;</span></span><br><span class="line"><span class="string">      &lt;Route path="</span>about<span class="string">" component=&#123;About&#125; /&gt;</span></span><br><span class="line"><span class="string">      &lt;Route path="</span>inbox<span class="string">" component=&#123;Inbox&#125;&gt;</span></span><br><span class="line"><span class="string">        &lt;Route path="</span>messages/:id<span class="string">" component=&#123;Message&#125; /&gt;</span></span><br><span class="line"><span class="string">      &lt;/Route&gt;</span></span><br><span class="line"><span class="string">    &lt;/Route&gt;</span></span><br><span class="line"><span class="string">  &lt;/Router&gt;</span></span><br><span class="line"><span class="string">), document.body)</span></span><br></pre></td></tr></table></figure></p>
 <p>这里，最下面的render就是路由配置的一个具体的格式，其中主路由 <code>&#39;/&#39;</code> 是匹配的 <code>App</code>这个组件<br>紧接着 <code>about</code> 和 <code>inbox</code> 是 <code>App</code> 的子组件 他们显示的位置就是 <code>this.props.children</code>的位置<br>他们会在路由匹配成功后显示在对应的位置上面<br>然后是<code>inbox</code>里面的又一个子路由，这个路由还待了一个参数id，会跟着路由传过来，就是说 我们匹配到<code>/inbox/messages/xxx</code> 的时候 message这个组件就会被渲染出来，而且对应的<code>this.props.params.id</code><br>也就是<code>xxx</code></p>
 <h2 id="添加首页"><a href="#添加首页" class="headerlink" title="添加首页"></a>添加首页</h2><p>仅仅这样写是不够的，比方说我没有给出子路由的时候<code>this.props.children</code>就是undefined<br>这个时候我们就应该加入一个默认的路由去渲染，我们可以使用<code>IndexRouter</code> 来设置默认的页面</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; IndexRoute &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> Dashboard = React.createClass(&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> &lt;div&gt;Welcome to the app!&lt;/div&gt;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">React.render((</div><div class="line">  &lt;Router&gt;</div><div class="line">    &lt;Route path="/" component=&#123;App&#125;&gt;</div><div class="line">      &#123;/* 当 url 为/时渲染 Dashboard */&#125;</div><div class="line">      &lt;IndexRoute component=&#123;Dashboard&#125; /&gt;</div><div class="line">      &lt;Route path="about" component=&#123;About&#125; /&gt;</div><div class="line">      &lt;Route path="inbox" component=&#123;Inbox&#125;&gt;</div><div class="line">        &lt;Route path="messages/:id" component=&#123;Message&#125; /&gt;</div><div class="line">      &lt;/Route&gt;</div><div class="line">    &lt;/Route&gt;</div><div class="line">  &lt;/Router&gt;</div><div class="line">), document.body)</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; IndexRoute &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Dashboard = React.createClass(&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Welcome to the app!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">React.render((</span><br><span class="line">  &lt;Router&gt;</span><br><span class="line">    &lt;Route path=<span class="string">"/"</span> component=&#123;App&#125;&gt;</span><br><span class="line">      &#123;<span class="comment">/* 当 url 为/时渲染 Dashboard */</span>&#125;</span><br><span class="line">      &lt;IndexRoute component=&#123;Dashboard&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"about"</span> component=&#123;About&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"inbox"</span> component=&#123;Inbox&#125;&gt;</span><br><span class="line">        &lt;Route path=<span class="string">"messages/:id"</span> component=&#123;Message&#125; /&gt;</span><br><span class="line">      &lt;<span class="regexp">/Route&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>Route&gt;</span><br><span class="line">  &lt;<span class="regexp">/Router&gt;</span></span><br><span class="line"><span class="regexp">), document.body)</span></span><br></pre></td></tr></table></figure>
 <p>这样的话 当我们的url是<code>/</code>时，我们渲染的子路由 <code>this.props.children</code>的位置就是<code>Dashboard</code> 这个路由</p>
 <p>如果我们想要将 <code>/inbox</code> 从 <code>/inbox/messages/:id</code>中去除，并且还能够让 <code>Message</code> 嵌套在 <code>App -&gt; Inbox</code> 中渲染，那会非常赞。绝对路径可以让我们做到这一点。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">React.render((</div><div class="line">  &lt;Router&gt;</div><div class="line">    &lt;Route path="/" component=&#123;App&#125;&gt;</div><div class="line">      &lt;IndexRoute component=&#123;Dashboard&#125; /&gt;</div><div class="line">      &lt;Route path="about" component=&#123;About&#125; /&gt;</div><div class="line">      &lt;Route path="inbox" component=&#123;Inbox&#125;&gt;</div><div class="line">        &#123;/* 使用 /messages/:id 替换 messages/:id */&#125;</div><div class="line">        &lt;Route path="/messages/:id" component=&#123;Message&#125; /&gt;</div><div class="line">      &lt;/Route&gt;</div><div class="line">    &lt;/Route&gt;</div><div class="line">  &lt;/Router&gt;</div><div class="line">), document.body)</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">React.render((</span><br><span class="line">  &lt;Router&gt;</span><br><span class="line">    &lt;Route path=<span class="string">"/"</span> component=&#123;App&#125;&gt;</span><br><span class="line">      &lt;IndexRoute component=&#123;Dashboard&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"about"</span> component=&#123;About&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"inbox"</span> component=&#123;Inbox&#125;&gt;</span><br><span class="line">        &#123;<span class="comment">/* 使用 /messages/:id 替换 messages/:id */</span>&#125;</span><br><span class="line">        &lt;Route path=<span class="string">"/messages/:id"</span> component=&#123;Message&#125; /&gt;</span><br><span class="line">      &lt;<span class="regexp">/Route&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>Route&gt;</span><br><span class="line">  &lt;<span class="regexp">/Router&gt;</span></span><br><span class="line"><span class="regexp">), document.body)</span></span><br></pre></td></tr></table></figure>
 <p>这样，我们的绝对路径就写好了，匹配<code>/messages/:id</code> 会依次渲染 <code>App -&gt; Inbox -&gt; Message</code></p>
 <p>但是，这时候又有了新的问题,当我们访问<code>/inbox/messages/5</code>的时候 我们就会看到错误，<br>这个的解决办法就是路由的重定向，我们使用<code>&lt;Redirect&gt;</code>来使这个url重新工作</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Redirect &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></div><div class="line"></div><div class="line">React.render((</div><div class="line">  &lt;Router&gt;</div><div class="line">    &lt;Route path="/" component=&#123;App&#125;&gt;</div><div class="line">      &lt;IndexRoute component=&#123;Dashboard&#125; /&gt;</div><div class="line">      &lt;Route path="about" component=&#123;About&#125; /&gt;</div><div class="line">      &lt;Route path="inbox" component=&#123;Inbox&#125;&gt;</div><div class="line">        &lt;Route path="/messages/:id" component=&#123;Message&#125; /&gt;</div><div class="line"></div><div class="line">        &#123;/* 跳转 /inbox/messages/:id 到 /messages/:id */&#125;</div><div class="line">        &lt;Redirect from="messages/:id" to="/messages/:id" /&gt;</div><div class="line">      &lt;/Route&gt;</div><div class="line">    &lt;/Route&gt;</div><div class="line">  &lt;/Router&gt;</div><div class="line">), document.body)</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Redirect &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br><span class="line"></span><br><span class="line">React.render((</span><br><span class="line">  &lt;Router&gt;</span><br><span class="line">    &lt;Route path=<span class="string">"/"</span> component=&#123;App&#125;&gt;</span><br><span class="line">      &lt;IndexRoute component=&#123;Dashboard&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"about"</span> component=&#123;About&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"inbox"</span> component=&#123;Inbox&#125;&gt;</span><br><span class="line">        &lt;Route path=<span class="string">"/messages/:id"</span> component=&#123;Message&#125; /&gt;</span><br><span class="line"></span><br><span class="line">        &#123;<span class="comment">/* 跳转 /inbox/messages/:id 到 /messages/:id */</span>&#125;</span><br><span class="line">        &lt;Redirect <span class="keyword">from</span>=<span class="string">"messages/:id"</span> to=<span class="string">"/messages/:id"</span> /&gt;</span><br><span class="line">      &lt;<span class="regexp">/Route&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>Route&gt;</span><br><span class="line">  &lt;<span class="regexp">/Router&gt;</span></span><br><span class="line"><span class="regexp">), document.body)</span></span><br></pre></td></tr></table></figure>
 <p>这样的话，无论任何人点击<code>/inbox/messages/5</code>这个链接，它最终都会被重定向到<code>/messages/5</code>这个url上面  </p>
 <h2 id="进入和离开的钩子"><a href="#进入和离开的钩子" class="headerlink" title="进入和离开的钩子"></a>进入和离开的钩子</h2><p><code>Router</code> 可以定义 <code>onEnter</code> 和 <code>onLeave</code> 两个钩子 ，这两个钩子会在页面跳转时触发，在验证权限的时候特别有用<br>，在路由跳转过程当中，<code>onLeav</code> 钩子会在所有将离开的路由中触发，从最下层的子路由开始直到最外层父路由结束。然后<code>onEnter</code> 钩子会从最外层的父路由开始直到最下层子路由结束</p>
 <p>继续我们上面的例子，如果一个用户点击链接，从 /messages/5 跳转到 /about，下面是这些 hook 的执行顺序：</p>
@@ -446,593 +136,132 @@
       
     </div>
 
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/react/" rel="tag"># react</a>
-          
-        </div>
-      
-
-      
-        
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/02/23/weex小记/" rel="next" title="weex小记">
-                <i class="fa fa-chevron-left"></i> weex小记
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/27/react-router-2/" rel="prev" title="react-router学习(2)">
-                react-router学习(2) <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
-          
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/react/">react</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/react/">react</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+  
+    
+    
+  
+</article>
+
+
+  
+
+	<section id="comments" class="comment">
+	  <div id="disqus_thread">
+	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	  </div>
+	</section>
+
+	<script type="text/javascript" defer>
+	var disqus_shortname = 'boseny-blog';
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	</script>
+
+
+	<!-- async load  -->
+	<script>
+			function async(u, c) {
+				var d = document, t = 'script',
+						o = d.createElement(t),
+						s = d.getElementsByTagName(t)[0];
+				o.src = u;
+				if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+				s.parentNode.insertBefore(o, s);
+			}
+	</script>
+	<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+	<script>
+			async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+					anchors.options = {
+						visible: 'hover',
+						placement: 'left',
+						// icon: '#'
+					};
+					anchors.add().remove('.article-title').remove('.subheading').remove('.sidebar-container h5');
+			})
+	</script>
+	<style>
+			/* place left on bigger screen */
+			@media all and (min-width: 800px) {
+					.anchorjs-link{
+							position: absolute;
+							left: -0.75em;
+							font-size: 1.1em;
+							margin-top : -0.1em;
+					}
+			}
+	</style>
+
+
+
+            </main>
           </div>
-          
+        </div>
+       
 
 
-          
-  <div class="comments" id="comments">
+
+
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/BosenY/Lap" target="_blank">Lap</a>
+    </br>
+    
+      
+        &copy;2016 - 2018 BosenY
+      
+    
+  </p>
+</footer>
     
   </div>
 
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/timg.jpg"
-               alt="BosenY" />
-          <p class="site-author-name" itemprop="name">BosenY</p>
-           
-              <p class="site-description motion-element" itemprop="description">菜</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-        
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">20</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">7</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">13</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/BosenY" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/boooseny" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  微博
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#react-router学习"><span class="nav-number">1.</span> <span class="nav-text">react-router学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加首页"><span class="nav-number">1.1.</span> <span class="nav-text">添加首页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进入和离开的钩子"><span class="nav-number">1.2.</span> <span class="nav-text">进入和离开的钩子</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">BosenY</span>
 </div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
-
-
-        
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-  
-  
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-      search_path = "search.xml";
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    function proceedsearch() {
-      $("body").append('<div class="local-search-pop-overlay">').css('overflow', 'hidden');
-      $('.popup').toggle();
-    }
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-      $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = $( "entry", xmlResponse ).map(function() {
-            return {
-              title: $( "title", this ).text(),
-              content: $("content",this).text(),
-              url: $( "url" , this).text()
-            };
-          }).get();
-          var $input = document.getElementById(search_id);
-          var $resultContent = document.getElementById(content_id);
-          $input.addEventListener('input', function(){
-            var matchcounts = 0;
-            var str='<ul class=\"search-result-list\">';
-            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-            $resultContent.innerHTML = "";
-            if (this.value.trim().length > 1) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var content_index = [];
-                var data_title = data.title.trim().toLowerCase();
-                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                var data_url = decodeURIComponent(data.url);
-                var index_title = -1;
-                var index_content = -1;
-                var first_occur = -1;
-                // only match artiles with not empty titles and contents
-                if(data_title != '') {
-                  keywords.forEach(function(keyword, i) {
-                    index_title = data_title.indexOf(keyword);
-                    index_content = data_content.indexOf(keyword);
-                    if( index_title >= 0 || index_content >= 0 ){
-                      isMatch = true;
-                      if (i == 0) {
-                        first_occur = index_content;
-                      }
-                    }
-
-                  });
-                }
-                // show search results
-                if (isMatch) {
-                  matchcounts += 1;
-                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                  var content = data.content.trim().replace(/<[^>]+>/g,"");
-                  if (first_occur >= 0) {
-                    // cut out 100 characters
-                    var start = first_occur - 20;
-                    var end = first_occur + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if(start == 0){
-                      end = 50;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    var match_content = content.substring(start, end);
-                    // highlight all keywords
-                    keywords.forEach(function(keyword){
-                      var regS = new RegExp(keyword, "gi");
-                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
-                    });
-
-                    str += "<p class=\"search-result\">" + match_content +"...</p>"
-                  }
-                  str += "</li>";
-                }
-              })};
-            str += "</ul>";
-            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-            $resultContent.innerHTML = str;
-          });
-          proceedsearch();
-        }
-      });}
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched == false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    });
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-  </script>
-
-
-  
-
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("kC7LP0xiAgGgrXz9VPGeBtnb-gzGzoHsz", "X5wFt0VL5VRUDq3fYhr7VzgN");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-
-  
-
+<script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/index.js"></script>
+<script src="/js/search.js"></script>
 </body>
 </html>

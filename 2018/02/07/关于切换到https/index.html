@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<html>
+<head >
+  <meta charset="utf-8">
+  
+  <title>关于切换到https | BosenYのblog</title>
+
+  
+  <meta name="author" content="BosenY">
+  
+
+  
+  <meta name="description" content="菜">
+  
+
+  
+  
+  <meta name="keywords" content="日常">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="关于切换到https"/>
+
+  <meta property="og:site_name" content="BosenYのblog"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+
+  <link rel="alternate" href="/atom.xml" title="BosenYのblog" type="application/atom+xml">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    
+
+    <header style="background-image: url('/images/blog-bg.jpg');">
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header page-scroll">
+          <button type="button" id="tglBtn" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">BosenY</a>
+        </div>
+        <div id="bosenyblog-navbar">
+          <div class="navbar-collapse" id="bs-example-navbar-collapse-6">
+            <ul class="nav navbar-nav navbar-right">
+            
+              <li><a href="/">Home</a></li>
+            
+              <li><a href="/archives">Archives</a></li>
+            
+              <li><a href="/about">About</a></li>
+            
+              <li><a href="/tags">Tags</a></li>
+            
+            </ul>
+          </div>
+        </div>
+
+    </div>
+ </nav>
+ <div class="gotop-btn">
+
+ </div>
+</header>
+
+        
+          <div class="container ">
+          <div class="row">
+            <main class="site-main posts-loop">
+            <article>
+
+  
+    
+    <h3 class="article-title"><span>关于切换到https</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/02/07/关于切换到https/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-02-07T01:01:01.000Z">
+          2018-02-07
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>其实不切https也没什么性能上的问题，就是想把chrome上的安全绿锁头显示出来；从另一方面讲，还能减少一些http劫持(这个其实深层次的我也没研究过，包括DNS劫持之类的…)和运营商劫持，切到https后，看上去好像是减少了一些被劫持的几率。<br><a id="more"></a></p>
+<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><p>因为是静态资源，也不想买国内的服务器(有国外的vps了)，所以就用github page，至于简单的如何配置hexo blog这里就不陈述了，反正百度一大把。</p>
+<p>因为github page不能上传ssl证书，所以就用CDN实现反向代理，原理基本上就是利用CDN服务器反向代理到github page 因为CDN服务器是提供https服务的，所以最终自己的域名也会变成https。</p>
+<p>这里我用的是<a href="https://www.cloudflare.com/" target="_blank" rel="noopener">CloudFlare</a>：<br><img src="http://owgraa3f3.bkt.clouddn.com/18-2-7/72109306.jpg" alt=""></p>
+<ul>
+<li>注册一个账号并登陆</li>
+<li>添加一个站点把自定义的域名配入,等扫描，扫描结束点击继续</li>
+<li>DNS项配入，把自己的域名和github page的ip地址配入到DNS解析当中，具体就是创建一个CNAME类型，这里填写的是你原来github page的域名， 然后再创建两个类型是A，name是自己的域名，值是github的ip 192.30.252.153和192.30.252.154，类似于底下这张图：<br><img src="http://owgraa3f3.bkt.clouddn.com/18-2-7/42228843.jpg" alt=""></li>
+<li>然后把下面的DNS服务器里的地址复制好，将自己购买的域名的服务器下的DNS改成这个</li>
+<li>让在Crypto选项处设置ssl为flexible</li>
+<li>在page rules中设置路由规则。然后设置两条规则<em style="color: red;">Always use https</em>一条url是<code>http://域名/</code> ，另一条是<code>http://域名/*</code>，这样就能开启强制https</li>
+<li>都配置好在12小时以内就会生效，然后博客就正式切到https了</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/日常/">日常</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+  
+    
+    
+  
+</article>
+
+
+  
+
+	<section id="comments" class="comment">
+	  <div id="disqus_thread">
+	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	  </div>
+	</section>
+
+	<script type="text/javascript" defer>
+	var disqus_shortname = 'boseny-blog';
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	</script>
+
+
+	<!-- async load  -->
+	<script>
+			function async(u, c) {
+				var d = document, t = 'script',
+						o = d.createElement(t),
+						s = d.getElementsByTagName(t)[0];
+				o.src = u;
+				if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+				s.parentNode.insertBefore(o, s);
+			}
+	</script>
+	<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+	<script>
+			async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+					anchors.options = {
+						visible: 'hover',
+						placement: 'left',
+						// icon: '#'
+					};
+					anchors.add().remove('.article-title').remove('.subheading').remove('.sidebar-container h5');
+			})
+	</script>
+	<style>
+			/* place left on bigger screen */
+			@media all and (min-width: 800px) {
+					.anchorjs-link{
+							position: absolute;
+							left: -0.75em;
+							font-size: 1.1em;
+							margin-top : -0.1em;
+					}
+			}
+	</style>
+
+
+
+            </main>
+          </div>
+        </div>
+       
+
+
+
+
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/BosenY/Lap" target="_blank">Lap</a>
+    </br>
+    
+      
+        &copy;2016 - 2018 BosenY
+      
+    
+  </p>
+</footer>
+    
+  </div>
+
+</div>
+<script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/index.js"></script>
+<script src="/js/search.js"></script>
+</body>
+</html>

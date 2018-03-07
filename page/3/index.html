@@ -1,0 +1,850 @@
+<!DOCTYPE HTML>
+<html>
+<head >
+  <meta charset="utf-8">
+  
+  <title>Page 3 | BosenYのblog</title>
+
+  
+  <meta name="author" content="BosenY">
+  
+
+  
+  <meta name="description" content="菜">
+  
+
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="BosenYのblog"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+
+  <link rel="alternate" href="/atom.xml" title="BosenYのblog" type="application/atom+xml">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    
+
+    <header style="background-image: url('/images/blog-bg.jpg');">
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header page-scroll">
+          <button type="button" id="tglBtn" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">BosenY</a>
+        </div>
+        <div id="bosenyblog-navbar">
+          <div class="navbar-collapse" id="bs-example-navbar-collapse-6">
+            <ul class="nav navbar-nav navbar-right">
+            
+              <li><a href="/">Home</a></li>
+            
+              <li><a href="/archives">Archives</a></li>
+            
+              <li><a href="/about">About</a></li>
+            
+              <li><a href="/tags">Tags</a></li>
+            
+            </ul>
+          </div>
+        </div>
+
+    </div>
+ </nav>
+ <div class="gotop-btn">
+
+ </div>
+</header>
+
+        
+          <div class="container ">
+          <div class="row">
+            <main class="site-main posts-loop">
+            
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/02/22/vue组件/"><span>vue组件</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/02/22/vue组件/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-02-22T13:35:30.000Z">
+          2017-02-22
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="vue组件开发-轮播图"><a href="#vue组件开发-轮播图" class="headerlink" title="vue组件开发-轮播图"></a>vue组件开发-轮播图</h1><p>今天自己写了一个轮播图的组件，在这里记录一下开发的具体流程</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>首先轮播图的一个关键就是定位和布局，如下图：<br><img src="http://p1.bpimg.com/567571/bcdda05709b61bee.png" alt=""></p>
+<p>这里就是分几个部分：</p>
+<ul>
+<li>图片</li>
+<li>左右的按钮</li>
+<li>底部的定位按钮</li>
+</ul>
+<p>首先是图片，图片的写法是将所有的图片放在一个父级div当中，然后使用flex布局使他们处于同一排，然后图片的显示区域只有一个图片的大小，<br>这样处于试图当中就只有一张图</p>
+<p>接下来是左右的按钮，左右的按钮布局是用到了position:absolute 只要给父元素的div的样式当中加入相对布局,然后根据上下左右的定位和transform定位同时去控制，这样就保证了位置</p>
+<p>底部的定位按钮的写法也是一样的</p>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/vue/">vue</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/vue/">vue</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/02/22/vue组件/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/02/22/vue组件/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/02/21/monggo/"><span>mongodb存图片</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/02/21/monggo/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-02-21T06:24:42.000Z">
+          2017-02-21
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="mongodb存储图片"><a href="#mongodb存储图片" class="headerlink" title="mongodb存储图片"></a>mongodb存储图片</h1>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/node/">node</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/mongodb/">mongodb</a><a href="/tags/node/">node</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/02/21/monggo/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/02/21/monggo/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/02/16/eggjs-1/"><span>eggjs学习(一)</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/02/16/eggjs-1/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-02-16T06:00:00.000Z">
+          2017-02-16
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="eggjs"><a href="#eggjs" class="headerlink" title="eggjs"></a>eggjs</h1><h2 id="什么是eggjs"><a href="#什么是eggjs" class="headerlink" title="什么是eggjs"></a>什么是eggjs</h2><p>eggjs 是一个企业级的koa框架，相对于普通的koa，他有以下的一些优势：  </p>
+<ul>
+<li>深度框架定制</li>
+<li>高度可扩展的插件机制</li>
+<li>内置多进程管理</li>
+<li>基于koa开发，性能优异</li>
+<li>框架稳定，测试覆盖率高</li>
+<li>渐进式开发</li>
+</ul>
+<p>注意：是基于koa1的<br>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/node/">node</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/koa/">koa</a><a href="/tags/eggjs/">eggjs</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/02/16/eggjs-1/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/02/16/eggjs-1/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/01/27/17年计划/"><span>17年学习计划</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/01/27/17年计划/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-01-27T11:52:52.000Z">
+          2017-01-27
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="16年成果"><a href="#16年成果" class="headerlink" title="16年成果"></a>16年成果</h1><p>今年总的来说已经达到了自己的目标，目前已经从一个只会一点前端发展到了前后端已经可以独立架构。<br>目前所学会的技术如下：</p>
+<ul>
+<li>前端： vue、react(尚未熟练)、react native、weex、各种库(vuex、vue-router、fetch、axios、lodash、d3)…</li>
+<li>后端： express、koa2、mongodb…</li>
+</ul>
+<h1 id="17年计划"><a href="#17年计划" class="headerlink" title="17年计划"></a>17年计划</h1><p>实习2个多月，感觉自己最薄弱的就是有关移动端的样式、事件等，准备加大力度学习移动端所有知识和框架，比如：react native、weex等等，然后vue的服务端渲染也要彻底掌握，还有那个新出的vuessr框架nuxt，感觉这个东西会火，然后就是各种后端的东西，虽然<br>说已经可以写一个完整的后端接口，但是还没有完善化，比方说加密方面和安全方面，都还是有待提高的，并且也不能仅限于nodejs，准备把php的thinkphp框架学起来，结合vue使用~</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/个人小纪/">个人小纪</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/前端/">前端</a><a href="/tags/后端/">后端</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/01/27/17年计划/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/01/27/17年计划/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/01/22/webpack-5/"><span>webpack2学习(五)</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/01/22/webpack-5/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-01-22T08:52:52.000Z">
+          2017-01-22
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="模块热替换-Hot-Module-Replacement"><a href="#模块热替换-Hot-Module-Replacement" class="headerlink" title="模块热替换(Hot Module Replacement)"></a>模块热替换(Hot Module Replacement)</h1><p>模块热替换功能会在应用程序运行过程中替换、添加或删除模块，而无需重新加载页面。这使得你可以在独立模块变更后，<br>无需刷新整个页面，就可以更新这些模块，极大地加速了开发时间。</p>
+<ul>
+<li>站在app角度<ol>
+<li>app代码要求HMR runtime检查更新</li>
+<li>HMR runtime(异步) 下载更新，然后通知app代码更新可用</li>
+<li>app代码要求HMR runtime 应用更新</li>
+</ol>
+</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/webpack/">webpack</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/node/">node</a><a href="/tags/webpack/">webpack</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/01/22/webpack-5/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/01/22/webpack-5/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/01/22/webpack-4/"><span>webpack2学习(四)</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/01/22/webpack-4/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-01-22T06:42:52.000Z">
+          2017-01-22
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="加载器-loaders"><a href="#加载器-loaders" class="headerlink" title="加载器(loaders)"></a>加载器(loaders)</h1><p>loader 是对应用程序中资源文件进行转换。它们是(运行在node.js中的) 函数，可以将资源文件作为参数的来源，然后返回新的资源文件<br>例如，你可以使用loader告诉webpack加载css文件，或者将TypeScript转化为JavaScript</p>
+<h2 id="loader特性"><a href="#loader特性" class="headerlink" title="loader特性"></a>loader特性</h2><ul>
+<li>loader支持链式传递。能够对资源使用流水线(pipeline)。 loader链式按照时间先后顺序进行编译。<br>loader链中的第一个loader返回值给下一个loader，并且在最后一个loader，webpack按照预期的JavaScript返回</li>
+<li>loader可以是同步或者是异步函数。</li>
+<li>loader运行在node.js中，并且能够执行任何可能的操作。</li>
+<li>loader接受查询参数。用于loader间传递配置。</li>
+<li>loader也能够使用  <code>options</code>对象进行配置</li>
+<li>除了使用package.json的main属性，还可以将普通的npm模块导出为loader，做法是在package.json里定义一个loader字段</li>
+<li>插件可以给loader带来更多的功能</li>
+<li>loader能够产生额外的任意文件</li>
+</ul>
+<p>loader通过(loader)预处理函数，为JavaScript生态系统提供了更多有利功能。用户现在可以更加灵活的引入细粒度逻辑，例如压缩、打包、语言翻译和其他<br>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/webpack/">webpack</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/node/">node</a><a href="/tags/webpack/">webpack</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/01/22/webpack-4/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/01/22/webpack-4/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/01/22/webpack-3/"><span>webpack2学习(三)</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/01/22/webpack-3/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-01-22T05:42:52.000Z">
+          2017-01-22
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="输出output"><a href="#输出output" class="headerlink" title="输出output"></a>输出output</h1><p>output选项控制webpack如何向硬盘写入编译文件。注意，即使可以存在多个入口起点，但只指定一个输出配置</p>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>设置<code>output</code>属性，只需要在你的webpack配置简单的设置输出值：</p>
+<p>webpack.config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  output: <span class="string">'bundle.js'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/webpack/">webpack</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/node/">node</a><a href="/tags/webpack/">webpack</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/01/22/webpack-3/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/01/22/webpack-3/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/01/22/webpack-2/"><span>webpack2学习(二)</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/01/22/webpack-2/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-01-22T03:06:00.000Z">
+          2017-01-22
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="entry入口起点"><a href="#entry入口起点" class="headerlink" title="entry入口起点"></a>entry入口起点</h1><h2 id="单入口写法"><a href="#单入口写法" class="headerlink" title="单入口写法"></a>单入口写法</h2><p>用法： <strong>entry： string|Array(string)</strong></p>
+<p>webpack.config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure></p>
+<p>entry 属性的单入口语法：</p>
+<p>webpack.config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry:&#123;</span><br><span class="line">      main:<span class="string">'./path/to/my/entry/file.js'</span></span><br><span class="line">  &#125; </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/webpack/">webpack</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/node/">node</a><a href="/tags/webpack/">webpack</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/01/22/webpack-2/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/01/22/webpack-2/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/01/22/webpack-1/"><span>webpack2学习(一)</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/01/22/webpack-1/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-01-22T02:00:00.000Z">
+          2017-01-22
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="webpack2学习（一）"><a href="#webpack2学习（一）" class="headerlink" title="webpack2学习（一）"></a>webpack2学习（一）</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>是一个现代JavaScript应用模块打包器</p>
+<h2 id="四个核心概念"><a href="#四个核心概念" class="headerlink" title="四个核心概念"></a>四个核心概念</h2><ol>
+<li><p>入口(Entry)  </p>
+<p> webpack 将创建所有应用程序依赖关系图表(dependency graph)。图表的起点被称之为入口起点(entry point)。入口起点告诉 webpack 从哪里开始，并遵循着依赖关系图表知道打包什么。可以将您的应用入口起点认为是根上下文(contextual root)或 app 第一个启动文件。<br> <br><br> 在webpack当中使用entry属性来定义入口  </p>
+<p> webpack.config.js：</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: <span class="string">'./path/to/my/entry/file.js'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/webpack/">webpack</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/node/">node</a><a href="/tags/webpack/">webpack</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/01/22/webpack-1/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/01/22/webpack-1/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+
+<nav class="pagination">
+  
+  <a href="/page/2/" class="pagination-prev">Prev</a>
+  
+  
+</nav>
+            </main>
+          </div>
+        </div>
+       
+
+
+
+
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/BosenY/Lap" target="_blank">Lap</a>
+    </br>
+    
+      
+        &copy;2016 - 2018 BosenY
+      
+    
+  </p>
+</footer>
+    
+  </div>
+
+</div>
+<script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/index.js"></script>
+<script src="/js/search.js"></script>
+</body>
+</html>

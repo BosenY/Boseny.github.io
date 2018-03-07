@@ -1,2378 +1,995 @@
-<!doctype html>
-
-
+<!DOCTYPE HTML>
+<html>
+<head >
+  <meta charset="utf-8">
+  
+  <title>BosenYのblog</title>
 
   
-
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
+  <meta name="author" content="BosenY">
   
 
   
-    
-    
+  <meta name="description" content="菜">
   
 
   
 
-  
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
   
 
-  
+  <meta property="og:site_name" content="BosenYのblog"/>
 
   
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  <meta property="og:image" content="/favicon.ico"/>
   
 
+  <link href="/favicon.ico" rel="icon">
+
+  <link rel="alternate" href="/atom.xml" title="BosenYのblog" type="application/atom+xml">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 
 
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-
-
-
-
-
-<meta name="description" content="菜">
-<meta property="og:type" content="website">
-<meta property="og:title" content="BosenYのblog">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="BosenYのblog">
-<meta property="og:description" content="菜">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BosenYのblog">
-<meta name="twitter:description" content="菜">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"right","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/"/>
-
-
-
-
-
-  <title> BosenYのblog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
+<body>
+<div class="blog">
+  <div class="content">
 
-
-
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?0264e5b7313574b2fce233d4f39e64af";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container one-collumn sidebar-position-right 
-   page-home 
- ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
     
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">BosenYのblog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益404
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
+    <header style="background-image: url('/images/blog-bg.jpg');">
 
 
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header page-scroll">
+          <button type="button" id="tglBtn" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">BosenY</a>
+        </div>
+        <div id="bosenyblog-navbar">
+          <div class="navbar-collapse" id="bs-example-navbar-collapse-6">
+            <ul class="nav navbar-nav navbar-right">
+            
+              <li><a href="/">Home</a></li>
+            
+              <li><a href="/archives">Archives</a></li>
+            
+              <li><a href="/about">About</a></li>
+            
+              <li><a href="/tags">Tags</a></li>
+            
+            </ul>
+          </div>
+        </div>
 
     </div>
-  
-</nav>
-
-
+ </nav>
+ <div class="gotop-btn">
 
  </div>
-    </header>
+</header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
+        
+        <div class="container ">
+          <div class="row">
+            <main class="site-main posts-loop    col-lg-8 col-lg-offset-1
+                    col-md-8 col-md-offset-1
+                    col-sm-12
+                    col-xs-12">
             
-  <section id="posts" class="posts-expand">
+  <article>
+
+  
     
-      
-
+    <h3 class="article-title"><a href="/2018/03/03/React-high-component/"><span>React高阶组件(转)</span></a></h3>
+    
   
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/20/初学RxJS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="BosenY">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/timg.jpg">
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/03/03/React-high-component/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-03-03T07:07:56.000Z">
+          2018-03-03
+        </time>
+      </a>
     </span>
+  </div>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BosenYのblog">
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>本文代码浅显易懂，思想深入实用。此属于react进阶用法，如果你还不了解react，建议从文档开始看起。</p>
+</blockquote>
+<p>我们都知道高阶函数是什么, 高阶组件其实是差不多的用法，只不过传入的参数变成了react组件，并返回一个新的组件.</p>
+<blockquote>
+<p>A higher-order component is a function that takes a component and returns a new component.<br>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/react/">react</a>
     </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/20/初学RxJS/" itemprop="url">
-                  初学RxJS
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T08:34:42+08:00">
-                2017-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/03/20/初学RxJS/" class="leancloud_visitors" data-flag-title="初学RxJS">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
     
 
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/20/初学RxJS/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
     
-      
+    
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/16/函数节流和函数防抖/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="BosenY">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/timg.jpg">
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/react/">react</a>
     </span>
+    
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BosenYのblog">
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2018/03/03/React-high-component/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2018/03/03/React-high-component/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/02/24/2018新年第一篇/"><span>2018新年第一篇</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/02/24/2018新年第一篇/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-02-24T11:10:11.000Z">
+          2018-02-24
+        </time>
+      </a>
     </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/16/函数节流和函数防抖/" itemprop="url">
-                  函数节流和函数防抖
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-16T14:07:46+08:00">
-                2017-03-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/03/16/函数节流和函数防抖/" class="leancloud_visitors" data-flag-title="函数节流和函数防抖">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
+  </div>
 
 
-    <div class="post-body" itemprop="articleBody">
+  
 
+  <div class="article-content">
+    <div class="entry">
       
-      
-
-      
-        
-          
-          
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/16/函数节流和函数防抖/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>过年期间没更新博客也没去更新theme的新功能，倒是也没有懒惰，只是趁着过年期间算是可以有一小段修整的时间，一边给自己放了个假，一边也完成了自己一直想做的一个小程序的第一版 -&gt; <code>精灵宝可梦dex</code>。<br>
       
     </div>
 
-    <div>
-      
-    </div>
+  </div>
 
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
+  <div class="article-footer">
+    <div class="article-meta pull-left">
 
     
-      
 
-  
+    
+    
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/11/redux中间件-reduxsaga学习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="BosenY">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/timg.jpg">
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/日常/">日常</a>
     </span>
+    
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BosenYのblog">
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2018/02/24/2018新年第一篇/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2018/02/24/2018新年第一篇/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/02/07/关于切换到https/"><span>关于切换到https</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/02/07/关于切换到https/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-02-07T01:01:01.000Z">
+          2018-02-07
+        </time>
+      </a>
     </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/11/redux中间件-reduxsaga学习/" itemprop="url">
-                  redux中间件-reduxsaga学习
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T17:29:17+08:00">
-                2017-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/03/11/redux中间件-reduxsaga学习/" class="leancloud_visitors" data-flag-title="redux中间件-reduxsaga学习">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
+  </div>
 
 
-    <div class="post-body" itemprop="articleBody">
+  
 
+  <div class="article-content">
+    <div class="entry">
       
-      
-
-      
-        
-          
-          redux-saga考虑到后期项目可能需要去异步对redux进行一些操作，看了react的生态圈，发
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/11/redux中间件-reduxsaga学习/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>其实不切https也没什么性能上的问题，就是想把chrome上的安全绿锁头显示出来；从另一方面讲，还能减少一些http劫持(这个其实深层次的我也没研究过，包括DNS劫持之类的…)和运营商劫持，切到https后，看上去好像是减少了一些被劫持的几率。<br>
       
     </div>
 
-    <div>
-      
-    </div>
+  </div>
 
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
+  <div class="article-footer">
+    <div class="article-meta pull-left">
 
     
-      
 
-  
+    
+    
 
-  
-  
-  
-
-  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/09/echarts学习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="BosenY">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/timg.jpg">
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/日常/">日常</a>
     </span>
+    
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BosenYのblog">
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2018/02/07/关于切换到https/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2018/02/07/关于切换到https/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/02/01/edit-highlight/"><span>edit-highlight</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/02/01/edit-highlight/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-02-01T01:58:04.000Z">
+          2018-02-01
+        </time>
+      </a>
     </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/09/echarts学习/" itemprop="url">
-                  echarts学习
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-09T14:16:06+08:00">
-                2017-03-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/03/09/echarts学习/" class="leancloud_visitors" data-flag-title="echarts学习">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
+  </div>
 
 
-    <div class="post-body" itemprop="articleBody">
+  
 
+  <div class="article-content">
+    <div class="entry">
       
-      
-
-      
-        
-          
-          echarts api学习因为暂时项目当中使用的是echarts-for-react插件，所以暂时先
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/09/echarts学习/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>把Lap的highlight风格做了一次大的调整，改成了自己最喜欢的atom-one-dark，只不过ES6的语法好像暂时没办法高亮，因为hexo内置hl渲染方法渲染出来的dom节点根本没办法对ES6部分写样式。<br>下面的是效果的展示，暂时也算满意了，可能以后还会进行一次调整。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">$initHighlight</span>(<span class="params">block, cls</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (cls.search(<span class="regexp">/\bno\-highlight\b/</span>) != <span class="number">-1</span>)</span><br><span class="line">      <span class="keyword">return</span> process(block, <span class="literal">true</span>, <span class="number">0x0F</span>) +</span><br><span class="line">             <span class="string">` class="<span class="subst">$&#123;cls&#125;</span>"`</span>;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="comment">/* handle exception */</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span> / <span class="number">2</span>; i &lt; classes.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (checkCondition(classes[i]) === <span class="literal">undefined</span>)</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'undefined'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> sss = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">export</span>  $initHighlight;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">body &#123;width: 500px;&#125;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"application/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="function"><span class="keyword">function</span> <span class="title">$init</span>(<span class="params"></span>) </span>&#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">checked</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">id</span>=<span class="string">'title'</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- here goes the rest of the page --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
-    <div>
-      
-    </div>
+  </div>
 
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
+  <div class="article-footer">
+    <div class="article-meta pull-left">
 
     
-      
+
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2018/02/01/edit-highlight/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2018/02/01/edit-highlight/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+  <article>
 
   
-
+    
+    <h3 class="article-title"><a href="/2018/01/28/daily-1/"><span>日常随笔</span></a></h3>
+    
   
-  
-  
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/04/redux学习-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="BosenY">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/timg.jpg">
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/01/28/daily-1/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-01-28T14:43:58.000Z">
+          2018-01-28
+        </time>
+      </a>
     </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BosenYのblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/04/redux学习-3/" itemprop="url">
-                  redux学习(3)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-04T15:07:56+08:00">
-                2017-03-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react/redux/" itemprop="url" rel="index">
-                    <span itemprop="name">redux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/03/04/redux学习-3/" class="leancloud_visitors" data-flag-title="redux学习(3)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
+  </div>
 
 
-    <div class="post-body" itemprop="articleBody">
+  
 
+  <div class="article-content">
+    <div class="entry">
       
-      
+        <h3 id="关于Lap"><a href="#关于Lap" class="headerlink" title="关于Lap"></a>关于Lap</h3><p>这个theme现在还差个人介绍模块和article模块没有进行优化，其他的可能弄完以后暂时先不更新了<br>不过该有的功能和统计的东西肯定是会一点一点全部完成的</p>
+<p>对于disqus，虽然看了一下其他人分享的如何去走代理设置让国内也可以访问，但我觉得这个办法还是不太好，既然无法成为一种更加通用可配置的方案，那就暂时不考虑了，也不是每个人都会去买一个vps进行配置，索性接这样弄: 3s访问不到就提示需要翻墙才可以进行评论。。 我觉得这样的处理方法比较通用吧。</p>
+<h3 id="近期安排"><a href="#近期安排" class="headerlink" title="近期安排"></a>近期安排</h3><p>最近可能要继续开始加班了，毕竟年末，所以写开源和学习的自由时间可能不是很多，但我想起我有一部分文章放在了简书，所以我决定先搬运一波，然后在把自己学Graphql的一些东西稍微写写，最近就是graphql了，别的也没空看了，等年后吧~</p>
+<p>最近一到周末就沉迷pokemon revolution不能自拔，可能要写一篇去安利一发了，毕竟是很多90后乃至80后满满的回忆~（更重要的是能和老外尬英文、PY）</p>
 
-      
-        
-          <h1 id="redux学习-三"><a href="#redux学习-三" class="headerlink" title="redux学习(三)"></a>redux学习(三)</h1><p>基本快把react-redux都看完了，还差最后的几部。</p>
-<h2 id="lt-Provider-gt-组件"><a href="#lt-Provider-gt-组件" class="headerlink" title="&lt;Provider&gt;组件"></a><code>&lt;Provider&gt;</code>组件</h2><p>connect方法生成容器组件后，需要让容器组件拿到state对象，才能生成ui组件的参数</p>
-<p>一种解决方法就是将state对象作为参数，传入容器组件。但是，这样做比较麻烦，尤其是容器组件可能在很深的层级，一级<br>级将state传下去就很麻烦</p>
-<p>使用了provider组件后，可以让容器组件拿到state<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/04/redux学习-3/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
 
-    <div>
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/个人小纪/">个人小纪</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/日常/">日常</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2018/01/28/daily-1/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2018/01/28/daily-1/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/01/18/关于最近的折腾/"><span>关于最近的折腾</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/01/18/关于最近的折腾/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-01-18T06:44:26.000Z">
+          2018-01-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>其实一直想用这个写博客的，但是出现过一次问题：<br>  我在win上面提交都是正常的，但是把项目搞到mac上之后提交就出现了bug，研究了半天也没找到完美解决的办法，这才自己去搭建了一个自己的博客。。<br>
       
     </div>
 
-    <div>
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/日常/">日常</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2018/01/18/关于最近的折腾/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2018/01/18/关于最近的折腾/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/15/ng-router/"><span>ng-router</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/15/ng-router/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-15T08:16:28.000Z">
+          2017-09-15
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="ng-router"><a href="#ng-router" class="headerlink" title="ng-router"></a>ng-router</h1><p>ng-router可以把angular1变成一个spa应用，在页面上的原理就是渲染了不同的controller来实现不同的路由，具体实例代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>AngularJS 路由实例 - 菜鸟教程<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>=<span class="string">'routingDemoApp'</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>AngularJS 路由应用<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/"</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/computers"</span>&gt;</span>电脑<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/printers"</span>&gt;</span>打印机<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/blabla"</span>&gt;</span>其他<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-view</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">            angular.module(<span class="string">'routingDemoApp'</span>,[<span class="string">'ngRoute'</span>])</span></span><br><span class="line"><span class="javascript">            .config([<span class="string">'$routeProvider'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$routeProvider</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">                $routeProvider</span></span><br><span class="line"><span class="javascript">                .when(<span class="string">'/'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是首页页面'</span>&#125;)</span></span><br><span class="line"><span class="javascript">                .when(<span class="string">'/computers'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是电脑分类页面'</span>&#125;)</span></span><br><span class="line"><span class="javascript">                .when(<span class="string">'/printers'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是打印机页面'</span>&#125;)</span></span><br><span class="line"><span class="javascript">                .otherwise(&#123;<span class="attr">redirectTo</span>:<span class="string">'/'</span>&#125;);</span></span><br><span class="line"><span class="undefined">            &#125;]);</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>首先，载入了实现路由的js文件：angular-route.js； 然后，包含了ngRoute模块作为主应用模块的依赖模块。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.module(<span class="string">'routingDemoApp'</span>,[<span class="string">'ngRoute'</span>])</span><br></pre></td></tr></table></figure></p>
+<p>使用ngView指令<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-view&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>该div内html会根据路由的变化来变化。</p>
+<p>然后配置$routeProvider, 用于定义我们的路由规则</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.config([<span class="string">'$routeProvider'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$routeProvider</span>)</span>&#123;</span><br><span class="line">    $routeProvider</span><br><span class="line">        .when(<span class="string">'/'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是首页页面'</span>&#125;)</span><br><span class="line">        .when(<span class="string">'/computers'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是电脑分类页面'</span>&#125;)</span><br><span class="line">        .when(<span class="string">'/printers'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是打印机页面'</span>&#125;)</span><br><span class="line">        .otherwise(&#123;<span class="attr">redirectTo</span>:<span class="string">'/'</span>&#125;);</span><br><span class="line">&#125;]);</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
+  </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
+  <div class="article-footer">
+    <div class="article-meta pull-left">
 
     
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/redux学习2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="BosenY">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/timg.jpg">
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/AngularJS/">AngularJS</a>
     </span>
+    
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BosenYのblog">
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/AngularJS/">AngularJS</a>
     </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/03/redux学习2/" itemprop="url">
-                  redux学习2
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-03T08:52:52+08:00">
-                2017-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react/redux/" itemprop="url" rel="index">
-                    <span itemprop="name">redux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/03/03/redux学习2/" class="leancloud_visitors" data-flag-title="redux学习2">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
     
 
+    </div>
 
-    <div class="post-body" itemprop="articleBody">
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/09/15/ng-router/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/09/15/ng-router/"><span>more</span></a></h3>
+    
+  
+</article>
 
-      
-      
 
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/15/ngapi/"><span>ngapi</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/15/ngapi/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-15T03:11:07.000Z">
+          2017-09-15
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
       
-        
-          <h1 id="react-redux学习"><a href="#react-redux学习" class="headerlink" title="react-redux学习"></a>react-redux学习</h1><p>react-redux是一个专门用于在react项目中使用redux的一个库，<br>而且还有一定的规范和写法的推荐。还有额外的api需要去学习。</p>
-<h2 id="组件规范"><a href="#组件规范" class="headerlink" title="组件规范"></a>组件规范</h2><h3 id="ui组件"><a href="#ui组件" class="headerlink" title="ui组件"></a>ui组件</h3><p>首先react-redux将所有的组件分成了两大类：ui组件和容器组件</p>
+        <h1 id="ngApi"><a href="#ngApi" class="headerlink" title="ngApi"></a>ngApi</h1><p>angularJS全局API用于执行常见任务的JS函数集合，如：</p>
 <ul>
-<li>UI组件只负责样式和ui</li>
-<li>所有数据都由props来传递</li>
-<li>不使用任何的redux</li>
+<li>比较对象</li>
+<li>迭代对象</li>
+<li><p>转换对象<br>简单的说就是将一些工作中常用的方法封装到了angular.prototype上了，<br>下面有几个典型的：</p>
+</li>
+<li><p>angular.lowercase() - 转换字符为小写</p>
+</li>
+<li>angular.uppercase() - 转换字符为大写</li>
+<li>angular.isString() - 判断是否是字符串</li>
+<li>angular.isNumber() - 判断是否是数字</li>
 </ul>
-<h3 id="容器组件"><a href="#容器组件" class="headerlink" title="容器组件"></a>容器组件</h3><ul>
-<li>管理所有的</li>
-<li>使用redux
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/redux学习2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<p>例子： <a src="http://www.runoob.com/try/tryit.php?filename=try_ng_api_lowercase">地址</a></p>
+
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/27/redux学习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="BosenY">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/timg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BosenYのblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/27/redux学习/" itemprop="url">
-                  redux学习(1)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-27T20:22:04+08:00">
-                2017-02-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react/redux/" itemprop="url" rel="index">
-                    <span itemprop="name">redux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/02/27/redux学习/" class="leancloud_visitors" data-flag-title="redux学习(1)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Redux学习"><a href="#Redux学习" class="headerlink" title="Redux学习"></a>Redux学习</h1><p>因为我最先掌握的是vuex，反过头来去看学习成本相对较高的redux，可能效果会好一点。</p>
-<p>redux是JavaScript状态容器，提供了可预测化的状态管理</p>
-<p>redux由flux演变而来，但受elm的启发，避开了flux的复杂性</p>
-<h2 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h2><p>应用当中的所有<code>state</code>都是以一个对象树的形式存储在一个一个单一的<code>store</code>当中，唯一改变<code>state</code>的办法就是触发<code>action</code>，一个描述发生什么的对象，为了描述<code>action</code>如何改变<code>state</code>树，你需要去编写<code>reducers</code><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/27/redux学习/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/27/react-router-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="BosenY">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/timg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BosenYのblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/27/react-router-2/" itemprop="url">
-                  react-router学习(2)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-27T14:42:12+08:00">
-                2017-02-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/02/27/react-router-2/" class="leancloud_visitors" data-flag-title="react-router学习(2)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          react router学习(2)路由匹配原理路由有三个属性来决定是否匹配一个url
-
-嵌套关系
-它
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/27/react-router-2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/27/react-router学习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="BosenY">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/timg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BosenYのblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/27/react-router学习/" itemprop="url">
-                  react-router学习(1)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-27T10:42:12+08:00">
-                2017-02-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/02/27/react-router学习/" class="leancloud_visitors" data-flag-title="react-router学习(1)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="react-router学习"><a href="#react-router学习" class="headerlink" title="react-router学习"></a>react-router学习</h1><p>关于配置什么的 请自行移至百度，下面就记录一下如何使用react-router</p>
-<p>有关react-router的内容都是从这里学习和摘抄的：   <a href="http://www.uprogrammer.cn">react中文文档</a> </p>
-<p>先写一个简单的例子来解释一下如何编写路由配置:<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/27/react-router学习/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/23/weex小记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="BosenY">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/timg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BosenYのblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/23/weex小记/" itemprop="url">
-                  weex小记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-23T14:19:24+08:00">
-                2017-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/02/23/weex小记/" class="leancloud_visitors" data-flag-title="weex小记">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="weex学习-一"><a href="#weex学习-一" class="headerlink" title="weex学习(一)"></a>weex学习(一)</h1><p>上个学期学校实验周要求做一个项目，就考虑做个native端的，当时weex还不怎么稳定，看了半天网上的资料还是研究不出到底如何从构建到编译、打包，<br>于是用了React Native，但是由于react本身学习成本的问题，做的并不精致，好多东西都没用进去。 在公司实习的这段时间，公司的新项目都使用vue，在这个3个多月的时间当中，基本<br>学会了vue的整个概念和它的一些生态库，比方说vue-router和vuex，然后自己也了解了webpack打包编译的机制<br>，还将nodejs后端的koa自己写到了一个个人的小项目里面： <a href="https://github.com/BosenY/koa2-vue2">vue2-koa2的小demo</a><br>感觉使用vue要比react清爽多了(关键还是学习成本低，上限还高)，现在看weex官方已经支持了vue语法编译，所以就学一下，准备毕设就拿这个开题。  </p>
-<p>关于weex和vue： Vue.js 是 Evan You 开发的渐进式 JavaScript 框架，在易用性、灵活性和性能等方面都非常优秀。开发者能够通过撰写 *.vue 文件，基于 &lt;template&gt;, &lt;style&gt;, &lt;script&gt;   快速构建组件化的 web 应用。<br>Vue.js 在 2016 年 10 月正式发布了 2.0 版本，该版本加入了 Virtual-DOM 和预编译器的设计，使得该框架在运行时能够脱离 HTML 和 CSS 解析，只依赖 JavaScript；同时 Virtual-DOM 也使得 Vue 2.x 渲染成原生 UI 成为了可能。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/23/weex小记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
-          
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
+  <div class="article-footer">
+    <div class="article-meta pull-left">
 
+    
       
 
-      
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/AngularJS/">AngularJS</a>
+    </span>
+    
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/timg.jpg"
-               alt="BosenY" />
-          <p class="site-author-name" itemprop="name">BosenY</p>
-           
-              <p class="site-description motion-element" itemprop="description">菜</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-        
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">20</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
+    
+    
 
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">7</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">13</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/BosenY" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/boooseny" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  微博
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-
-      
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/AngularJS/">AngularJS</a>
+    </span>
+    
 
     </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">BosenY</span>
-</div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
-
-
-        
-
-        
-      </div>
-    </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/09/15/ngapi/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
     
   </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/09/15/ngapi/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/14/ng过滤器/"><span>ng过滤器</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/14/ng过滤器/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-14T06:40:04.000Z">
+          2017-09-14
+        </time>
+      </a>
+    </span>
+  </div>
+
 
   
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="ng过滤器"><a href="#ng过滤器" class="headerlink" title="ng过滤器"></a>ng过滤器</h1><p>所有的例子会写在这里：<a src="http://jsbin.com/vigiciresi/edit?html,js,output">例子</a></p>
+<p>首先学习一下ng1的过滤器的一个基本写法：</p>
+<p>一个过滤器，不带参数的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;expression | filter&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>一个过滤器，带参数的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;expression | filter:<span class="built_in">arguments</span>&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>一个过滤器，带多个参数的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;expression | filter: arg1: arg2: ...&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>多个过滤器，不带参数的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;expression | filter1 | filter2 | ...&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>先学习自定义的，现找出来10个：</p>
+<h2 id="1-currency"><a href="#1-currency" class="headerlink" title="1. currency"></a>1. currency</h2><p>顾名思义，用于将数字转换为货币的<br>默认的话，是将数字转化成了当前使用语言环境的符号<br>当然也可以设置自定义符号，格式：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; currency_expression | currency : symbol : fractionSize&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其中symbol代表你要自定义的货币符号，fractionSize代表小数位的取舍量</p>
+<h2 id="2-date"><a href="#2-date" class="headerlink" title="2. date"></a>2. date</h2><p>根据要求将时间转换成字符串，开发当中经常用到，<br>格式化的字符串可以由以下原件组成：</p>
+<ul>
+<li>‘yyyy’: 年份用4位数字表示(e.g. AD 1 =&gt; 0001, AD 2010 =&gt; 2010)</li>
+<li>‘yy’: 年份用2位数字表示, 补全0 (00-99). (e.g. AD 2001 =&gt; 01, AD 2010 =&gt; 10)</li>
+<li>‘y’: 年份用最少位数字表示, e.g. (AD 1 =&gt; 1, AD 199 =&gt; 199)</li>
+<li>‘MMMM’: 月份 (January-December)</li>
+<li>‘MMM’: 月份 (Jan-Dec)</li>
+<li>‘MM’: 月份, 补全0 (01-12)</li>
+<li>‘M’: 月份 (1-12)</li>
+<li>‘dd’: 日期, 补全0 (01-31)</li>
+<li>‘d’: 日期 (1-31)</li>
+<li>‘EEEE’: 星期,(Sunday-Saturday)</li>
+<li>‘EEE’: 星期, (Sun-Sat)</li>
+<li>‘HH’: 小时, 补全0 (00-23)</li>
+<li>‘H’: 补全0 (0-23)</li>
+<li>‘hh’: AM/PM 表示的小时, 补全0 (01-12)</li>
+<li>‘h’: AM/PM 表示的小时, (1-12)</li>
+<li>‘mm’: 分钟, 补全0 (00-59)</li>
+<li>‘m’: 分钟 (0-59)</li>
+<li>‘ss’: 秒, 补全0 (00-59)</li>
+<li>‘s’: 秒 (0-59)</li>
+<li>‘sss’: 毫秒, 补全0 (000-999)</li>
+<li>‘a’: AM/PM 标记</li>
+<li>‘Z’: 用4位表示时区的偏移 (-1200-+1200)</li>
+<li>‘ww’: 周数, 补全0 (00-53). 01周是每年的包含第一个周四的周</li>
+<li>‘w’: Week of year (0-53). 01周是每年的包含第一个周四的周</li>
+<li>‘G’, ‘GG’, ‘GGG’: 时代的简写字符串 (e.g. ‘AD’)</li>
+<li>‘GGGG’: 时代的完整字符串 (e.g. ‘Anno Domini’)</li>
+</ul>
+<p>格式字符串还可以是下列预定义的本地化的格式之一:</p>
+<ul>
+<li>‘medium’: en_US 地区的形式，等同于 ‘MMM d, y h:mm:ss a’ (e.g. Sep 3, 2010 12:05:08 PM)</li>
+<li>‘short’: en_US 地区的形式，等同于 ‘M/d/yy h:mm a’ (e.g. 9/3/10 12:05 PM)</li>
+<li>‘fullDate’: en_US 地区的形式，等同于 ‘EEEE, MMMM d, y’ (e.g. Friday, September 3, 2010)</li>
+<li>‘longDate’: en_US 地区的形式，等同于 ‘MMMM d, y’ (e.g. September 3, 2010)</li>
+<li>‘mediumDate’: en_US 地区的形式，等同于 ‘MMM d, y’ (e.g. Sep 3, 2010)</li>
+<li>‘shortDate’: en_US 地区的形式，等同于 ‘M/d/yy’ (e.g. 9/3/10)</li>
+<li>‘mediumTime’: en_US 地区的形式，等同于 ‘h:mm:ss a’ (e.g. 12:05:08 PM)</li>
+<li>‘shortTime’: en_US 地区的形式，等同于 ‘h:mm a’ (e.g. 12:05 PM)</li>
+</ul>
+<p>格式字符串可以包含文字。但是需要使用 ‘ 包裹进行转义 (e.g. “h ‘in the morning’”).<br>如果想使用单引号,则需要转义 - 举个例子, 在一行里有两个单引号 (e.g. “h ‘o’’clock’”).</p>
+<p></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/AngularJS/">AngularJS</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/AngularJS/">AngularJS</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/09/14/ng过滤器/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/09/14/ng过滤器/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/13/angular1/"><span>ng1学习</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/13/angular1/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-13T02:00:00.000Z">
+          2017-09-13
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="ng1学习"><a href="#ng1学习" class="headerlink" title="ng1学习"></a>ng1学习</h1><p>开始搞新项目，采用hybird开发，web层用ng1搞，呵呵。这下不得不搞ng了。。。 这样下来也算是前端三大框架都玩了一遍（不过也就vue算是熟练）</p>
+<p>先挖个坑，慢慢开始重新写（前面把日志都写到有道云笔记了。准备一点一点搬过来重构博客了）</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/AngularJS/">AngularJS</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/AngularJS/">AngularJS</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/09/13/angular1/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/09/13/angular1/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+
+<nav class="pagination">
+  
+  
+  <a href="/page/2/" class="pagination-next">Next</a>
+  
+</nav>
+            </main>
+            <div class="sidebar
+                    col-lg-3 col-lg-offset-0
+                    col-md-3 col-md-offset-0
+                    col-sm-12
+                    col-xs-12
+                    sidebar-container
+                ">
+                <div class="sidebar-container">
+
+<div style="   ">
+<form class="site-search-form">
+    站内搜索(test)<input type="text" id="local-search-input" class="st-search-input" />
+</form>
+<div id="local-search-result" class="local-search-result-cls"></div>
+</div>
+
+
+<script type="text/javascript" id="local.search.active">
+var inputArea       = document.querySelector("#local-search-input");
+inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
 </script>
 
 
-
-
-
-
-
-
-
-  
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-  
-  
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-      search_path = "search.xml";
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    function proceedsearch() {
-      $("body").append('<div class="local-search-pop-overlay">').css('overflow', 'hidden');
-      $('.popup').toggle();
-    }
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-      $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = $( "entry", xmlResponse ).map(function() {
-            return {
-              title: $( "title", this ).text(),
-              content: $("content",this).text(),
-              url: $( "url" , this).text()
-            };
-          }).get();
-          var $input = document.getElementById(search_id);
-          var $resultContent = document.getElementById(content_id);
-          $input.addEventListener('input', function(){
-            var matchcounts = 0;
-            var str='<ul class=\"search-result-list\">';
-            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-            $resultContent.innerHTML = "";
-            if (this.value.trim().length > 1) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var content_index = [];
-                var data_title = data.title.trim().toLowerCase();
-                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                var data_url = decodeURIComponent(data.url);
-                var index_title = -1;
-                var index_content = -1;
-                var first_occur = -1;
-                // only match artiles with not empty titles and contents
-                if(data_title != '') {
-                  keywords.forEach(function(keyword, i) {
-                    index_title = data_title.indexOf(keyword);
-                    index_content = data_content.indexOf(keyword);
-                    if( index_title >= 0 || index_content >= 0 ){
-                      isMatch = true;
-                      if (i == 0) {
-                        first_occur = index_content;
-                      }
-                    }
-
-                  });
-                }
-                // show search results
-                if (isMatch) {
-                  matchcounts += 1;
-                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                  var content = data.content.trim().replace(/<[^>]+>/g,"");
-                  if (first_occur >= 0) {
-                    // cut out 100 characters
-                    var start = first_occur - 20;
-                    var end = first_occur + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if(start == 0){
-                      end = 50;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    var match_content = content.substring(start, end);
-                    // highlight all keywords
-                    keywords.forEach(function(keyword){
-                      var regS = new RegExp(keyword, "gi");
-                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
-                    });
-
-                    str += "<p class=\"search-result\">" + match_content +"...</p>"
-                  }
-                  str += "</li>";
-                }
-              })};
-            str += "</ul>";
-            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-            $resultContent.innerHTML = str;
-          });
-          proceedsearch();
-        }
-      });}
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched == false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    });
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-  </script>
-
-
-  
-
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("kC7LP0xiAgGgrXz9VPGeBtnb-gzGzoHsz", "X5wFt0VL5VRUDq3fYhr7VzgN");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-
-  
-
-</body>
-</html>
+    <div class="categories-container" style="margin-top:40px;">
+        <p>归档:</p>
+            
+                <a href="/categories/AngularJS/" title="AngularJS" rel="4">AngularJS</a>
+            
+                <a href="/categories/JavaScript/" title="JavaScript" rel="2">JavaScript</a>
+            
+                <a href="/categories/node/" title="node" rel="2">node</a>
+            
+                <a href="/categories/react/" title="react" rel="7">react</a>
+            
+                <a href="/categories/react/redux/" title="redux" rel="3">redux</a>
+            
+                <a href="/categories/vue/" title="vue" rel="2">vue</a>
+            
+                <a href="/categories/webpack/" title="webpack" rel="5">webpack</a>
+            
+                <a href="/categories/个人小纪/" title="个人小纪" rel="2">个人小纪</a>
+            
+    </div>
+
+
+
+
+    <div class="social-container" style="margin-top:40px;">
+        <p>Links:</p>
+            
+                
+                    <li class="social-item"><i class="fa fa-fw fa-github"></i><a href="https://github.com/Boseny">GitHub</a></li>
+                
+
+            
+                
+                    <li class="social-item"><i class="fa fa-fw fa-weibo"></i><a href="https://weibo.com/boseny">微博</a></li>
+                
+
+            
+                
+                    <li class="social-item"><i class=" fa fa-fw zhihu-icon"></i><a href="https://www.zhihu.com/people/boseny">知乎</a></li>
+                
+
+            
+                
+                    <li class="social-item"><i class=" fa fa-fw lofter-icon"></i><a href="http://boseny.lofter.com/">Lofter</a></li>
+                
+
+            
+
+    </div>
+
+
+</div>
+            </div>
+          </div>
+        </div>
+        
+
+
+
+
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/BosenY/Lap" target="_blank">Lap</a>
+    </br>
+    
+      
+        &copy;2016 - 2018 BosenY
+      
+    
+  </p>
+</footer>
+    
+  </div>
+
+</div>
+<script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/index.js"></script>
+<script src="/js/search.js"></script>
+<script async>'use strict';'serviceWorker'in navigator&&navigator.serviceWorker.register('service-worker.js').then(function(a){a.onupdatefound=function(){var b=a.installing;b.onstatechange=function(){switch(b.state){case'installed':navigator.serviceWorker.controller?console.log('New or updated content is available.'):console.log('Content is now available offline!');break;case'redundant':console.error('The installing service worker became redundant.');}}}}).catch(function(a){console.error('Error during service worker registration:',a)});
+</script></body></html>
