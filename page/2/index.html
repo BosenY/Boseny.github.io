@@ -3,14 +3,14 @@
 <head >
   <meta charset="utf-8">
   
-  <title>Page 2 | BosenYのblog</title>
+  <title>第 2 页 | BosenYのblog</title>
 
   
   <meta name="author" content="BosenY">
   
 
   
-  <meta name="description" content="菜">
+  <meta name="description" content="除了做前端，我还想拍拍照">
   
 
   
@@ -62,13 +62,13 @@
           <div class="navbar-collapse" id="bs-example-navbar-collapse-6">
             <ul class="nav navbar-nav navbar-right">
             
-              <li><a href="/">Home</a></li>
+              <li><a href="/">主页</a></li>
             
-              <li><a href="/archives">Archives</a></li>
+              <li><a href="/archives">归档</a></li>
             
-              <li><a href="/about">About</a></li>
+              <li><a href="/about">关于</a></li>
             
-              <li><a href="/tags">Tags</a></li>
+              <li><a href="/tags">标签</a></li>
             
             </ul>
           </div>
@@ -82,9 +82,12 @@
 </header>
 
         
-          <div class="container ">
+        <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
+            <main class="site-main posts-loop    col-lg-8 col-lg-offset-1
+                    col-md-8 col-md-offset-1
+                    col-sm-12
+                    col-xs-12">
             
   <article>
 
@@ -139,13 +142,6 @@
     
 
     
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/Ecmascript7/">Ecmascript7</a>
-    </span>
-    
 
     </div>
 
@@ -154,7 +150,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2017/04/21/es7bind语法的小纪/#comment">Comments</a>
+          <a href="/2017/04/21/es7bind语法的小纪/#comment">评论</a>
         </span>
       </span>
     </div>
@@ -162,7 +158,7 @@
   </div>
   
     
-    <h3 class="article-read"><a href="/2017/04/21/es7bind语法的小纪/"><span>more</span></a></h3>
+    <h3 class="article-read"><a href="/2017/04/21/es7bind语法的小纪/"><span>点击阅读</span></a></h3>
     
   
 </article>
@@ -195,62 +191,7 @@
     <div class="entry">
       
         <h2 id="初学Rxjs"><a href="#初学Rxjs" class="headerlink" title="初学Rxjs"></a>初学Rxjs</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>Rxjs 是一个通过使用可观察序列来构建异步和基于事件的程oberservable序的库，可以吧它当成一个针对于事件的lodash</p>
-<p>Rxjs就是JavaScript的响应式扩展，响应式的思路就是把随时间不断变化的数据、状态、事件等等转化成可被观察的序列(observable sequence),然后订阅序列中那些observable对象的变化，一旦变化，就会执行事先安排好的各种转换和操作</p>
-<h3 id="四个生命周期"><a href="#四个生命周期" class="headerlink" title="四个生命周期"></a>四个生命周期</h3><ul>
-<li>创建：创建一个observable，返回一个被观察的序列源实例</li>
-<li>订阅：通过序列源实例可以订阅序列发射新数据变更时的响应方法（回调方法）</li>
-<li>执行：响应的动作就是执行</li>
-<li>销毁：通过序列源实例可以销毁，而当订阅方法发生错误时也会自动销毁</li>
-</ul>
-<h3 id="剖析可观察对象"><a href="#剖析可观察对象" class="headerlink" title="剖析可观察对象"></a>剖析可观察对象</h3><p>使用Rx.Observable.create或一个能产生可观察对象的操作符来创造一个可观察对象，使用一个观察者订阅他，执行然后给观察者发送next/error/complete的通知，他们的执行可能会被disposed（处理）。这四个方面均被编码进可观察对象的实例当中。</p>
-<h2 id="核心的可观察对象的概念"><a href="#核心的可观察对象的概念" class="headerlink" title="核心的可观察对象的概念"></a>核心的可观察对象的概念</h2><ul>
-<li>Creating Observables 创建</li>
-<li>Subscribing Obserables 订阅</li>
-<li>Executing the Observable 执行</li>
-<li>Disposing Observables 处理</li>
-</ul>
-<h3 id="Creating-Observables"><a href="#Creating-Observables" class="headerlink" title="Creating Observables"></a>Creating Observables</h3><p>Rx.Observable.create 用来创建一个可观察对象 ，是可观察对象构造函数的别名，它接受一个参数（订阅的 fnuction）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> observable = Rx.Observable.create(<span class="function"><span class="keyword">function</span> <span class="title">subscribe</span>(<span class="params">observer</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> id = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    observer.next(<span class="string">'hi'</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="Subscribing-Obserables"><a href="#Subscribing-Obserables" class="headerlink" title="Subscribing Obserables"></a>Subscribing Obserables</h3><p>一个可观察对象可以被订阅</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">observable.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x));</span><br></pre></td></tr></table></figure>
-<p>这里的subscribe和上面create的subscribe是不一样的，但是你可以在概念上将他们等价，上面写成一个匿名函数也是可以的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> observable = Rx.Observable.create(<span class="function"><span class="params">observer</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> id = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    observer.next(<span class="string">'hi'</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<pre><code>订阅一个可观察对象就像是调用一个函数，在数据将被发送的地方提供回调
-</code></pre><p>完全不同于addEventListener/removeEventListener事件句柄API,使用observervable.subscribe，给定的观察者并没有作为一个监听者被注册</p>
-<p>订阅数启动可观察对象执行和发送值或者事件给观察者的简单方式</p>
-<h3 id="Executing-the-Observable"><a href="#Executing-the-Observable" class="headerlink" title="Executing the Observable"></a>Executing the Observable</h3><p>执行可观察对象就是在创建时里面的匿名函数做的事情，一个仅在观察者订阅时发生的惰性计算，执行随时间产生多个值，以同步或者异步的方式</p>
-<p>下面是observervable对象可以发送的三种类型的值：</p>
-<ol>
-<li>next 发送一个数字/字符串/对象等等</li>
-<li>error 发送一个js错误或者异常</li>
-<li><p>complete 不发送值<br>next可以在可观察对象执行期间发生多次，而error和complete只能在执行期间发生一次，但仅会执行二者之中的一个</p>
-<pre><code>一个可观察对象的执行期间，零个到无穷多个next通知被发送。如果Error或者Complete通知一旦被发送，此后将不再发送任何值。
-</code></pre></li>
-</ol>
-<p>一个好的使用方式就是使用try catch语句去包裹通知语句，如果捕获了异常就会发送一个错误通知</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> observable = Rx.Observable.create(<span class="function"><span class="keyword">function</span> <span class="title">subscribe</span>(<span class="params">observer</span>) </span>&#123;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">observer.next(<span class="number">1</span>);</span><br><span class="line">observer.next(<span class="number">2</span>);</span><br><span class="line">observer.next(<span class="number">3</span>);</span><br><span class="line">observer.complete();</span><br><span class="line">&#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">observer.error(err); <span class="comment">// delivers an error if it caught one</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="Disposing-Observables"><a href="#Disposing-Observables" class="headerlink" title="Disposing Observables"></a>Disposing Observables</h3><p>处理可观察对象的执行：<br>    由于可观察对象的执行可能是无限的(无数个next)，而对于观察者来说却往往需要在有限的时间内终止执行，因此需要一个api来取消执行。因为每次的执行仅仅服务于一个观察者，一旦观察者听得接收数据，他就不得不通过一个方式去终止执行，从而避免浪费大量的计算性能和内存资源</p>
-<p>这里observable.subscribe被调用返回了一个对象： subscription<br>这个对象表示了正在进行的执行：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> subscription = observable.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x));</span><br></pre></td></tr></table></figure>
-<p>在这里使用subscription.unsubscribe()就可以取消你正在进行的执行</p>
-<h2 id="observer观察者"><a href="#observer观察者" class="headerlink" title="observer观察者"></a>observer观察者</h2><p>观察者就是可观察对象所发送数据的消费者，简单说就是一组回调函数，分别对应一种被可观察对象发送的通知的类型：next、error和complete</p>
-<pre><code>观察者不过是三个回调函数组成的对象，每个回调函数分别对应可观察对象的通知类型
-</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> observer=&#123;</span><br><span class="line">next:<span class="function"><span class="params">x</span>=&gt;</span><span class="built_in">console</span>.log(<span class="string">'Observer got a next value: '</span> + x),</span><br><span class="line">error: <span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.error(<span class="string">'Observer got an error: '</span> + err),</span><br><span class="line">complete: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Observer got a complete notification'</span>)</span><br><span class="line">&#125;</span><br><span class="line">observable.subscribe(observer)</span><br></pre></td></tr></table></figure>
-<p>当订阅一个可观察对象，你仅仅提供回调来作为参数就够了，并不需要完整的观察者对象</p>
-<p>在observable.subscribe内部，他讲使用第一个回调参数作为next的处理句柄创建一个观察者对象，也可以通过将三个函数作为参数提供三种回调</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">observable.subscribe(</span><br><span class="line">    x =&gt; <span class="built_in">console</span>.log(<span class="string">'Observer got a next value: '</span> + x),</span><br><span class="line">    err =&gt; <span class="built_in">console</span>.error(<span class="string">'Observer got an error: '</span> + err),</span><br><span class="line">    () =&gt; <span class="built_in">console</span>.log(<span class="string">'Observer got a complete notification'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<h2 id="Subject主题"><a href="#Subject主题" class="headerlink" title="Subject主题"></a>Subject主题</h2><p>Subject是允许值被多播到多个观察者的一种特殊的observable</p>
-<p>Subject就是一个可观察对象，只不过可以被多播至多个观察者。同时Subject也类似于eventemitter：维护着众多事件监听器的注册表</p>
-<ul>
-<li>每一个Subject及时一个可观察对象，又是一个观察者对象，也就是说，它既可以拥有next、error、complete方法，又可以去subscribe它</li>
-<li>观察者： 有next、error等方法</li>
-<li>可观察对象： 可以被订阅<br>demo： </li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> subject = <span class="keyword">new</span> Rx.Subject();</span><br><span class="line"></span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerA: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerB: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">subject.next(<span class="number">1</span>);</span><br><span class="line">subject.next(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-<p>输出效果如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">observerA: <span class="number">1</span></span><br><span class="line">observerB: <span class="number">1</span></span><br><span class="line">observerA: <span class="number">2</span></span><br><span class="line">observerB: <span class="number">2</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="多播的可观察对象"><a href="#多播的可观察对象" class="headerlink" title="多播的可观察对象"></a>多播的可观察对象</h3><p>一个多播的可观察对象可以通过多个订阅者的订阅去传递通知，而普通的单播可观察对象不可以<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> source=Rx.Observable.from([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]);</span><br><span class="line"><span class="keyword">var</span> subject=<span class="keyword">new</span> Rx.Subject();</span><br><span class="line"><span class="keyword">var</span> multicasted=source.multicast(subject);</span><br><span class="line">multicasted.subscribe(&#123;</span><br><span class="line">  next:<span class="function">(<span class="params">v</span>)=&gt;</span><span class="built_in">console</span>.log(<span class="string">'observerA:'</span> +v);</span><br><span class="line">&#125;);</span><br><span class="line">multicasted.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerB: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line">multicasted.connect();</span><br></pre></td></tr></table></figure></p>
-<p>multicast方法返回一个看起来像普通的可观察对象的可观察对象，但是却有着和subject一样的行为，multicast返回一个connectableobservable，他是一个具有connect方法的observable</p>
-<p>connect方法对于觉得何时开始分享可观察对象的执行时非常重要的，在source下面有source.subscribe（subject），connect（）返回一个Subscription，你可以取消订阅，以取消共享的Observable执行。</p>
-
+<p>Rxjs就是JavaScript的响应式扩展，响应式的思路就是把随时间不断变化的数据、状态、事件等等转化成可被观察的序列(observable sequence),然后订阅序列中那些observable对象的变化，一旦变化，就会执行事先安排好的各种转换和操作<br>
       
     </div>
 
@@ -270,7 +211,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2017/03/20/初学RxJS/#comment">Comments</a>
+          <a href="/2017/03/20/初学RxJS/#comment">评论</a>
         </span>
       </span>
     </div>
@@ -278,7 +219,7 @@
   </div>
   
     
-    <h3 class="article-read"><a href="/2017/03/20/初学RxJS/"><span>more</span></a></h3>
+    <h3 class="article-read"><a href="/2017/03/20/初学RxJS/"><span>点击阅读</span></a></h3>
     
   
 </article>
@@ -330,13 +271,6 @@
     
 
     
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/react/">react</a><a href="/tags/redux/">redux</a>
-    </span>
-    
 
     </div>
 
@@ -345,7 +279,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2017/03/11/redux中间件-reduxsaga学习/#comment">Comments</a>
+          <a href="/2017/03/11/redux中间件-reduxsaga学习/#comment">评论</a>
         </span>
       </span>
     </div>
@@ -353,7 +287,7 @@
   </div>
   
     
-    <h3 class="article-read"><a href="/2017/03/11/redux中间件-reduxsaga学习/"><span>more</span></a></h3>
+    <h3 class="article-read"><a href="/2017/03/11/redux中间件-reduxsaga学习/"><span>点击阅读</span></a></h3>
     
   
 </article>
@@ -408,13 +342,6 @@
     
 
     
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/echarts/">echarts</a>
-    </span>
-    
 
     </div>
 
@@ -423,7 +350,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2017/03/09/echarts学习/#comment">Comments</a>
+          <a href="/2017/03/09/echarts学习/#comment">评论</a>
         </span>
       </span>
     </div>
@@ -431,7 +358,7 @@
   </div>
   
     
-    <h3 class="article-read"><a href="/2017/03/09/echarts学习/"><span>more</span></a></h3>
+    <h3 class="article-read"><a href="/2017/03/09/echarts学习/"><span>点击阅读</span></a></h3>
     
   
 </article>
@@ -485,13 +412,6 @@
     
 
     
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/react/">react</a><a href="/tags/redux/">redux</a>
-    </span>
-    
 
     </div>
 
@@ -500,7 +420,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2017/03/04/redux学习-3/#comment">Comments</a>
+          <a href="/2017/03/04/redux学习-3/#comment">评论</a>
         </span>
       </span>
     </div>
@@ -508,7 +428,7 @@
   </div>
   
     
-    <h3 class="article-read"><a href="/2017/03/04/redux学习-3/"><span>more</span></a></h3>
+    <h3 class="article-read"><a href="/2017/03/04/redux学习-3/"><span>点击阅读</span></a></h3>
     
   
 </article>
@@ -568,13 +488,6 @@
     
 
     
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/react/">react</a><a href="/tags/redux/">redux</a>
-    </span>
-    
 
     </div>
 
@@ -583,7 +496,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2017/03/03/redux学习2/#comment">Comments</a>
+          <a href="/2017/03/03/redux学习2/#comment">评论</a>
         </span>
       </span>
     </div>
@@ -591,7 +504,7 @@
   </div>
   
     
-    <h3 class="article-read"><a href="/2017/03/03/redux学习2/"><span>more</span></a></h3>
+    <h3 class="article-read"><a href="/2017/03/03/redux学习2/"><span>点击阅读</span></a></h3>
     
   
 </article>
@@ -645,13 +558,6 @@
     
 
     
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/react/">react</a><a href="/tags/redux/">redux</a>
-    </span>
-    
 
     </div>
 
@@ -660,7 +566,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2017/02/27/redux学习/#comment">Comments</a>
+          <a href="/2017/02/27/redux学习/#comment">评论</a>
         </span>
       </span>
     </div>
@@ -668,7 +574,7 @@
   </div>
   
     
-    <h3 class="article-read"><a href="/2017/02/27/redux学习/"><span>more</span></a></h3>
+    <h3 class="article-read"><a href="/2017/02/27/redux学习/"><span>点击阅读</span></a></h3>
     
   
 </article>
@@ -757,13 +663,6 @@
     
 
     
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/react/">react</a>
-    </span>
-    
 
     </div>
 
@@ -772,7 +671,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2017/02/27/react-router-2/#comment">Comments</a>
+          <a href="/2017/02/27/react-router-2/#comment">评论</a>
         </span>
       </span>
     </div>
@@ -780,7 +679,7 @@
   </div>
   
     
-    <h3 class="article-read"><a href="/2017/02/27/react-router-2/"><span>more</span></a></h3>
+    <h3 class="article-read"><a href="/2017/02/27/react-router-2/"><span>点击阅读</span></a></h3>
     
   
 </article>
@@ -833,13 +732,6 @@
     
 
     
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/react/">react</a>
-    </span>
-    
 
     </div>
 
@@ -848,7 +740,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2017/02/27/react-router学习/#comment">Comments</a>
+          <a href="/2017/02/27/react-router学习/#comment">评论</a>
         </span>
       </span>
     </div>
@@ -856,7 +748,7 @@
   </div>
   
     
-    <h3 class="article-read"><a href="/2017/02/27/react-router学习/"><span>more</span></a></h3>
+    <h3 class="article-read"><a href="/2017/02/27/react-router学习/"><span>点击阅读</span></a></h3>
     
   
 </article>
@@ -908,13 +800,6 @@
     
 
     
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/vue/">vue</a><a href="/tags/weex/">weex</a>
-    </span>
-    
 
     </div>
 
@@ -923,7 +808,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2017/02/23/weex小记/#comment">Comments</a>
+          <a href="/2017/02/23/weex小记/#comment">评论</a>
         </span>
       </span>
     </div>
@@ -931,7 +816,7 @@
   </div>
   
     
-    <h3 class="article-read"><a href="/2017/02/23/weex小记/"><span>more</span></a></h3>
+    <h3 class="article-read"><a href="/2017/02/23/weex小记/"><span>点击阅读</span></a></h3>
     
   
 </article>
@@ -942,16 +827,95 @@
 
 <nav class="pagination">
   
-  <a href="/" class="pagination-prev">Prev</a>
+  <a href="/" class="pagination-prev">上一页</a>
   
   
-  <a href="/page/3/" class="pagination-next">Next</a>
+  <a href="/page/3/" class="pagination-next">下一页</a>
   
 </nav>
             </main>
+            <div class="sidebar
+                    col-lg-3 col-lg-offset-0
+                    col-md-3 col-md-offset-0
+                    col-sm-12
+                    col-xs-12
+                    sidebar-container
+                ">
+                <div class="sidebar-container">
+
+
+
+<div style="   ">
+<form class="site-search-form">
+    站内搜索(test)<input type="text" id="local-search-input" class="st-search-input" />
+</form>
+<div id="local-search-result" class="local-search-result-cls"></div>
+</div>
+
+
+<script type="text/javascript" id="local.search.active">
+var inputArea       = document.querySelector("#local-search-input");
+inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script>
+
+
+    <div class="categories-container" style="margin-top:40px;">
+        <p>归档:</p>
+            
+                <a href="/categories/AngularJS/" title="AngularJS" rel="4">AngularJS</a>
+            
+                <a href="/categories/JavaScript/" title="JavaScript" rel="2">JavaScript</a>
+            
+                <a href="/categories/node/" title="node" rel="2">node</a>
+            
+                <a href="/categories/react/" title="react" rel="7">react</a>
+            
+                <a href="/categories/react/redux/" title="redux" rel="3">redux</a>
+            
+                <a href="/categories/vue/" title="vue" rel="2">vue</a>
+            
+                <a href="/categories/webpack/" title="webpack" rel="5">webpack</a>
+            
+                <a href="/categories/个人小纪/" title="个人小纪" rel="2">个人小纪</a>
+            
+    </div>
+
+
+
+
+    <div class="social-container" style="margin-top:40px;">
+        <p>Links:</p>
+            
+                
+                    <li class="social-item"><i class="fa fa-fw fa-github"></i><a href="https://github.com/Boseny">GitHub</a></li>
+                
+
+            
+                
+                    <li class="social-item"><i class="fa fa-fw fa-weibo"></i><a href="https://weibo.com/boseny">微博</a></li>
+                
+
+            
+                
+                    <li class="social-item"><i class=" fa fa-fw zhihu-icon"></i><a href="https://www.zhihu.com/people/boseny">知乎</a></li>
+                
+
+            
+                
+                    <li class="social-item"><i class=" fa fa-fw lofter-icon"></i><a href="http://boseny.lofter.com/">Lofter</a></li>
+                
+
+            
+
+    </div>
+
+
+</div>
+            </div>
           </div>
         </div>
-       
+        
 
 
 

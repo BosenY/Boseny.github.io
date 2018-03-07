@@ -14,12 +14,6 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> react </tag>
-            
-        </tags>
-      
     </entry>
     
     <entry>
@@ -28,12 +22,6 @@
       <content type="html"><![CDATA[<p>过年期间没更新博客也没去更新theme的新功能，倒是也没有懒惰，只是趁着过年期间算是可以有一小段修整的时间，一边给自己放了个假，一边也完成了自己一直想做的一个小程序的第一版 -&gt; <code>精灵宝可梦dex</code>。<br>  <a id="more"></a><br>  最近刚把这个小程序的第一版功能做完，其实我以前倒是也做过小程序，但只是写一点简单的页面和接口对接而已，这次由自己来独立完成一个小程序，可能要考虑的东西蛮多的，比方说:</p><ul><li>小程序的加载速度</li><li>如何提升小程序的用户体验等</li></ul><p>反正也算是将第一版功能保质保量做完了，而且用户体验还不错，不需要进行任何接口调用，我是把数据进行了前期的爬取整理后直接放在本地，所以访问速度得到了保证。 对于图片方面，目前是将宝可梦的图片放到了腾讯云的存储对象中，缩略图本身每张的大小并不是很大，所以没有用雪碧图，可能下一个版本会进行改进。<br>准备在第二版当中继续提升性能，然后加入一些其他功能，比方说进化关系和能力值计算等。    也欢迎其他感兴趣的人一起加入或者提些意见，毕竟一个人做难免有些想法并不是最完美的~  (因为有appID所以不能开源)<br>关于<code>Lap</code>这个hexo theme 最近就准备继续更新，因为也是自己用心弄的一个项目，肯定不能荒废掉，会一直坚持的！</p>]]></content>
       
       
-        <tags>
-            
-            <tag> 日常 </tag>
-            
-        </tags>
-      
     </entry>
     
     <entry>
@@ -41,12 +29,6 @@
       <link href="/2018/02/07/%E5%85%B3%E4%BA%8E%E5%88%87%E6%8D%A2%E5%88%B0https/"/>
       <content type="html"><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>其实不切https也没什么性能上的问题，就是想把chrome上的安全绿锁头显示出来；从另一方面讲，还能减少一些http劫持(这个其实深层次的我也没研究过，包括DNS劫持之类的…)和运营商劫持，切到https后，看上去好像是减少了一些被劫持的几率。<br><a id="more"></a></p><h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><p>因为是静态资源，也不想买国内的服务器(有国外的vps了)，所以就用github page，至于简单的如何配置hexo blog这里就不陈述了，反正百度一大把。</p><p>因为github page不能上传ssl证书，所以就用CDN实现反向代理，原理基本上就是利用CDN服务器反向代理到github page 因为CDN服务器是提供https服务的，所以最终自己的域名也会变成https。</p><p>这里我用的是<a href="https://www.cloudflare.com/" target="_blank" rel="noopener">CloudFlare</a>：<br><img src="http://owgraa3f3.bkt.clouddn.com/18-2-7/72109306.jpg" alt=""></p><ul><li>注册一个账号并登陆</li><li>添加一个站点把自定义的域名配入,等扫描，扫描结束点击继续</li><li>DNS项配入，把自己的域名和github page的ip地址配入到DNS解析当中，具体就是创建一个CNAME类型，这里填写的是你原来github page的域名， 然后再创建两个类型是A，name是自己的域名，值是github的ip 192.30.252.153和192.30.252.154，类似于底下这张图：<br><img src="http://owgraa3f3.bkt.clouddn.com/18-2-7/42228843.jpg" alt=""></li><li>然后把下面的DNS服务器里的地址复制好，将自己购买的域名的服务器下的DNS改成这个</li><li>让在Crypto选项处设置ssl为flexible</li><li>在page rules中设置路由规则。然后设置两条规则<em style="color: red;">Always use https</em>一条url是<code>http://域名/</code> ，另一条是<code>http://域名/*</code>，这样就能开启强制https</li><li>都配置好在12小时以内就会生效，然后博客就正式切到https了</li></ul>]]></content>
       
-      
-        <tags>
-            
-            <tag> 日常 </tag>
-            
-        </tags>
       
     </entry>
     
@@ -70,12 +52,6 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> 日常 </tag>
-            
-        </tags>
-      
     </entry>
     
     <entry>
@@ -83,12 +59,6 @@
       <link href="/2018/01/18/%E5%85%B3%E4%BA%8E%E6%9C%80%E8%BF%91%E7%9A%84%E6%8A%98%E8%85%BE/"/>
       <content type="html"><![CDATA[<p>其实一直想用这个写博客的，但是出现过一次问题：<br>  我在win上面提交都是正常的，但是把项目搞到mac上之后提交就出现了bug，研究了半天也没找到完美解决的办法，这才自己去搭建了一个自己的博客。。<br>  <a id="more"></a></p><p>自己是在搬瓦工的vps上搭建的，采用的是golang的gin + React + Nextjs ，总体上倒是没什么问题，唯一的问题就是cdn解析过慢，毕竟有墙的因素在，感觉身在国内确实也没法避免这个问题，性能上反正我自己是忍受不了了，于是还是回来写这个。。 不过好像也更新了很多，可能好多的插件什么的也不能用了，准备近期好好弄一下，把bug都解决掉。</p>]]></content>
       
-      
-        <tags>
-            
-            <tag> 日常 </tag>
-            
-        </tags>
       
     </entry>
     
@@ -104,14 +74,6 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-            <tag> AngularJS </tag>
-            
-        </tags>
-      
     </entry>
     
     <entry>
@@ -125,14 +87,6 @@
           
       </categories>
       
-      
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-            <tag> AngularJS </tag>
-            
-        </tags>
       
     </entry>
     
@@ -148,14 +102,6 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-            <tag> AngularJS </tag>
-            
-        </tags>
-      
     </entry>
     
     <entry>
@@ -169,14 +115,6 @@
           
       </categories>
       
-      
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-            <tag> AngularJS </tag>
-            
-        </tags>
       
     </entry>
     
@@ -192,20 +130,12 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-            <tag> Ecmascript7 </tag>
-            
-        </tags>
-      
     </entry>
     
     <entry>
       <title>初学RxJS</title>
       <link href="/2017/03/20/%E5%88%9D%E5%AD%A6RxJS/"/>
-      <content type="html"><![CDATA[<h2 id="初学Rxjs"><a href="#初学Rxjs" class="headerlink" title="初学Rxjs"></a>初学Rxjs</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>Rxjs 是一个通过使用可观察序列来构建异步和基于事件的程oberservable序的库，可以吧它当成一个针对于事件的lodash</p><p>Rxjs就是JavaScript的响应式扩展，响应式的思路就是把随时间不断变化的数据、状态、事件等等转化成可被观察的序列(observable sequence),然后订阅序列中那些observable对象的变化，一旦变化，就会执行事先安排好的各种转换和操作</p><h3 id="四个生命周期"><a href="#四个生命周期" class="headerlink" title="四个生命周期"></a>四个生命周期</h3><ul><li>创建：创建一个observable，返回一个被观察的序列源实例</li><li>订阅：通过序列源实例可以订阅序列发射新数据变更时的响应方法（回调方法）</li><li>执行：响应的动作就是执行</li><li>销毁：通过序列源实例可以销毁，而当订阅方法发生错误时也会自动销毁</li></ul><h3 id="剖析可观察对象"><a href="#剖析可观察对象" class="headerlink" title="剖析可观察对象"></a>剖析可观察对象</h3><p>使用Rx.Observable.create或一个能产生可观察对象的操作符来创造一个可观察对象，使用一个观察者订阅他，执行然后给观察者发送next/error/complete的通知，他们的执行可能会被disposed（处理）。这四个方面均被编码进可观察对象的实例当中。</p><h2 id="核心的可观察对象的概念"><a href="#核心的可观察对象的概念" class="headerlink" title="核心的可观察对象的概念"></a>核心的可观察对象的概念</h2><ul><li>Creating Observables 创建</li><li>Subscribing Obserables 订阅</li><li>Executing the Observable 执行</li><li>Disposing Observables 处理</li></ul><h3 id="Creating-Observables"><a href="#Creating-Observables" class="headerlink" title="Creating Observables"></a>Creating Observables</h3><p>Rx.Observable.create 用来创建一个可观察对象 ，是可观察对象构造函数的别名，它接受一个参数（订阅的 fnuction）</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> observable = Rx.Observable.create(<span class="function"><span class="keyword">function</span> <span class="title">subscribe</span>(<span class="params">observer</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> id = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    observer.next(<span class="string">'hi'</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h3 id="Subscribing-Obserables"><a href="#Subscribing-Obserables" class="headerlink" title="Subscribing Obserables"></a>Subscribing Obserables</h3><p>一个可观察对象可以被订阅</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">observable.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x));</span><br></pre></td></tr></table></figure><p>这里的subscribe和上面create的subscribe是不一样的，但是你可以在概念上将他们等价，上面写成一个匿名函数也是可以的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> observable = Rx.Observable.create(<span class="function"><span class="params">observer</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> id = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    observer.next(<span class="string">'hi'</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><pre><code>订阅一个可观察对象就像是调用一个函数，在数据将被发送的地方提供回调</code></pre><p>完全不同于addEventListener/removeEventListener事件句柄API,使用observervable.subscribe，给定的观察者并没有作为一个监听者被注册</p><p>订阅数启动可观察对象执行和发送值或者事件给观察者的简单方式</p><h3 id="Executing-the-Observable"><a href="#Executing-the-Observable" class="headerlink" title="Executing the Observable"></a>Executing the Observable</h3><p>执行可观察对象就是在创建时里面的匿名函数做的事情，一个仅在观察者订阅时发生的惰性计算，执行随时间产生多个值，以同步或者异步的方式</p><p>下面是observervable对象可以发送的三种类型的值：</p><ol><li>next 发送一个数字/字符串/对象等等</li><li>error 发送一个js错误或者异常</li><li><p>complete 不发送值<br>next可以在可观察对象执行期间发生多次，而error和complete只能在执行期间发生一次，但仅会执行二者之中的一个</p><pre><code>一个可观察对象的执行期间，零个到无穷多个next通知被发送。如果Error或者Complete通知一旦被发送，此后将不再发送任何值。</code></pre></li></ol><p>一个好的使用方式就是使用try catch语句去包裹通知语句，如果捕获了异常就会发送一个错误通知</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> observable = Rx.Observable.create(<span class="function"><span class="keyword">function</span> <span class="title">subscribe</span>(<span class="params">observer</span>) </span>&#123;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">observer.next(<span class="number">1</span>);</span><br><span class="line">observer.next(<span class="number">2</span>);</span><br><span class="line">observer.next(<span class="number">3</span>);</span><br><span class="line">observer.complete();</span><br><span class="line">&#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">observer.error(err); <span class="comment">// delivers an error if it caught one</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h3 id="Disposing-Observables"><a href="#Disposing-Observables" class="headerlink" title="Disposing Observables"></a>Disposing Observables</h3><p>处理可观察对象的执行：<br>    由于可观察对象的执行可能是无限的(无数个next)，而对于观察者来说却往往需要在有限的时间内终止执行，因此需要一个api来取消执行。因为每次的执行仅仅服务于一个观察者，一旦观察者听得接收数据，他就不得不通过一个方式去终止执行，从而避免浪费大量的计算性能和内存资源</p><p>这里observable.subscribe被调用返回了一个对象： subscription<br>这个对象表示了正在进行的执行：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> subscription = observable.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x));</span><br></pre></td></tr></table></figure><p>在这里使用subscription.unsubscribe()就可以取消你正在进行的执行</p><h2 id="observer观察者"><a href="#observer观察者" class="headerlink" title="observer观察者"></a>observer观察者</h2><p>观察者就是可观察对象所发送数据的消费者，简单说就是一组回调函数，分别对应一种被可观察对象发送的通知的类型：next、error和complete</p><pre><code>观察者不过是三个回调函数组成的对象，每个回调函数分别对应可观察对象的通知类型</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> observer=&#123;</span><br><span class="line">next:<span class="function"><span class="params">x</span>=&gt;</span><span class="built_in">console</span>.log(<span class="string">'Observer got a next value: '</span> + x),</span><br><span class="line">error: <span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.error(<span class="string">'Observer got an error: '</span> + err),</span><br><span class="line">complete: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Observer got a complete notification'</span>)</span><br><span class="line">&#125;</span><br><span class="line">observable.subscribe(observer)</span><br></pre></td></tr></table></figure><p>当订阅一个可观察对象，你仅仅提供回调来作为参数就够了，并不需要完整的观察者对象</p><p>在observable.subscribe内部，他讲使用第一个回调参数作为next的处理句柄创建一个观察者对象，也可以通过将三个函数作为参数提供三种回调</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">observable.subscribe(</span><br><span class="line">    x =&gt; <span class="built_in">console</span>.log(<span class="string">'Observer got a next value: '</span> + x),</span><br><span class="line">    err =&gt; <span class="built_in">console</span>.error(<span class="string">'Observer got an error: '</span> + err),</span><br><span class="line">    () =&gt; <span class="built_in">console</span>.log(<span class="string">'Observer got a complete notification'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure><h2 id="Subject主题"><a href="#Subject主题" class="headerlink" title="Subject主题"></a>Subject主题</h2><p>Subject是允许值被多播到多个观察者的一种特殊的observable</p><p>Subject就是一个可观察对象，只不过可以被多播至多个观察者。同时Subject也类似于eventemitter：维护着众多事件监听器的注册表</p><ul><li>每一个Subject及时一个可观察对象，又是一个观察者对象，也就是说，它既可以拥有next、error、complete方法，又可以去subscribe它</li><li>观察者： 有next、error等方法</li><li>可观察对象： 可以被订阅<br>demo： </li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> subject = <span class="keyword">new</span> Rx.Subject();</span><br><span class="line"></span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerA: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerB: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">subject.next(<span class="number">1</span>);</span><br><span class="line">subject.next(<span class="number">2</span>);</span><br></pre></td></tr></table></figure><p>输出效果如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">observerA: <span class="number">1</span></span><br><span class="line">observerB: <span class="number">1</span></span><br><span class="line">observerA: <span class="number">2</span></span><br><span class="line">observerB: <span class="number">2</span></span><br></pre></td></tr></table></figure></p><h3 id="多播的可观察对象"><a href="#多播的可观察对象" class="headerlink" title="多播的可观察对象"></a>多播的可观察对象</h3><p>一个多播的可观察对象可以通过多个订阅者的订阅去传递通知，而普通的单播可观察对象不可以<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> source=Rx.Observable.from([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]);</span><br><span class="line"><span class="keyword">var</span> subject=<span class="keyword">new</span> Rx.Subject();</span><br><span class="line"><span class="keyword">var</span> multicasted=source.multicast(subject);</span><br><span class="line">multicasted.subscribe(&#123;</span><br><span class="line">  next:<span class="function">(<span class="params">v</span>)=&gt;</span><span class="built_in">console</span>.log(<span class="string">'observerA:'</span> +v);</span><br><span class="line">&#125;);</span><br><span class="line">multicasted.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerB: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line">multicasted.connect();</span><br></pre></td></tr></table></figure></p><p>multicast方法返回一个看起来像普通的可观察对象的可观察对象，但是却有着和subject一样的行为，multicast返回一个connectableobservable，他是一个具有connect方法的observable</p><p>connect方法对于觉得何时开始分享可观察对象的执行时非常重要的，在source下面有source.subscribe（subject），connect（）返回一个Subscription，你可以取消订阅，以取消共享的Observable执行。</p>]]></content>
+      <content type="html"><![CDATA[<h2 id="初学Rxjs"><a href="#初学Rxjs" class="headerlink" title="初学Rxjs"></a>初学Rxjs</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>Rxjs 是一个通过使用可观察序列来构建异步和基于事件的程oberservable序的库，可以吧它当成一个针对于事件的lodash</p><p>Rxjs就是JavaScript的响应式扩展，响应式的思路就是把随时间不断变化的数据、状态、事件等等转化成可被观察的序列(observable sequence),然后订阅序列中那些observable对象的变化，一旦变化，就会执行事先安排好的各种转换和操作<br><a id="more"></a></p><h3 id="四个生命周期"><a href="#四个生命周期" class="headerlink" title="四个生命周期"></a>四个生命周期</h3><ul><li>创建：创建一个observable，返回一个被观察的序列源实例</li><li>订阅：通过序列源实例可以订阅序列发射新数据变更时的响应方法（回调方法）</li><li>执行：响应的动作就是执行</li><li>销毁：通过序列源实例可以销毁，而当订阅方法发生错误时也会自动销毁</li></ul><h3 id="剖析可观察对象"><a href="#剖析可观察对象" class="headerlink" title="剖析可观察对象"></a>剖析可观察对象</h3><p>使用Rx.Observable.create或一个能产生可观察对象的操作符来创造一个可观察对象，使用一个观察者订阅他，执行然后给观察者发送next/error/complete的通知，他们的执行可能会被disposed（处理）。这四个方面均被编码进可观察对象的实例当中。</p><h2 id="核心的可观察对象的概念"><a href="#核心的可观察对象的概念" class="headerlink" title="核心的可观察对象的概念"></a>核心的可观察对象的概念</h2><ul><li>Creating Observables 创建</li><li>Subscribing Obserables 订阅</li><li>Executing the Observable 执行</li><li>Disposing Observables 处理</li></ul><h3 id="Creating-Observables"><a href="#Creating-Observables" class="headerlink" title="Creating Observables"></a>Creating Observables</h3><p>Rx.Observable.create 用来创建一个可观察对象 ，是可观察对象构造函数的别名，它接受一个参数（订阅的 fnuction）</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> observable = Rx.Observable.create(<span class="function"><span class="keyword">function</span> <span class="title">subscribe</span>(<span class="params">observer</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> id = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    observer.next(<span class="string">'hi'</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h3 id="Subscribing-Obserables"><a href="#Subscribing-Obserables" class="headerlink" title="Subscribing Obserables"></a>Subscribing Obserables</h3><p>一个可观察对象可以被订阅</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">observable.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x));</span><br></pre></td></tr></table></figure><p>这里的subscribe和上面create的subscribe是不一样的，但是你可以在概念上将他们等价，上面写成一个匿名函数也是可以的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> observable = Rx.Observable.create(<span class="function"><span class="params">observer</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> id = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    observer.next(<span class="string">'hi'</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><pre><code>订阅一个可观察对象就像是调用一个函数，在数据将被发送的地方提供回调</code></pre><p>完全不同于addEventListener/removeEventListener事件句柄API,使用observervable.subscribe，给定的观察者并没有作为一个监听者被注册</p><p>订阅数启动可观察对象执行和发送值或者事件给观察者的简单方式</p><h3 id="Executing-the-Observable"><a href="#Executing-the-Observable" class="headerlink" title="Executing the Observable"></a>Executing the Observable</h3><p>执行可观察对象就是在创建时里面的匿名函数做的事情，一个仅在观察者订阅时发生的惰性计算，执行随时间产生多个值，以同步或者异步的方式</p><p>下面是observervable对象可以发送的三种类型的值：</p><ol><li>next 发送一个数字/字符串/对象等等</li><li>error 发送一个js错误或者异常</li><li><p>complete 不发送值<br>next可以在可观察对象执行期间发生多次，而error和complete只能在执行期间发生一次，但仅会执行二者之中的一个</p><pre><code>一个可观察对象的执行期间，零个到无穷多个next通知被发送。如果Error或者Complete通知一旦被发送，此后将不再发送任何值。</code></pre></li></ol><p>一个好的使用方式就是使用try catch语句去包裹通知语句，如果捕获了异常就会发送一个错误通知</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> observable = Rx.Observable.create(<span class="function"><span class="keyword">function</span> <span class="title">subscribe</span>(<span class="params">observer</span>) </span>&#123;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">observer.next(<span class="number">1</span>);</span><br><span class="line">observer.next(<span class="number">2</span>);</span><br><span class="line">observer.next(<span class="number">3</span>);</span><br><span class="line">observer.complete();</span><br><span class="line">&#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">observer.error(err); <span class="comment">// delivers an error if it caught one</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h3 id="Disposing-Observables"><a href="#Disposing-Observables" class="headerlink" title="Disposing Observables"></a>Disposing Observables</h3><p>处理可观察对象的执行：<br>    由于可观察对象的执行可能是无限的(无数个next)，而对于观察者来说却往往需要在有限的时间内终止执行，因此需要一个api来取消执行。因为每次的执行仅仅服务于一个观察者，一旦观察者听得接收数据，他就不得不通过一个方式去终止执行，从而避免浪费大量的计算性能和内存资源</p><p>这里observable.subscribe被调用返回了一个对象： subscription<br>这个对象表示了正在进行的执行：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> subscription = observable.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x));</span><br></pre></td></tr></table></figure><p>在这里使用subscription.unsubscribe()就可以取消你正在进行的执行</p><h2 id="observer观察者"><a href="#observer观察者" class="headerlink" title="observer观察者"></a>observer观察者</h2><p>观察者就是可观察对象所发送数据的消费者，简单说就是一组回调函数，分别对应一种被可观察对象发送的通知的类型：next、error和complete</p><pre><code>观察者不过是三个回调函数组成的对象，每个回调函数分别对应可观察对象的通知类型</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> observer=&#123;</span><br><span class="line">next:<span class="function"><span class="params">x</span>=&gt;</span><span class="built_in">console</span>.log(<span class="string">'Observer got a next value: '</span> + x),</span><br><span class="line">error: <span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.error(<span class="string">'Observer got an error: '</span> + err),</span><br><span class="line">complete: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Observer got a complete notification'</span>)</span><br><span class="line">&#125;</span><br><span class="line">observable.subscribe(observer)</span><br></pre></td></tr></table></figure><p>当订阅一个可观察对象，你仅仅提供回调来作为参数就够了，并不需要完整的观察者对象</p><p>在observable.subscribe内部，他讲使用第一个回调参数作为next的处理句柄创建一个观察者对象，也可以通过将三个函数作为参数提供三种回调</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">observable.subscribe(</span><br><span class="line">    x =&gt; <span class="built_in">console</span>.log(<span class="string">'Observer got a next value: '</span> + x),</span><br><span class="line">    err =&gt; <span class="built_in">console</span>.error(<span class="string">'Observer got an error: '</span> + err),</span><br><span class="line">    () =&gt; <span class="built_in">console</span>.log(<span class="string">'Observer got a complete notification'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure><h2 id="Subject主题"><a href="#Subject主题" class="headerlink" title="Subject主题"></a>Subject主题</h2><p>Subject是允许值被多播到多个观察者的一种特殊的observable</p><p>Subject就是一个可观察对象，只不过可以被多播至多个观察者。同时Subject也类似于eventemitter：维护着众多事件监听器的注册表</p><ul><li>每一个Subject及时一个可观察对象，又是一个观察者对象，也就是说，它既可以拥有next、error、complete方法，又可以去subscribe它</li><li>观察者： 有next、error等方法</li><li>可观察对象： 可以被订阅<br>demo： </li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> subject = <span class="keyword">new</span> Rx.Subject();</span><br><span class="line"></span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerA: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerB: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">subject.next(<span class="number">1</span>);</span><br><span class="line">subject.next(<span class="number">2</span>);</span><br></pre></td></tr></table></figure><p>输出效果如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">observerA: <span class="number">1</span></span><br><span class="line">observerB: <span class="number">1</span></span><br><span class="line">observerA: <span class="number">2</span></span><br><span class="line">observerB: <span class="number">2</span></span><br></pre></td></tr></table></figure></p><h3 id="多播的可观察对象"><a href="#多播的可观察对象" class="headerlink" title="多播的可观察对象"></a>多播的可观察对象</h3><p>一个多播的可观察对象可以通过多个订阅者的订阅去传递通知，而普通的单播可观察对象不可以<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> source=Rx.Observable.from([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]);</span><br><span class="line"><span class="keyword">var</span> subject=<span class="keyword">new</span> Rx.Subject();</span><br><span class="line"><span class="keyword">var</span> multicasted=source.multicast(subject);</span><br><span class="line">multicasted.subscribe(&#123;</span><br><span class="line">  next:<span class="function">(<span class="params">v</span>)=&gt;</span><span class="built_in">console</span>.log(<span class="string">'observerA:'</span> +v);</span><br><span class="line">&#125;);</span><br><span class="line">multicasted.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerB: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line">multicasted.connect();</span><br></pre></td></tr></table></figure></p><p>multicast方法返回一个看起来像普通的可观察对象的可观察对象，但是却有着和subject一样的行为，multicast返回一个connectableobservable，他是一个具有connect方法的observable</p><p>connect方法对于觉得何时开始分享可观察对象的执行时非常重要的，在source下面有source.subscribe（subject），connect（）返回一个Subscription，你可以取消订阅，以取消共享的Observable执行。</p>]]></content>
       
       
     </entry>
@@ -222,14 +152,6 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> react </tag>
-            
-            <tag> redux </tag>
-            
-        </tags>
-      
     </entry>
     
     <entry>
@@ -243,14 +165,6 @@
           
       </categories>
       
-      
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-            <tag> echarts </tag>
-            
-        </tags>
       
     </entry>
     
@@ -268,14 +182,6 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> react </tag>
-            
-            <tag> redux </tag>
-            
-        </tags>
-      
     </entry>
     
     <entry>
@@ -291,14 +197,6 @@
           
       </categories>
       
-      
-        <tags>
-            
-            <tag> react </tag>
-            
-            <tag> redux </tag>
-            
-        </tags>
       
     </entry>
     
@@ -316,14 +214,6 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> react </tag>
-            
-            <tag> redux </tag>
-            
-        </tags>
-      
     </entry>
     
     <entry>
@@ -337,12 +227,6 @@
           
       </categories>
       
-      
-        <tags>
-            
-            <tag> react </tag>
-            
-        </tags>
       
     </entry>
     
@@ -358,12 +242,6 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> react </tag>
-            
-        </tags>
-      
     </entry>
     
     <entry>
@@ -377,14 +255,6 @@
           
       </categories>
       
-      
-        <tags>
-            
-            <tag> vue </tag>
-            
-            <tag> weex </tag>
-            
-        </tags>
       
     </entry>
     
@@ -400,12 +270,6 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> vue </tag>
-            
-        </tags>
-      
     </entry>
     
     <entry>
@@ -419,14 +283,6 @@
           
       </categories>
       
-      
-        <tags>
-            
-            <tag> mongodb </tag>
-            
-            <tag> node </tag>
-            
-        </tags>
       
     </entry>
     
@@ -442,14 +298,6 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> koa </tag>
-            
-            <tag> eggjs </tag>
-            
-        </tags>
-      
     </entry>
     
     <entry>
@@ -463,14 +311,6 @@
           
       </categories>
       
-      
-        <tags>
-            
-            <tag> 前端 </tag>
-            
-            <tag> 后端 </tag>
-            
-        </tags>
       
     </entry>
     
@@ -486,14 +326,6 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> node </tag>
-            
-            <tag> webpack </tag>
-            
-        </tags>
-      
     </entry>
     
     <entry>
@@ -507,14 +339,6 @@
           
       </categories>
       
-      
-        <tags>
-            
-            <tag> node </tag>
-            
-            <tag> webpack </tag>
-            
-        </tags>
       
     </entry>
     
@@ -530,14 +354,6 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> node </tag>
-            
-            <tag> webpack </tag>
-            
-        </tags>
-      
     </entry>
     
     <entry>
@@ -552,14 +368,6 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> node </tag>
-            
-            <tag> webpack </tag>
-            
-        </tags>
-      
     </entry>
     
     <entry>
@@ -573,14 +381,6 @@
           
       </categories>
       
-      
-        <tags>
-            
-            <tag> node </tag>
-            
-            <tag> webpack </tag>
-            
-        </tags>
       
     </entry>
     
