@@ -117,7 +117,7 @@
     <entry>
       <title>ngapi</title>
       <link href="/2017/09/15/ngapi/"/>
-      <content type="html"><![CDATA[<h1 id="ngApi"><a href="#ngApi" class="headerlink" title="ngApi"></a>ngApi</h1><p>angularJS全局API用于执行常见任务的JS函数集合，如：</p><ul><li>比较对象</li><li>迭代对象</li><li><p>转换对象<br>简单的说就是将一些工作中常用的方法封装到了angular.prototype上了，<br>下面有几个典型的：</p></li><li><p>angular.lowercase() - 转换字符为小写</p></li><li>angular.uppercase() - 转换字符为大写</li><li>angular.isString() - 判断是否是字符串</li><li>angular.isNumber() - 判断是否是数字</li></ul><p>例子： <a src="http://www.runoob.com/try/tryit.php?filename=try_ng_api_lowercase">地址</a></p>]]></content>
+      <content type="html"><![CDATA[<h1 id="ngApi"><a href="#ngApi" class="headerlink" title="ngApi"></a>ngApi</h1><p>angular JS全局API用于执行常见任务的JS函数集合，如：</p><ul><li>比较对象</li><li>迭代对象</li><li><p>转换对象<br>简单的说就是将一些工作中常用的方法封装到了angular.prototype上了，<br>下面有几个典型的：</p></li><li><p>angular.lowercase() - 转换字符为小写</p></li><li>angular.uppercase() - 转换字符为大写</li><li>angular.isString() - 判断是否是字符串</li><li>angular.isNumber() - 判断是否是数字</li></ul><p>例子： <a src="http://www.runoob.com/try/tryit.php?filename=try_ng_api_lowercase">地址</a></p>]]></content>
       
       <categories>
           
