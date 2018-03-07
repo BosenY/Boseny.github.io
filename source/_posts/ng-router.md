@@ -11,7 +11,7 @@ categories:
 # ng-router
 
 ng-router可以把angular1变成一个spa应用，在页面上的原理就是渲染了不同的controller来实现不同的路由，具体实例代码如下：
-```js
+```html
 <html>
     <head>
         <meta charset="utf-8">
