@@ -35,7 +35,7 @@ var searchFunc = function (path, search_id, content_id) {
         return {
           title: $("title", this).text(),
           content: $("content", this).text(),
-          url: $("link", this).attr("href")
+          url: $("url", this).text()
         };
       }).get();
       $resultContent.innerHTML = "";
