@@ -21,6 +21,7 @@ article blockquote {
   line-height: 2rem;
 }
 article .article-read {
+  border-radius: 999em;
   font-size: 16px;
   text-align: center;
   padding: 7px 0;
