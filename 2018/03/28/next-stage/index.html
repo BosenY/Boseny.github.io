@@ -3,7 +3,7 @@
 <head >
   <meta charset="utf-8">
   
-  <title>关于es7bind语法的小纪 | BosenYのblog</title>
+  <title>next-stage | BosenYのblog</title>
 
   
   <meta name="author" content="BosenY">
@@ -15,14 +15,14 @@
 
   
   
-  <meta name="keywords" content="JavaScript,Ecmascript7">
+  <meta name="keywords" content="日常">
   
 
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <meta property="og:title" content="关于es7bind语法的小纪"/>
+  <meta property="og:title" content="next-stage"/>
 
   <meta property="og:site_name" content="BosenYのblog"/>
 
@@ -93,15 +93,15 @@
 
   
     
-    <h3 class="article-title"><span>关于es7bind语法的小纪</span></h3>
+    <h3 class="article-title"><span>next-stage</span></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2017/04/21/es7bind语法的小纪/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-04-21T02:11:04.000Z">
-          2017-04-21
+      <a href="/2018/03/28/next-stage/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-03-27T16:23:08.000Z">
+          2018-03-28
         </time>
       </a>
     </span>
@@ -113,17 +113,13 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="有关es7-function-bind-syntax的东西"><a href="#有关es7-function-bind-syntax的东西" class="headerlink" title="有关es7 function bind syntax的东西"></a>有关es7 function bind syntax的东西</h1><p>因为群里有大佬以前提到过，但是因为自己太菜了根本无法理解，所以就去学习了一下。。</p>
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>所谓的function bind syntax ，其实就是一个绑定的语法糖，就和箭头函数是类似的（箭头函数是声明函数时绑定this的语法糖，这里就有个坑，用箭头函数声明的方法就不能再使用::去绑定了，不会起作用。。）</p>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>简单来说<strong>::</strong>有两种作用：</p>
-<ol>
-<li>当::出现在一个对象名的签名，且对象名后面紧跟着一个它的方法名的时候，作用就是把这个对象绑定为这个方法的this</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    method() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">::obj.method</span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line">obj.method.bind(obj)</span><br></pre></td></tr></table></figure>
-<ol>
-<li>当::出现在对象和方法名之间的时候，将这个对象绑定为这个方法的this,当然，因为这个绑定后还是一个函数，所以也可以直接调用</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    foo: <span class="string">'bar'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">method</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.foo)</span><br><span class="line">&#125;</span><br><span class="line">obj::method()</span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line">method.call(obj)()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">obj::method</span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line">method.bind(obj)</span><br></pre></td></tr></table></figure>
+        <p>最近比较忙，也没空弄太多，因为开始搭建和架构公司的一个中间层项目(感觉被委以重任蛮开心的)，用的是阿里开源的<a href="https://eggjs.org/" target="_blank" rel="noopener">eggjs</a>  </p>
+<a id="more"></a>
+<p>最近一直再重新温习nodejs一些知识点，以前也就是乱七八糟乱学一通，也没学出个出息来，这次准备看深入浅出nodejs这本书，外加对koa源码进行一个解读，学习一下nodejs框架的一些设计理念。  </p>
+<p>顺便说一下小程序也发布了1.5.1版本，已经有了很多功能: 比方说可以看pokemon的进化关系，特性等，数据是爬完了，但是需要时间一点一点弄，还得再找时间继续完善  </p>
+<p>今天抽空把Lap的一些css问题修复了一下，可能是自己都看不下去了吧~  </p>
+<p>有空再写，eggjs还是蛮好用的，但是架构公司级的中间层，感觉自己压力蛮大的，还是好好看好好学吧。</p>
+
       
     </div>
 
@@ -137,7 +133,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/JavaScript/">JavaScript</a>
+        <a href="/categories/个人小纪/">个人小纪</a>
     </span>
     
 
@@ -146,7 +142,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/Ecmascript7/">Ecmascript7</a>
+        <a href="/tags/日常/">日常</a>
     </span>
     
 
