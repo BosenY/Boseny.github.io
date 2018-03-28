@@ -35,17 +35,16 @@
     top: 260px;
   }
 }
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .nav li a {
     color: #fff !important;
     padding: 20px !important;
   }
 }
-@media (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .navbar-collapse {
     width: 170px;
     float: right;
-    background: #333;
     position: absolute;
     right: 50px;
     box-shadow: rgba(0,0,0,0.118) 0 1px 6px, rgba(0,0,0,0.239) 0 1px 4px;
@@ -59,8 +58,6 @@
   .nav li a:hover {
     color: #000 !important;
   }
-}
-@media only screen and (max-width: 767px) {
   #bosenyblog-navbar.in {
     transform: scaleY(1);
     opacity: 1;
