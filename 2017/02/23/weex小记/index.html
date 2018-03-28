@@ -204,17 +204,28 @@
 
 
 
+
 <!-- UY BEGIN -->
 	<div id="gitment-container"></div>
 	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script src="/js/web-pinyin.js"></script>
 	<script>
+		function toUnicode(s){ 
+			return s.replace(/([\u4E00-\u9FA5]|[\uFE30-\uFFA0])/g,function(){
+			return "\\u" + RegExp["$1"].charCodeAt(0).toString(16);
+			});
+		}
+		var title = 'weex小记'
 		var GitHub_id = 'Boseny'
 		var client_id = 'f40c67d0359a2646d2b1'
 		var client_secret = '1cbedbd1a1a2e4b42901aee3d7afe1856c1b7e2d'
 		var repo = 'boseny.me'
 		var gitment = new Gitment({
 		// id: '页面 ID', // 可选。默认为 location.href
+		// id:"11" ,
+		id: title,
+		title: title,
 		owner: GitHub_id,//'你的 GitHub ID',
 		repo: repo,//'存储评论的 repo',
 		oauth: {
@@ -262,5 +273,6 @@
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="/js/index.js"></script>
 <script src="/js/search.js"></script>
+
 </body>
 </html>
