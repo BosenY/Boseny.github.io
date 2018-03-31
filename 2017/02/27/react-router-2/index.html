@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,7 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="react-router学习-2"><a href="#react-router学习-2" class="headerlink" title="react router学习(2)"></a>react router学习(2)</h1><h2 id="路由匹配原理"><a href="#路由匹配原理" class="headerlink" title="路由匹配原理"></a>路由匹配原理</h2><p>路由有三个属性来决定是否匹配一个url</p>
+          <h1 id="react-router学习-2"><a href="#react-router学习-2" class="headerlink" title="react router学习(2)"></a>react router学习(2)</h1><h2 id="路由匹配原理"><a href="#路由匹配原理" class="headerlink" title="路由匹配原理"></a>路由匹配原理</h2><p>路由有三个属性来决定是否匹配一个url</p>
 <ol>
 <li>嵌套关系</li>
 <li>它的路径语法</li>
@@ -160,7 +162,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -193,6 +195,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#react-router学习-2"><span class="toc-number">1.</span> <span class="toc-text">react router学习(2)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#路由匹配原理"><span class="toc-number">1.1.</span> <span class="toc-text">路由匹配原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#嵌套关系"><span class="toc-number">1.1.1.</span> <span class="toc-text">嵌套关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#它的路径语法"><span class="toc-number">1.1.2.</span> <span class="toc-text">它的路径语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#它的优先级"><span class="toc-number">1.1.3.</span> <span class="toc-text">它的优先级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#History"><span class="toc-number">1.2.</span> <span class="toc-text">History</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#History的模式"><span class="toc-number">1.2.1.</span> <span class="toc-text">History的模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#browserHistory"><span class="toc-number">1.3.</span> <span class="toc-text">browserHistory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hashHistory"><span class="toc-number">1.4.</span> <span class="toc-text">hashHistory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#createMemoryHistory"><span class="toc-number">1.5.</span> <span class="toc-text">createMemoryHistory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Index-Links"><span class="toc-number">1.6.</span> <span class="toc-text">Index Links</span></a></li></ol></li></ol>
+</div>
 
 
   
@@ -265,6 +272,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

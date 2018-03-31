@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,7 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="webpack2学习（一）"><a href="#webpack2学习（一）" class="headerlink" title="webpack2学习（一）"></a>webpack2学习（一）</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>是一个现代JavaScript应用模块打包器</p>
+          <h1 id="webpack2学习（一）"><a href="#webpack2学习（一）" class="headerlink" title="webpack2学习（一）"></a>webpack2学习（一）</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>是一个现代JavaScript应用模块打包器</p>
 <h2 id="四个核心概念"><a href="#四个核心概念" class="headerlink" title="四个核心概念"></a>四个核心概念</h2><ol>
 <li><p>入口(Entry)  </p>
 <p> webpack 将创建所有应用程序依赖关系图表(dependency graph)。图表的起点被称之为入口起点(entry point)。入口起点告诉 webpack 从哪里开始，并遵循着依赖关系图表知道打包什么。可以将您的应用入口起点认为是根上下文(contextual root)或 app 第一个启动文件。<br> <br><br> 在webpack当中使用entry属性来定义入口  </p>
@@ -128,14 +130,14 @@
 </li>
 </ol>
 <a id="more"></a>
-<ol>
+<ol start="2">
 <li><p>出口(Output)</p>
 <p> webpack 的output属性描述了如何处理打包代码<br> webpack.config.js</p>
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: <span class="string">'./path/to/my/entry/file.js'</span>,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">        filename: <span class="string">'my-first-webpack.bundle.js'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p> 这里的<em>__dirname</em>是指当前模块文件所在目录的完整绝对路径,path定义了打包后出口对应的就是当前目录下的dist文件夹,而打包出来的名字就是底下filename来控制的</p>
 </li>
 </ol>
-<ol>
+<ol start="3">
 <li><p>加载器(Loader)  </p>
 <p> webpack 的目标是，让项目中的所有资源都成为 webpack 的关注点，而浏览器不需要考虑这些（这并不意味着资源都必须打包在一起）。 webpack 把 每个文件(.css, .html, .scss, .jpg, etc.) 都作为模块 处理。然而 webpack 只了解 JavaScript。</p>
 <ul>
@@ -158,7 +160,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -191,6 +193,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack2学习（一）"><span class="toc-number">1.</span> <span class="toc-text">webpack2学习（一）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-number">1.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四个核心概念"><span class="toc-number">1.2.</span> <span class="toc-text">四个核心概念</span></a></li></ol></li></ol>
+</div>
 
 
   
@@ -263,6 +270,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

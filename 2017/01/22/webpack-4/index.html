@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,7 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="加载器-loaders"><a href="#加载器-loaders" class="headerlink" title="加载器(loaders)"></a>加载器(loaders)</h1><p>loader 是对应用程序中资源文件进行转换。它们是(运行在node.js中的) 函数，可以将资源文件作为参数的来源，然后返回新的资源文件<br>例如，你可以使用loader告诉webpack加载css文件，或者将TypeScript转化为JavaScript</p>
+          <h1 id="加载器-loaders"><a href="#加载器-loaders" class="headerlink" title="加载器(loaders)"></a>加载器(loaders)</h1><p>loader 是对应用程序中资源文件进行转换。它们是(运行在node.js中的) 函数，可以将资源文件作为参数的来源，然后返回新的资源文件<br>例如，你可以使用loader告诉webpack加载css文件，或者将TypeScript转化为JavaScript</p>
 <h2 id="loader特性"><a href="#loader特性" class="headerlink" title="loader特性"></a>loader特性</h2><ul>
 <li>loader支持链式传递。能够对资源使用流水线(pipeline)。 loader链式按照时间先后顺序进行编译。<br>loader链中的第一个loader返回值给下一个loader，并且在最后一个loader，webpack按照预期的JavaScript返回</li>
 <li>loader可以是同步或者是异步函数。</li>
@@ -141,7 +143,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -174,6 +176,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#加载器-loaders"><span class="toc-number">1.</span> <span class="toc-text">加载器(loaders)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#loader特性"><span class="toc-number">1.1.</span> <span class="toc-text">loader特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解析loader"><span class="toc-number">1.2.</span> <span class="toc-text">解析loader</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用loader"><span class="toc-number">1.3.</span> <span class="toc-text">引用loader</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#插件-plugins"><span class="toc-number">2.</span> <span class="toc-text">插件(plugins)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#解剖"><span class="toc-number">2.1.</span> <span class="toc-text">解剖</span></a></li></ol></li></ol>
+</div>
 
 
   
@@ -246,6 +253,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,7 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>过年期间没更新博客也没去更新theme的新功能，倒是也没有懒惰，只是趁着过年期间算是可以有一小段修整的时间，一边给自己放了个假，一边也完成了自己一直想做的一个小程序的第一版 -&gt; <code>精灵宝可梦dex</code>。<br>  <a id="more"></a><br>  最近刚把这个小程序的第一版功能做完，其实我以前倒是也做过小程序，但只是写一点简单的页面和接口对接而已，这次由自己来独立完成一个小程序，可能要考虑的东西蛮多的，比方说:</p>
+          <p>过年期间没更新博客也没去更新theme的新功能，倒是也没有懒惰，只是趁着过年期间算是可以有一小段修整的时间，一边给自己放了个假，一边也完成了自己一直想做的一个小程序的第一版 -&gt; <code>精灵宝可梦dex</code>。<br>  <a id="more"></a><br>  最近刚把这个小程序的第一版功能做完，其实我以前倒是也做过小程序，但只是写一点简单的页面和接口对接而已，这次由自己来独立完成一个小程序，可能要考虑的东西蛮多的，比方说:</p>
 <ul>
 <li>小程序的加载速度</li>
 <li>如何提升小程序的用户体验等</li>
@@ -128,7 +130,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -154,6 +156,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    
+</div>
 
 
   
@@ -226,6 +233,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

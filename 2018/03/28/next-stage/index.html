@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,7 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>最近比较忙，也没空弄太多，因为开始搭建和架构公司的一个中间层项目(感觉被委以重任蛮开心的)，用的是阿里开源的<a href="https://eggjs.org/" target="_blank" rel="noopener">eggjs</a>  </p>
+          <p>最近比较忙，也没空弄太多，因为开始搭建和架构公司的一个中间层项目(感觉被委以重任蛮开心的)，用的是阿里开源的<a href="https://eggjs.org/" target="_blank" rel="noopener">eggjs</a>  </p>
 <a id="more"></a>
 <p>最近一直再重新温习nodejs一些知识点，以前也就是乱七八糟乱学一通，也没学出个出息来，这次准备看深入浅出nodejs这本书，外加对koa源码进行一个解读，学习一下nodejs框架的一些设计理念。  </p>
 <p>顺便说一下小程序也发布了1.5.1版本，已经有了很多功能: 比方说可以看pokemon的进化关系，特性等，数据是爬完了，但是需要时间一点一点弄，还得再找时间继续完善  </p>
@@ -128,7 +130,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -161,6 +163,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    
+</div>
 
 
   
@@ -233,6 +240,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

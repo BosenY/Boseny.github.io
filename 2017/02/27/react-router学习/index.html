@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,7 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="react-router学习"><a href="#react-router学习" class="headerlink" title="react-router学习"></a>react-router学习</h1><p>关于配置什么的 请自行移至百度，下面就记录一下如何使用react-router</p>
+          <h1 id="react-router学习"><a href="#react-router学习" class="headerlink" title="react-router学习"></a>react-router学习</h1><p>关于配置什么的 请自行移至百度，下面就记录一下如何使用react-router</p>
 <p>有关react-router的内容都是从这里学习和摘抄的：   <a href="http://www.uprogrammer.cn" target="_blank" rel="noopener">react中文文档</a> </p>
 <p>先写一个简单的例子来解释一下如何编写路由配置:<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Router, Route, Link &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br><span class="line"><span class="keyword">const</span> App = React.createClass(&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;App&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">        &lt;ul&gt;</span></span><br><span class="line"><span class="regexp">          &lt;li&gt;&lt;Link to="/</span>about<span class="string">"&gt;About&lt;/Link&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">          &lt;li&gt;&lt;Link to="</span>/inbox<span class="string">"&gt;Inbox&lt;/Link&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;/ul&gt;</span></span><br><span class="line"><span class="string">        &#123;this.props.children&#125;</span></span><br><span class="line"><span class="string">      &lt;/div&gt;</span></span><br><span class="line"><span class="string">    )</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">const About = React.createClass(&#123;</span></span><br><span class="line"><span class="string">  render() &#123;</span></span><br><span class="line"><span class="string">    return &lt;h3&gt;About&lt;/h3&gt;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">const Inbox = React.createClass(&#123;</span></span><br><span class="line"><span class="string">  render() &#123;</span></span><br><span class="line"><span class="string">    return (</span></span><br><span class="line"><span class="string">      &lt;div&gt;</span></span><br><span class="line"><span class="string">        &lt;h2&gt;Inbox&lt;/h2&gt;</span></span><br><span class="line"><span class="string">        &#123;this.props.children || "</span>Welcome to your Inbox<span class="string">"&#125;</span></span><br><span class="line"><span class="string">      &lt;/div&gt;</span></span><br><span class="line"><span class="string">    )</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">const Message = React.createClass(&#123;</span></span><br><span class="line"><span class="string">  render() &#123;</span></span><br><span class="line"><span class="string">    return &lt;h3&gt;Message &#123;this.props.params.id&#125;&lt;/h3&gt;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">React.render((</span></span><br><span class="line"><span class="string">  &lt;Router&gt;</span></span><br><span class="line"><span class="string">    &lt;Route path="</span>/<span class="string">" component=&#123;App&#125;&gt;</span></span><br><span class="line"><span class="string">      &lt;Route path="</span>about<span class="string">" component=&#123;About&#125; /&gt;</span></span><br><span class="line"><span class="string">      &lt;Route path="</span>inbox<span class="string">" component=&#123;Inbox&#125;&gt;</span></span><br><span class="line"><span class="string">        &lt;Route path="</span>messages/:id<span class="string">" component=&#123;Message&#125; /&gt;</span></span><br><span class="line"><span class="string">      &lt;/Route&gt;</span></span><br><span class="line"><span class="string">    &lt;/Route&gt;</span></span><br><span class="line"><span class="string">  &lt;/Router&gt;</span></span><br><span class="line"><span class="string">), document.body)</span></span><br></pre></td></tr></table></figure></p>
 <p>这里，最下面的render就是路由配置的一个具体的格式，其中主路由 <code>&#39;/&#39;</code> 是匹配的 <code>App</code>这个组件<br>紧接着 <code>about</code> 和 <code>inbox</code> 是 <code>App</code> 的子组件 他们显示的位置就是 <code>this.props.children</code>的位置<br>他们会在路由匹配成功后显示在对应的位置上面<br>然后是<code>inbox</code>里面的又一个子路由，这个路由还待了一个参数id，会跟着路由传过来，就是说 我们匹配到<code>/inbox/messages/xxx</code> 的时候 message这个组件就会被渲染出来，而且对应的<code>this.props.params.id</code><br>也就是<code>xxx</code></p>
@@ -142,7 +144,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -175,6 +177,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#react-router学习"><span class="toc-number">1.</span> <span class="toc-text">react-router学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#添加首页"><span class="toc-number">1.1.</span> <span class="toc-text">添加首页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进入和离开的钩子"><span class="toc-number">1.2.</span> <span class="toc-text">进入和离开的钩子</span></a></li></ol></li></ol>
+</div>
 
 
   
@@ -247,6 +254,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

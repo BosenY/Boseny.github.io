@@ -44,7 +44,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -89,7 +89,7 @@
                     col-sm-12
                     col-xs-12">
             
-  <article>
+  <article class="article-container ">
 
   
     
@@ -114,11 +114,11 @@
 
   <div class="article-content">
     <div class="entry">
-      
+         
         <p>最近比较忙，也没空弄太多，因为开始搭建和架构公司的一个中间层项目(感觉被委以重任蛮开心的)，用的是阿里开源的<a href="https://eggjs.org/" target="_blank" rel="noopener">eggjs</a>  </p>
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -156,7 +156,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -181,7 +182,7 @@
 
   <div class="article-content">
     <div class="entry">
-      
+         
         <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
 <p>本文代码浅显易懂，思想深入实用。此属于react进阶用法，如果你还不了解react，建议从文档开始看起。</p>
 </blockquote>
@@ -190,7 +191,7 @@
 <p>A higher-order component is a function that takes a component and returns a new component.<br>
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -228,7 +229,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -253,11 +255,11 @@
 
   <div class="article-content">
     <div class="entry">
-      
+         
         <p>过年期间没更新博客也没去更新theme的新功能，倒是也没有懒惰，只是趁着过年期间算是可以有一小段修整的时间，一边给自己放了个假，一边也完成了自己一直想做的一个小程序的第一版 -&gt; <code>精灵宝可梦dex</code>。<br>
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -288,7 +290,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -313,11 +316,11 @@
 
   <div class="article-content">
     <div class="entry">
-      
+         
         <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>其实不切https也没什么性能上的问题，就是想把chrome上的安全绿锁头显示出来；从另一方面讲，还能减少一些http劫持(这个其实深层次的我也没研究过，包括DNS劫持之类的…)和运营商劫持，切到https后，看上去好像是减少了一些被劫持的几率。<br>
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -348,7 +351,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -374,12 +378,12 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>把Lap的highlight风格做了一次大的调整，改成了自己最喜欢的atom-one-dark，只不过ES6的语法好像暂时没办法高亮，因为hexo内置hl渲染方法渲染出来的dom节点根本没办法对ES6部分写样式。<br>下面的是效果的展示，暂时也算满意了，可能以后还会进行一次调整。</p>
+          <p>把Lap的highlight风格做了一次大的调整，改成了自己最喜欢的atom-one-dark，只不过ES6的语法好像暂时没办法高亮，因为hexo内置hl渲染方法渲染出来的dom节点根本没办法对ES6部分写样式。<br>下面的是效果的展示，暂时也算满意了，可能以后还会进行一次调整。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">$initHighlight</span>(<span class="params">block, cls</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (cls.search(<span class="regexp">/\bno\-highlight\b/</span>) != <span class="number">-1</span>)</span><br><span class="line">      <span class="keyword">return</span> process(block, <span class="literal">true</span>, <span class="number">0x0F</span>) +</span><br><span class="line">             <span class="string">` class="<span class="subst">$&#123;cls&#125;</span>"`</span>;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="comment">/* handle exception */</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span> / <span class="number">2</span>; i &lt; classes.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (checkCondition(classes[i]) === <span class="literal">undefined</span>)</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'undefined'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> sss = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">export</span>  $initHighlight;</span><br></pre></td></tr></table></figure>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">body &#123;width: 500px;&#125;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"application/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="function"><span class="keyword">function</span> <span class="title">$init</span>(<span class="params"></span>) </span>&#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">checked</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">id</span>=<span class="string">'title'</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- here goes the rest of the page --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -403,7 +407,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -429,14 +434,14 @@
   <div class="article-content">
     <div class="entry">
       
-        <h3 id="关于Lap"><a href="#关于Lap" class="headerlink" title="关于Lap"></a>关于Lap</h3><p>这个theme现在还差个人介绍模块和article模块没有进行优化，其他的可能弄完以后暂时先不更新了<br>不过该有的功能和统计的东西肯定是会一点一点全部完成的</p>
+          <h3 id="关于Lap"><a href="#关于Lap" class="headerlink" title="关于Lap"></a>关于Lap</h3><p>这个theme现在还差个人介绍模块和article模块没有进行优化，其他的可能弄完以后暂时先不更新了<br>不过该有的功能和统计的东西肯定是会一点一点全部完成的</p>
 <p>对于disqus，虽然看了一下其他人分享的如何去走代理设置让国内也可以访问，但我觉得这个办法还是不太好，既然无法成为一种更加通用可配置的方案，那就暂时不考虑了，也不是每个人都会去买一个vps进行配置，索性接这样弄: 3s访问不到就提示需要翻墙才可以进行评论。。 我觉得这样的处理方法比较通用吧。</p>
 <h3 id="近期安排"><a href="#近期安排" class="headerlink" title="近期安排"></a>近期安排</h3><p>最近可能要继续开始加班了，毕竟年末，所以写开源和学习的自由时间可能不是很多，但我想起我有一部分文章放在了简书，所以我决定先搬运一波，然后在把自己学Graphql的一些东西稍微写写，最近就是graphql了，别的也没空看了，等年后吧~</p>
 <p>最近一到周末就沉迷pokemon revolution不能自拔，可能要写一篇去安利一发了，毕竟是很多90后乃至80后满满的回忆~（更重要的是能和老外尬英文、PY）</p>
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -474,7 +479,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -499,11 +505,11 @@
 
   <div class="article-content">
     <div class="entry">
-      
+         
         <p>其实一直想用这个写博客的，但是出现过一次问题：<br>  我在win上面提交都是正常的，但是把项目搞到mac上之后提交就出现了bug，研究了半天也没找到完美解决的办法，这才自己去搭建了一个自己的博客。。<br>
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -534,7 +540,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -560,7 +567,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="ng-router"><a href="#ng-router" class="headerlink" title="ng-router"></a>ng-router</h1><p>ng-router可以把angular1变成一个spa应用，在页面上的原理就是渲染了不同的controller来实现不同的路由，具体实例代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>AngularJS 路由实例 - 菜鸟教程<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>=<span class="string">'routingDemoApp'</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>AngularJS 路由应用<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/"</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/computers"</span>&gt;</span>电脑<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/printers"</span>&gt;</span>打印机<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/blabla"</span>&gt;</span>其他<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-view</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">            angular.module(<span class="string">'routingDemoApp'</span>,[<span class="string">'ngRoute'</span>])</span></span><br><span class="line"><span class="javascript">            .config([<span class="string">'$routeProvider'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$routeProvider</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">                $routeProvider</span></span><br><span class="line"><span class="javascript">                .when(<span class="string">'/'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是首页页面'</span>&#125;)</span></span><br><span class="line"><span class="javascript">                .when(<span class="string">'/computers'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是电脑分类页面'</span>&#125;)</span></span><br><span class="line"><span class="javascript">                .when(<span class="string">'/printers'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是打印机页面'</span>&#125;)</span></span><br><span class="line"><span class="javascript">                .otherwise(&#123;<span class="attr">redirectTo</span>:<span class="string">'/'</span>&#125;);</span></span><br><span class="line"><span class="undefined">            &#125;]);</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+          <h1 id="ng-router"><a href="#ng-router" class="headerlink" title="ng-router"></a>ng-router</h1><p>ng-router可以把angular1变成一个spa应用，在页面上的原理就是渲染了不同的controller来实现不同的路由，具体实例代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>AngularJS 路由实例 - 菜鸟教程<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>=<span class="string">'routingDemoApp'</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>AngularJS 路由应用<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/"</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/computers"</span>&gt;</span>电脑<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/printers"</span>&gt;</span>打印机<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/blabla"</span>&gt;</span>其他<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-view</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">            angular.module(<span class="string">'routingDemoApp'</span>,[<span class="string">'ngRoute'</span>])</span></span><br><span class="line"><span class="javascript">            .config([<span class="string">'$routeProvider'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$routeProvider</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">                $routeProvider</span></span><br><span class="line"><span class="javascript">                .when(<span class="string">'/'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是首页页面'</span>&#125;)</span></span><br><span class="line"><span class="javascript">                .when(<span class="string">'/computers'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是电脑分类页面'</span>&#125;)</span></span><br><span class="line"><span class="javascript">                .when(<span class="string">'/printers'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是打印机页面'</span>&#125;)</span></span><br><span class="line"><span class="javascript">                .otherwise(&#123;<span class="attr">redirectTo</span>:<span class="string">'/'</span>&#125;);</span></span><br><span class="line"><span class="undefined">            &#125;]);</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>首先，载入了实现路由的js文件：angular-route.js； 然后，包含了ngRoute模块作为主应用模块的依赖模块。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.module(<span class="string">'routingDemoApp'</span>,[<span class="string">'ngRoute'</span>])</span><br></pre></td></tr></table></figure></p>
 <p>使用ngView指令<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-view&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
 <p>该div内html会根据路由的变化来变化。</p>
@@ -569,7 +576,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -607,7 +614,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -633,7 +641,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="ngApi"><a href="#ngApi" class="headerlink" title="ngApi"></a>ngApi</h1><p>angular JS全局API用于执行常见任务的JS函数集合，如：</p>
+          <h1 id="ngApi"><a href="#ngApi" class="headerlink" title="ngApi"></a>ngApi</h1><p>angular JS全局API用于执行常见任务的JS函数集合，如：</p>
 <ul>
 <li>比较对象</li>
 <li>迭代对象</li>
@@ -649,7 +657,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -687,7 +695,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -713,7 +722,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="ng过滤器"><a href="#ng过滤器" class="headerlink" title="ng过滤器"></a>ng过滤器</h1><p>所有的例子会写在这里：<a src="http://jsbin.com/vigiciresi/edit?html,js,output">例子</a></p>
+          <h1 id="ng过滤器"><a href="#ng过滤器" class="headerlink" title="ng过滤器"></a>ng过滤器</h1><p>所有的例子会写在这里：<a src="http://jsbin.com/vigiciresi/edit?html,js,output">例子</a></p>
 <p>首先学习一下ng1的过滤器的一个基本写法：</p>
 <p>一个过滤器，不带参数的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;expression | filter&#125;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>一个过滤器，带参数的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;expression | filter:<span class="built_in">arguments</span>&#125;&#125;</span><br></pre></td></tr></table></figure></p>
@@ -766,7 +775,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -800,6 +809,7 @@
     
   
 </article>
+
 
 
 
@@ -920,5 +930,5 @@ inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
 <script src="/js/index.js"></script>
 <script src="/js/search.js"></script>
 
-<script async>'use strict';'serviceWorker'in navigator&&navigator.serviceWorker.register('service-worker.js').then(function(a){a.onupdatefound=function(){var b=a.installing;b.onstatechange=function(){switch(b.state){case'installed':navigator.serviceWorker.controller?console.log('New or updated content is available.'):console.log('Content is now available offline!');break;case'redundant':console.error('The installing service worker became redundant.');}}}}).catch(function(a){console.error('Error during service worker registration:',a)});
+<script>'use strict';'serviceWorker'in navigator&&navigator.serviceWorker.register('service-worker.js').then(function(a){a.onupdatefound=function(){var b=a.installing;b.onstatechange=function(){switch(b.state){case'installed':navigator.serviceWorker.controller?console.log('New or updated content is available.'):console.log('Content is now available offline!');break;case'redundant':console.error('The installing service worker became redundant.');}}}}).catch(function(a){console.error('Error during service worker registration:',a)});
 </script></body></html>

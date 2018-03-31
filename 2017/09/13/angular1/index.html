@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,12 +121,12 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="ng1学习"><a href="#ng1学习" class="headerlink" title="ng1学习"></a>ng1学习</h1><p>开始搞新项目，采用hybird开发，web层用ng1搞，呵呵。这下不得不搞ng了。。。 这样下来也算是前端三大框架都玩了一遍（不过也就vue算是熟练）</p>
+          <h1 id="ng1学习"><a href="#ng1学习" class="headerlink" title="ng1学习"></a>ng1学习</h1><p>开始搞新项目，采用hybird开发，web层用ng1搞，呵呵。这下不得不搞ng了。。。 这样下来也算是前端三大框架都玩了一遍（不过也就vue算是熟练）</p>
 <p>先挖个坑，慢慢开始重新写（前面把日志都写到有道云笔记了。准备一点一点搬过来重构博客了）</p>
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -157,6 +159,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ng1学习"><span class="toc-number">1.</span> <span class="toc-text">ng1学习</span></a></li></ol>
+</div>
 
 
   
@@ -229,6 +236,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

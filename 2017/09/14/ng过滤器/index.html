@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,7 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="ng过滤器"><a href="#ng过滤器" class="headerlink" title="ng过滤器"></a>ng过滤器</h1><p>所有的例子会写在这里：<a src="http://jsbin.com/vigiciresi/edit?html,js,output">例子</a></p>
+          <h1 id="ng过滤器"><a href="#ng过滤器" class="headerlink" title="ng过滤器"></a>ng过滤器</h1><p>所有的例子会写在这里：<a src="http://jsbin.com/vigiciresi/edit?html,js,output">例子</a></p>
 <p>首先学习一下ng1的过滤器的一个基本写法：</p>
 <p>一个过滤器，不带参数的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;expression | filter&#125;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>一个过滤器，带参数的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;expression | filter:<span class="built_in">arguments</span>&#125;&#125;</span><br></pre></td></tr></table></figure></p>
@@ -172,7 +174,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -205,6 +207,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ng过滤器"><span class="toc-number">1.</span> <span class="toc-text">ng过滤器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-currency"><span class="toc-number">1.1.</span> <span class="toc-text">1. currency</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-date"><span class="toc-number">1.2.</span> <span class="toc-text">2. date</span></a></li></ol></li></ol>
+</div>
 
 
   
@@ -277,6 +284,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

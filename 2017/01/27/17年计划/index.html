@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,7 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="16年成果"><a href="#16年成果" class="headerlink" title="16年成果"></a>16年成果</h1><p>今年总的来说已经达到了自己的目标，目前已经从一个只会一点前端发展到了前后端已经可以独立架构。<br>目前所学会的技术如下：</p>
+          <h1 id="16年成果"><a href="#16年成果" class="headerlink" title="16年成果"></a>16年成果</h1><p>今年总的来说已经达到了自己的目标，目前已经从一个只会一点前端发展到了前后端已经可以独立架构。<br>目前所学会的技术如下：</p>
 <ul>
 <li>前端： vue、react(尚未熟练)、react native、weex、各种库(vuex、vue-router、fetch、axios、lodash、d3)…</li>
 <li>后端： express、koa2、mongodb…</li>
@@ -128,7 +130,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -161,6 +163,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#16年成果"><span class="toc-number">1.</span> <span class="toc-text">16年成果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#17年计划"><span class="toc-number">2.</span> <span class="toc-text">17年计划</span></a></li></ol>
+</div>
 
 
   
@@ -233,6 +240,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

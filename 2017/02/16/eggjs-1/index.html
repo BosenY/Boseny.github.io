@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,7 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="eggjs"><a href="#eggjs" class="headerlink" title="eggjs"></a>eggjs</h1><h2 id="什么是eggjs"><a href="#什么是eggjs" class="headerlink" title="什么是eggjs"></a>什么是eggjs</h2><p>eggjs 是一个企业级的koa框架，相对于普通的koa，他有以下的一些优势：  </p>
+          <h1 id="eggjs"><a href="#eggjs" class="headerlink" title="eggjs"></a>eggjs</h1><h2 id="什么是eggjs"><a href="#什么是eggjs" class="headerlink" title="什么是eggjs"></a>什么是eggjs</h2><p>eggjs 是一个企业级的koa框架，相对于普通的koa，他有以下的一些优势：  </p>
 <ul>
 <li>深度框架定制</li>
 <li>高度可扩展的插件机制</li>
@@ -132,7 +134,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -165,6 +167,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#eggjs"><span class="toc-number">1.</span> <span class="toc-text">eggjs</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是eggjs"><span class="toc-number">1.1.</span> <span class="toc-text">什么是eggjs</span></a></li></ol></li></ol>
+</div>
 
 
   
@@ -237,6 +244,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,7 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="entry入口起点"><a href="#entry入口起点" class="headerlink" title="entry入口起点"></a>entry入口起点</h1><h2 id="单入口写法"><a href="#单入口写法" class="headerlink" title="单入口写法"></a>单入口写法</h2><p>用法： <strong>entry： string|Array(string)</strong></p>
+          <h1 id="entry入口起点"><a href="#entry入口起点" class="headerlink" title="entry入口起点"></a>entry入口起点</h1><h2 id="单入口写法"><a href="#单入口写法" class="headerlink" title="单入口写法"></a>单入口写法</h2><p>用法： <strong>entry： string|Array(string)</strong></p>
 <p>webpack.config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure></p>
 <p>entry 属性的单入口语法：</p>
 <p>webpack.config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry:&#123;</span><br><span class="line">      main:<span class="string">'./path/to/my/entry/file.js'</span></span><br><span class="line">  &#125; </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure></p>
@@ -144,7 +146,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -177,6 +179,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#entry入口起点"><span class="toc-number">1.</span> <span class="toc-text">entry入口起点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#单入口写法"><span class="toc-number">1.1.</span> <span class="toc-text">单入口写法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象语法"><span class="toc-number">1.2.</span> <span class="toc-text">对象语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见场景"><span class="toc-number">1.3.</span> <span class="toc-text">常见场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#入口分离-应用-app-和-公共库-vendor"><span class="toc-number">1.3.1.</span> <span class="toc-text">入口分离 应用(app) 和 公共库(vendor)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多页应用"><span class="toc-number">1.3.2.</span> <span class="toc-text">多页应用</span></a></li></ol></li></ol></li></ol>
+</div>
 
 
   
@@ -249,6 +256,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

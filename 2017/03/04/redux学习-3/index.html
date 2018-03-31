@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,7 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="redux学习-三"><a href="#redux学习-三" class="headerlink" title="redux学习(三)"></a>redux学习(三)</h1><p>基本快把react-redux都看完了，还差最后的几部。</p>
+          <h1 id="redux学习-三"><a href="#redux学习-三" class="headerlink" title="redux学习(三)"></a>redux学习(三)</h1><p>基本快把react-redux都看完了，还差最后的几部。</p>
 <h2 id="lt-Provider-gt-组件"><a href="#lt-Provider-gt-组件" class="headerlink" title="&lt;Provider&gt;组件"></a><code>&lt;Provider&gt;</code>组件</h2><p>connect方法生成容器组件后，需要让容器组件拿到state对象，才能生成ui组件的参数</p>
 <p>一种解决方法就是将state对象作为参数，传入容器组件。但是，这样做比较麻烦，尤其是容器组件可能在很深的层级，一级<br>级将state传下去就很麻烦</p>
 <p>使用了provider组件后，可以让容器组件拿到state<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"><span class="keyword">import</span> todoApp <span class="keyword">from</span> <span class="string">'./reducers'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./components/App'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> store = createStore(todoApp);</span><br><span class="line"></span><br><span class="line">render(</span><br><span class="line">  &lt;Provider store=&#123;store&#125;&gt;</span><br><span class="line">    &lt;App /&gt;</span><br><span class="line">  &lt;<span class="regexp">/Provider&gt;,</span></span><br><span class="line"><span class="regexp">  document.getElementById('root')</span></span><br><span class="line"><span class="regexp">)</span></span><br></pre></td></tr></table></figure></p>
@@ -127,7 +129,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -160,6 +162,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#redux学习-三"><span class="toc-number">1.</span> <span class="toc-text">redux学习(三)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#lt-Provider-gt-组件"><span class="toc-number">1.1.</span> <span class="toc-text">&lt;Provider&gt;组件</span></a></li></ol></li></ol>
+</div>
 
 
   
@@ -232,6 +239,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

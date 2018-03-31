@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,7 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="vue组件开发-轮播图"><a href="#vue组件开发-轮播图" class="headerlink" title="vue组件开发-轮播图"></a>vue组件开发-轮播图</h1><p>今天自己写了一个轮播图的组件，在这里记录一下开发的具体流程</p>
+          <h1 id="vue组件开发-轮播图"><a href="#vue组件开发-轮播图" class="headerlink" title="vue组件开发-轮播图"></a>vue组件开发-轮播图</h1><p>今天自己写了一个轮播图的组件，在这里记录一下开发的具体流程</p>
 <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>首先轮播图的一个关键就是定位和布局，如下图：<br><img src="http://p1.bpimg.com/567571/bcdda05709b61bee.png" alt=""></p>
 <p>这里就是分几个部分：</p>
 <ul>
@@ -134,7 +136,7 @@
 <h2 id="逻辑和功能的实现"><a href="#逻辑和功能的实现" class="headerlink" title="逻辑和功能的实现"></a>逻辑和功能的实现</h2>
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -167,6 +169,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vue组件开发-轮播图"><span class="toc-number">1.</span> <span class="toc-text">vue组件开发-轮播图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#开始"><span class="toc-number">1.1.</span> <span class="toc-text">开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#逻辑和功能的实现"><span class="toc-number">1.2.</span> <span class="toc-text">逻辑和功能的实现</span></a></li></ol></li></ol>
+</div>
 
 
   
@@ -239,6 +246,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

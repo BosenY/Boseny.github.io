@@ -44,7 +44,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -89,7 +89,7 @@
                     col-sm-12
                     col-xs-12">
             
-  <article>
+  <article class="article-container ">
 
   
     
@@ -115,12 +115,12 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="ng1学习"><a href="#ng1学习" class="headerlink" title="ng1学习"></a>ng1学习</h1><p>开始搞新项目，采用hybird开发，web层用ng1搞，呵呵。这下不得不搞ng了。。。 这样下来也算是前端三大框架都玩了一遍（不过也就vue算是熟练）</p>
+          <h1 id="ng1学习"><a href="#ng1学习" class="headerlink" title="ng1学习"></a>ng1学习</h1><p>开始搞新项目，采用hybird开发，web层用ng1搞，呵呵。这下不得不搞ng了。。。 这样下来也算是前端三大框架都玩了一遍（不过也就vue算是熟练）</p>
 <p>先挖个坑，慢慢开始重新写（前面把日志都写到有道云笔记了。准备一点一点搬过来重构博客了）</p>
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -158,7 +158,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -184,20 +185,20 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="有关es7-function-bind-syntax的东西"><a href="#有关es7-function-bind-syntax的东西" class="headerlink" title="有关es7 function bind syntax的东西"></a>有关es7 function bind syntax的东西</h1><p>因为群里有大佬以前提到过，但是因为自己太菜了根本无法理解，所以就去学习了一下。。</p>
+          <h1 id="有关es7-function-bind-syntax的东西"><a href="#有关es7-function-bind-syntax的东西" class="headerlink" title="有关es7 function bind syntax的东西"></a>有关es7 function bind syntax的东西</h1><p>因为群里有大佬以前提到过，但是因为自己太菜了根本无法理解，所以就去学习了一下。。</p>
 <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>所谓的function bind syntax ，其实就是一个绑定的语法糖，就和箭头函数是类似的（箭头函数是声明函数时绑定this的语法糖，这里就有个坑，用箭头函数声明的方法就不能再使用::去绑定了，不会起作用。。）</p>
 <h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>简单来说<strong>::</strong>有两种作用：</p>
 <ol>
 <li>当::出现在一个对象名的签名，且对象名后面紧跟着一个它的方法名的时候，作用就是把这个对象绑定为这个方法的this</li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    method() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">::obj.method</span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line">obj.method.bind(obj)</span><br></pre></td></tr></table></figure>
-<ol>
+<ol start="2">
 <li>当::出现在对象和方法名之间的时候，将这个对象绑定为这个方法的this,当然，因为这个绑定后还是一个函数，所以也可以直接调用</li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    foo: <span class="string">'bar'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">method</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.foo)</span><br><span class="line">&#125;</span><br><span class="line">obj::method()</span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line">method.call(obj)()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">obj::method</span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line">method.bind(obj)</span><br></pre></td></tr></table></figure>
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -235,7 +236,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -260,12 +262,12 @@
 
   <div class="article-content">
     <div class="entry">
-      
+         
         <h2 id="初学Rxjs"><a href="#初学Rxjs" class="headerlink" title="初学Rxjs"></a>初学Rxjs</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>Rxjs 是一个通过使用可观察序列来构建异步和基于事件的程oberservable序的库，可以吧它当成一个针对于事件的lodash</p>
 <p>Rxjs就是JavaScript的响应式扩展，响应式的思路就是把随时间不断变化的数据、状态、事件等等转化成可被观察的序列(observable sequence),然后订阅序列中那些observable对象的变化，一旦变化，就会执行事先安排好的各种转换和操作<br>
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -289,7 +291,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -315,11 +318,11 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="redux-saga"><a href="#redux-saga" class="headerlink" title="redux-saga"></a>redux-saga</h1><p>考虑到后期项目可能需要去异步对redux进行一些操作，看了react的生态圈，发现这个中间件比较火，就想学习一下，在这里做个简单的记录</p>
+          <h1 id="redux-saga"><a href="#redux-saga" class="headerlink" title="redux-saga"></a>redux-saga</h1><p>考虑到后期项目可能需要去异步对redux进行一些操作，看了react的生态圈，发现这个中间件比较火，就想学习一下，在这里做个简单的记录</p>
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -357,7 +360,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -383,14 +387,56 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="echarts-api学习"><a href="#echarts-api学习" class="headerlink" title="echarts api学习"></a>echarts api学习</h1><p>因为暂时项目当中使用的是echarts-for-react插件，所以暂时先不考虑了解echarts原生对象的一些方法，<br>先从配置项开始学习。</p>
+          <h1 id="echarts-api学习"><a href="#echarts-api学习" class="headerlink" title="echarts api学习"></a>echarts api学习</h1><p>因为暂时项目当中使用的是echarts-for-react插件，所以暂时先不考虑了解echarts原生对象的一些方法，<br>先从配置项开始学习。</p>
 <p>首先是初始化一个echarts对象，然后这个对象去调用echarts的setOption方法，配置展示的信息。</p>
 <p>setOption用来写echarts图表的配置信息</p>
-<h3 id="title"><a href="#title" class="headerlink" title="title"></a>title</h3><p>标题组件，包含主标题和副标题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">title: &#123;</span><br><span class="line">    show: <span class="comment">//是否显示标题组件 默认是true</span></span><br><span class="line">    text:<span class="comment">//主标题文本</span></span><br><span class="line">    link: <span class="comment">//主标题的超文本链接，也可以用在react的路由跳转</span></span><br><span class="line">    target: <span class="comment">//指定打开超链接的方式 默认是新窗口</span></span><br><span class="line">    textStyle: &#123;</span><br><span class="line">        color: <span class="comment">// 主标题颜色</span></span><br><span class="line">        fontWeight: <span class="comment">//主标题文字字体粗细</span></span><br><span class="line">        fontFamily: <span class="comment">// 主标题文字字体</span></span><br><span class="line">        fontSize: <span class="comment">//主标题文字字体大小</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    textAligin: <span class="comment">//标题文本水平对齐方式</span></span><br><span class="line">    textBaseline: <span class="comment">//标题文本垂直对齐方式</span></span><br><span class="line">    subtext: <span class="comment">//副标题文本  副标题也有主标题同样的配置，这里就不记录了</span></span><br><span class="line">    sublink: <span class="comment">//富文本超链接</span></span><br><span class="line">    </span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"><span class="comment">//api太多啦，也不记载这么多了，具体的自己去官网看吧，自己就记录一些第一层的配置信息</span></span><br><span class="line"></span><br><span class="line">legend: <span class="comment">//图例组件，展现了不同系列的标记(symbol)，颜色和名字。可以通过点击图例控制哪些系列不显示</span></span><br><span class="line"></span><br><span class="line">grid: <span class="comment">//直角坐标系内绘图网格，单个grid内最多可以放置上下两个x轴，左右两个y轴。可以在网格上绘制折线图、柱状图、散点图(气泡图)，在echarts3当中可以存在任意多个grid组件</span></span><br><span class="line"></span><br><span class="line">xAxis: <span class="comment">// 直角坐标系grid中的x轴，一般情况下grid组件最多只能放左右两个x轴，多于两个x轴需要通过配置offset防止同个位置多个x轴的重叠</span></span><br><span class="line"></span><br><span class="line">yAxis: <span class="comment">//直角坐标系 grid 中的 y 轴，一般情况下单个 grid 组件最多只能放左右两个 y 轴，多于两个 y 轴需要通过配置 offset 属性防止同个位置多个 Y 轴的重叠。</span></span><br><span class="line"></span><br><span class="line">polar: <span class="comment">// 极坐标系，可以用于散点图和折线图，每个极坐标拥有一个角度轴和一个半径轴</span></span><br><span class="line"></span><br><span class="line">radiusAxis: <span class="comment">//极坐标系的径向轴</span></span><br><span class="line"></span><br><span class="line">angleAxis:  <span class="comment">//极坐标系的角度轴</span></span><br><span class="line"></span><br><span class="line">radar : <span class="comment">// 雷达坐标系组件</span></span><br><span class="line"></span><br><span class="line">dataZoom: <span class="comment">// 用于区域缩放，从而能自由关注细节的数据信息，或者概览数据整体，或者去除离群点的影响</span></span><br><span class="line"></span><br><span class="line">tooltip: <span class="comment">//提示框组件</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="title"><a href="#title" class="headerlink" title="title"></a>title</h3><p>标题组件，包含主标题和副标题</p>
+<pre><code class="javascript">title: {
+    show: //是否显示标题组件 默认是true
+    text://主标题文本
+    link: //主标题的超文本链接，也可以用在react的路由跳转
+    target: //指定打开超链接的方式 默认是新窗口
+    textStyle: {
+        color: // 主标题颜色
+        fontWeight: //主标题文字字体粗细
+        fontFamily: // 主标题文字字体
+        fontSize: //主标题文字字体大小
+
+    }
+    textAligin: //标题文本水平对齐方式
+    textBaseline: //标题文本垂直对齐方式
+    subtext: //副标题文本  副标题也有主标题同样的配置，这里就不记录了
+    sublink: //富文本超链接
+
+},
+
+//api太多啦，也不记载这么多了，具体的自己去官网看吧，自己就记录一些第一层的配置信息
+
+legend: //图例组件，展现了不同系列的标记(symbol)，颜色和名字。可以通过点击图例控制哪些系列不显示
+
+grid: //直角坐标系内绘图网格，单个grid内最多可以放置上下两个x轴，左右两个y轴。可以在网格上绘制折线图、柱状图、散点图(气泡图)，在echarts3当中可以存在任意多个grid组件
+
+xAxis: // 直角坐标系grid中的x轴，一般情况下grid组件最多只能放左右两个x轴，多于两个x轴需要通过配置offset防止同个位置多个x轴的重叠
+
+yAxis: //直角坐标系 grid 中的 y 轴，一般情况下单个 grid 组件最多只能放左右两个 y 轴，多于两个 y 轴需要通过配置 offset 属性防止同个位置多个 Y 轴的重叠。
+
+polar: // 极坐标系，可以用于散点图和折线图，每个极坐标拥有一个角度轴和一个半径轴
+
+radiusAxis: //极坐标系的径向轴
+
+angleAxis:  //极坐标系的角度轴
+
+radar : // 雷达坐标系组件
+
+dataZoom: // 用于区域缩放，从而能自由关注细节的数据信息，或者概览数据整体，或者去除离群点的影响
+
+tooltip: //提示框组件
+
+</code></pre>
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -428,7 +474,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -453,14 +500,14 @@
 
   <div class="article-content">
     <div class="entry">
-      
+         
         <h1 id="redux学习-三"><a href="#redux学习-三" class="headerlink" title="redux学习(三)"></a>redux学习(三)</h1><p>基本快把react-redux都看完了，还差最后的几部。</p>
 <h2 id="lt-Provider-gt-组件"><a href="#lt-Provider-gt-组件" class="headerlink" title="&lt;Provider&gt;组件"></a><code>&lt;Provider&gt;</code>组件</h2><p>connect方法生成容器组件后，需要让容器组件拿到state对象，才能生成ui组件的参数</p>
 <p>一种解决方法就是将state对象作为参数，传入容器组件。但是，这样做比较麻烦，尤其是容器组件可能在很深的层级，一级<br>级将state传下去就很麻烦</p>
 <p>使用了provider组件后，可以让容器组件拿到state<br>
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -498,7 +545,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -523,7 +571,7 @@
 
   <div class="article-content">
     <div class="entry">
-      
+         
         <h1 id="react-redux学习"><a href="#react-redux学习" class="headerlink" title="react-redux学习"></a>react-redux学习</h1><p>react-redux是一个专门用于在react项目中使用redux的一个库，<br>而且还有一定的规范和写法的推荐。还有额外的api需要去学习。</p>
 <h2 id="组件规范"><a href="#组件规范" class="headerlink" title="组件规范"></a>组件规范</h2><h3 id="ui组件"><a href="#ui组件" class="headerlink" title="ui组件"></a>ui组件</h3><p>首先react-redux将所有的组件分成了两大类：ui组件和容器组件</p>
 <ul>
@@ -536,7 +584,7 @@
 <li>使用redux
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -574,7 +622,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -599,14 +648,14 @@
 
   <div class="article-content">
     <div class="entry">
-      
+         
         <h1 id="Redux学习"><a href="#Redux学习" class="headerlink" title="Redux学习"></a>Redux学习</h1><p>因为我最先掌握的是vuex，反过头来去看学习成本相对较高的redux，可能效果会好一点。</p>
 <p>redux是JavaScript状态容器，提供了可预测化的状态管理</p>
 <p>redux由flux演变而来，但受elm的启发，避开了flux的复杂性</p>
 <h2 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h2><p>应用当中的所有<code>state</code>都是以一个对象树的形式存储在一个一个单一的<code>store</code>当中，唯一改变<code>state</code>的办法就是触发<code>action</code>，一个描述发生什么的对象，为了描述<code>action</code>如何改变<code>state</code>树，你需要去编写<code>reducers</code><br>
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -644,7 +693,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -670,7 +720,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="react-router学习-2"><a href="#react-router学习-2" class="headerlink" title="react router学习(2)"></a>react router学习(2)</h1><h2 id="路由匹配原理"><a href="#路由匹配原理" class="headerlink" title="路由匹配原理"></a>路由匹配原理</h2><p>路由有三个属性来决定是否匹配一个url</p>
+          <h1 id="react-router学习-2"><a href="#react-router学习-2" class="headerlink" title="react router学习(2)"></a>react router学习(2)</h1><h2 id="路由匹配原理"><a href="#路由匹配原理" class="headerlink" title="路由匹配原理"></a>路由匹配原理</h2><p>路由有三个属性来决定是否匹配一个url</p>
 <ol>
 <li>嵌套关系</li>
 <li>它的路径语法</li>
@@ -711,7 +761,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -749,7 +799,8 @@
 
 
 
-  <article>
+
+  <article class="article-container ">
 
   
     
@@ -774,13 +825,13 @@
 
   <div class="article-content">
     <div class="entry">
-      
+         
         <h1 id="react-router学习"><a href="#react-router学习" class="headerlink" title="react-router学习"></a>react-router学习</h1><p>关于配置什么的 请自行移至百度，下面就记录一下如何使用react-router</p>
 <p>有关react-router的内容都是从这里学习和摘抄的：   <a href="http://www.uprogrammer.cn" target="_blank" rel="noopener">react中文文档</a> </p>
 <p>先写一个简单的例子来解释一下如何编写路由配置:<br>
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -814,6 +865,7 @@
     
   
 </article>
+
 
 
 

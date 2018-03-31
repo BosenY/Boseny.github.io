@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,7 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h2 id="初学Rxjs"><a href="#初学Rxjs" class="headerlink" title="初学Rxjs"></a>初学Rxjs</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>Rxjs 是一个通过使用可观察序列来构建异步和基于事件的程oberservable序的库，可以吧它当成一个针对于事件的lodash</p>
+          <h2 id="初学Rxjs"><a href="#初学Rxjs" class="headerlink" title="初学Rxjs"></a>初学Rxjs</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>Rxjs 是一个通过使用可观察序列来构建异步和基于事件的程oberservable序的库，可以吧它当成一个针对于事件的lodash</p>
 <p>Rxjs就是JavaScript的响应式扩展，响应式的思路就是把随时间不断变化的数据、状态、事件等等转化成可被观察的序列(observable sequence),然后订阅序列中那些observable对象的变化，一旦变化，就会执行事先安排好的各种转换和操作<br><a id="more"></a></p>
 <h3 id="四个生命周期"><a href="#四个生命周期" class="headerlink" title="四个生命周期"></a>四个生命周期</h3><ul>
 <li>创建：创建一个observable，返回一个被观察的序列源实例</li>
@@ -178,7 +180,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -197,6 +199,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#初学Rxjs"><span class="toc-number">1.</span> <span class="toc-text">初学Rxjs</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念"><span class="toc-number">1.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四个生命周期"><span class="toc-number">1.2.</span> <span class="toc-text">四个生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#剖析可观察对象"><span class="toc-number">1.3.</span> <span class="toc-text">剖析可观察对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#核心的可观察对象的概念"><span class="toc-number">2.</span> <span class="toc-text">核心的可观察对象的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-Observables"><span class="toc-number">2.1.</span> <span class="toc-text">Creating Observables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Subscribing-Obserables"><span class="toc-number">2.2.</span> <span class="toc-text">Subscribing Obserables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Executing-the-Observable"><span class="toc-number">2.3.</span> <span class="toc-text">Executing the Observable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Disposing-Observables"><span class="toc-number">2.4.</span> <span class="toc-text">Disposing Observables</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#observer观察者"><span class="toc-number">3.</span> <span class="toc-text">observer观察者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Subject主题"><span class="toc-number">4.</span> <span class="toc-text">Subject主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多播的可观察对象"><span class="toc-number">4.1.</span> <span class="toc-text">多播的可观察对象</span></a></li></ol></li></ol>
+</div>
 
 
   
@@ -269,6 +276,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

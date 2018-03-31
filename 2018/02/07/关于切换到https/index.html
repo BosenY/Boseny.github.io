@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,7 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>其实不切https也没什么性能上的问题，就是想把chrome上的安全绿锁头显示出来；从另一方面讲，还能减少一些http劫持(这个其实深层次的我也没研究过，包括DNS劫持之类的…)和运营商劫持，切到https后，看上去好像是减少了一些被劫持的几率。<br><a id="more"></a></p>
+          <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>其实不切https也没什么性能上的问题，就是想把chrome上的安全绿锁头显示出来；从另一方面讲，还能减少一些http劫持(这个其实深层次的我也没研究过，包括DNS劫持之类的…)和运营商劫持，切到https后，看上去好像是减少了一些被劫持的几率。<br><a id="more"></a></p>
 <h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><p>因为是静态资源，也不想买国内的服务器(有国外的vps了)，所以就用github page，至于简单的如何配置hexo blog这里就不陈述了，反正百度一大把。</p>
 <p>因为github page不能上传ssl证书，所以就用CDN实现反向代理，原理基本上就是利用CDN服务器反向代理到github page 因为CDN服务器是提供https服务的，所以最终自己的域名也会变成https。</p>
 <p>这里我用的是<a href="https://www.cloudflare.com/" target="_blank" rel="noopener">CloudFlare</a>：<br><img src="http://owgraa3f3.bkt.clouddn.com/18-2-7/72109306.jpg" alt=""></p>
@@ -135,7 +137,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -161,6 +163,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#起因"><span class="toc-number">1.</span> <span class="toc-text">起因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体操作"><span class="toc-number">2.</span> <span class="toc-text">具体操作</span></a></li></ol>
+</div>
 
 
   
@@ -233,6 +240,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,7 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="react-redux学习"><a href="#react-redux学习" class="headerlink" title="react-redux学习"></a>react-redux学习</h1><p>react-redux是一个专门用于在react项目中使用redux的一个库，<br>而且还有一定的规范和写法的推荐。还有额外的api需要去学习。</p>
+          <h1 id="react-redux学习"><a href="#react-redux学习" class="headerlink" title="react-redux学习"></a>react-redux学习</h1><p>react-redux是一个专门用于在react项目中使用redux的一个库，<br>而且还有一定的规范和写法的推荐。还有额外的api需要去学习。</p>
 <h2 id="组件规范"><a href="#组件规范" class="headerlink" title="组件规范"></a>组件规范</h2><h3 id="ui组件"><a href="#ui组件" class="headerlink" title="ui组件"></a>ui组件</h3><p>首先react-redux将所有的组件分成了两大类：ui组件和容器组件</p>
 <ul>
 <li>UI组件只负责样式和ui</li>
@@ -154,7 +156,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -187,6 +189,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#react-redux学习"><span class="toc-number">1.</span> <span class="toc-text">react-redux学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#组件规范"><span class="toc-number">1.1.</span> <span class="toc-text">组件规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ui组件"><span class="toc-number">1.1.1.</span> <span class="toc-text">ui组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#容器组件"><span class="toc-number">1.1.2.</span> <span class="toc-text">容器组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#connect"><span class="toc-number">1.1.3.</span> <span class="toc-text">connect()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mapStateToProps"><span class="toc-number">1.1.4.</span> <span class="toc-text">mapStateToProps()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mapDispatchToProps"><span class="toc-number">1.1.5.</span> <span class="toc-text">mapDispatchToProps()</span></a></li></ol></li></ol></li></ol>
+</div>
 
 
   
@@ -259,6 +266,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

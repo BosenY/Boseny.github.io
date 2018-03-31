@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,7 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="ngApi"><a href="#ngApi" class="headerlink" title="ngApi"></a>ngApi</h1><p>angular JS全局API用于执行常见任务的JS函数集合，如：</p>
+          <h1 id="ngApi"><a href="#ngApi" class="headerlink" title="ngApi"></a>ngApi</h1><p>angular JS全局API用于执行常见任务的JS函数集合，如：</p>
 <ul>
 <li>比较对象</li>
 <li>迭代对象</li>
@@ -135,7 +137,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -168,6 +170,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ngApi"><span class="toc-number">1.</span> <span class="toc-text">ngApi</span></a></li></ol>
+</div>
 
 
   
@@ -240,6 +247,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

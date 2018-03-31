@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,7 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="Redux学习"><a href="#Redux学习" class="headerlink" title="Redux学习"></a>Redux学习</h1><p>因为我最先掌握的是vuex，反过头来去看学习成本相对较高的redux，可能效果会好一点。</p>
+          <h1 id="Redux学习"><a href="#Redux学习" class="headerlink" title="Redux学习"></a>Redux学习</h1><p>因为我最先掌握的是vuex，反过头来去看学习成本相对较高的redux，可能效果会好一点。</p>
 <p>redux是JavaScript状态容器，提供了可预测化的状态管理</p>
 <p>redux由flux演变而来，但受elm的启发，避开了flux的复杂性</p>
 <h2 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h2><p>应用当中的所有<code>state</code>都是以一个对象树的形式存储在一个一个单一的<code>store</code>当中，唯一改变<code>state</code>的办法就是触发<code>action</code>，一个描述发生什么的对象，为了描述<code>action</code>如何改变<code>state</code>树，你需要去编写<code>reducers</code><br><a id="more"></a></p>
@@ -140,7 +142,7 @@
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -173,6 +175,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Redux学习"><span class="toc-number">1.</span> <span class="toc-text">Redux学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#核心"><span class="toc-number">1.1.</span> <span class="toc-text">核心</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三大原则"><span class="toc-number">1.2.</span> <span class="toc-text">三大原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-单一数据源"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.单一数据源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-state是只读的"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.state是只读的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-使用纯函数来执行修改"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.使用纯函数来执行修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#redux的一般写法"><span class="toc-number">1.2.4.</span> <span class="toc-text">redux的一般写法</span></a></li></ol></li></ol></li></ol>
+</div>
 
 
   
@@ -245,6 +252,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

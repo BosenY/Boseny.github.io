@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,10 +121,10 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="mongodb存储图片"><a href="#mongodb存储图片" class="headerlink" title="mongodb存储图片"></a>mongodb存储图片</h1>
+          <h1 id="mongodb存储图片"><a href="#mongodb存储图片" class="headerlink" title="mongodb存储图片"></a>mongodb存储图片</h1>
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -155,6 +157,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mongodb存储图片"><span class="toc-number">1.</span> <span class="toc-text">mongodb存储图片</span></a></li></ol>
+</div>
 
 
   
@@ -227,6 +234,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 

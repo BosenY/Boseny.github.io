@@ -81,7 +81,7 @@ article .article-excerpt,
 article .article-content,
 article .featured-media {
   margin: 4rem 0;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #424242;
 }
 article .article-excerpt img,
@@ -142,9 +142,22 @@ article code {
   white-space: normal;
   border-radius: 0;
 }
-article p {
+article p,
+article ul {
   margin: 2rem 0;
   line-height: 1.8;
+}
+article h1 {
+  padding-bottom: 0.3em;
+  font-size: 2em;
+}
+article h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.5em;
+}
+article h3 {
+  padding-bottom: 0.3em;
+  font-size: 1em;
 }
 article .video-container {
   position: relative;

@@ -47,7 +47,7 @@
 
     
 
-    <header style="background-image: url('/images/blog-bg.jpg');">
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -88,8 +88,10 @@
 
           <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop">
-            <article>
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
@@ -119,11 +121,11 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="redux-saga"><a href="#redux-saga" class="headerlink" title="redux-saga"></a>redux-saga</h1><p>考虑到后期项目可能需要去异步对redux进行一些操作，看了react的生态圈，发现这个中间件比较火，就想学习一下，在这里做个简单的记录</p>
+          <h1 id="redux-saga"><a href="#redux-saga" class="headerlink" title="redux-saga"></a>redux-saga</h1><p>考虑到后期项目可能需要去异步对redux进行一些操作，看了react的生态圈，发现这个中间件比较火，就想学习一下，在这里做个简单的记录</p>
 
       
     </div>
-
+    
   </div>
 
   <div class="article-footer">
@@ -156,6 +158,11 @@
     
   
 </article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#redux-saga"><span class="toc-number">1.</span> <span class="toc-text">redux-saga</span></a></li></ol>
+</div>
 
 
   
@@ -228,6 +235,7 @@
 		gitment.render('gitment-container')
 	</script>
 <!-- UY END -->
+
 
 
 
