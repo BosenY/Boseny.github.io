@@ -147,6 +147,11 @@ article ul {
   margin: 2rem 0;
   line-height: 1.8;
 }
+article p li,
+article ul li {
+  list-style: circle;
+  margin-left: 20px;
+}
 article h1 {
   padding-bottom: 0.3em;
   font-size: 2em;
