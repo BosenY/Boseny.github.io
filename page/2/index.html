@@ -93,6 +93,124 @@
 
   
     
+    <h3 class="article-title"><a href="/2017/09/14/ng-filter/"><span>ng过滤器</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/14/ng-filter/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-14T06:40:04.000Z">
+          2017-09-14
+        </time>
+      </a>
+    </span>
+    <br />
+    
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+          <h1 id="ng过滤器"><a href="#ng过滤器" class="headerlink" title="ng过滤器"></a>ng过滤器</h1><p>所有的例子会写在这里：<a src="http://jsbin.com/vigiciresi/edit?html,js,output">例子</a></p>
+<p>首先学习一下ng1的过滤器的一个基本写法：</p>
+<p>一个过滤器，不带参数的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;expression | filter&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>一个过滤器，带参数的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;expression | filter:<span class="built_in">arguments</span>&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>一个过滤器，带多个参数的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;expression | filter: arg1: arg2: ...&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>多个过滤器，不带参数的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;expression | filter1 | filter2 | ...&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>先学习自定义的，现找出来10个：</p>
+<h2 id="1-currency"><a href="#1-currency" class="headerlink" title="1. currency"></a>1. currency</h2><p>顾名思义，用于将数字转换为货币的<br>默认的话，是将数字转化成了当前使用语言环境的符号<br>当然也可以设置自定义符号，格式：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; currency_expression | currency : symbol : fractionSize&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其中symbol代表你要自定义的货币符号，fractionSize代表小数位的取舍量</p>
+<h2 id="2-date"><a href="#2-date" class="headerlink" title="2. date"></a>2. date</h2><p>根据要求将时间转换成字符串，开发当中经常用到，<br>格式化的字符串可以由以下原件组成：</p>
+<ul>
+<li>‘yyyy’: 年份用4位数字表示(e.g. AD 1 =&gt; 0001, AD 2010 =&gt; 2010)</li>
+<li>‘yy’: 年份用2位数字表示, 补全0 (00-99). (e.g. AD 2001 =&gt; 01, AD 2010 =&gt; 10)</li>
+<li>‘y’: 年份用最少位数字表示, e.g. (AD 1 =&gt; 1, AD 199 =&gt; 199)</li>
+<li>‘MMMM’: 月份 (January-December)</li>
+<li>‘MMM’: 月份 (Jan-Dec)</li>
+<li>‘MM’: 月份, 补全0 (01-12)</li>
+<li>‘M’: 月份 (1-12)</li>
+<li>‘dd’: 日期, 补全0 (01-31)</li>
+<li>‘d’: 日期 (1-31)</li>
+<li>‘EEEE’: 星期,(Sunday-Saturday)</li>
+<li>‘EEE’: 星期, (Sun-Sat)</li>
+<li>‘HH’: 小时, 补全0 (00-23)</li>
+<li>‘H’: 补全0 (0-23)</li>
+<li>‘hh’: AM/PM 表示的小时, 补全0 (01-12)</li>
+<li>‘h’: AM/PM 表示的小时, (1-12)</li>
+<li>‘mm’: 分钟, 补全0 (00-59)</li>
+<li>‘m’: 分钟 (0-59)</li>
+<li>‘ss’: 秒, 补全0 (00-59)</li>
+<li>‘s’: 秒 (0-59)</li>
+<li>‘sss’: 毫秒, 补全0 (000-999)</li>
+<li>‘a’: AM/PM 标记</li>
+<li>‘Z’: 用4位表示时区的偏移 (-1200-+1200)</li>
+<li>‘ww’: 周数, 补全0 (00-53). 01周是每年的包含第一个周四的周</li>
+<li>‘w’: Week of year (0-53). 01周是每年的包含第一个周四的周</li>
+<li>‘G’, ‘GG’, ‘GGG’: 时代的简写字符串 (e.g. ‘AD’)</li>
+<li>‘GGGG’: 时代的完整字符串 (e.g. ‘Anno Domini’)</li>
+</ul>
+<p>格式字符串还可以是下列预定义的本地化的格式之一:</p>
+<ul>
+<li>‘medium’: en_US 地区的形式，等同于 ‘MMM d, y h:mm:ss a’ (e.g. Sep 3, 2010 12:05:08 PM)</li>
+<li>‘short’: en_US 地区的形式，等同于 ‘M/d/yy h:mm a’ (e.g. 9/3/10 12:05 PM)</li>
+<li>‘fullDate’: en_US 地区的形式，等同于 ‘EEEE, MMMM d, y’ (e.g. Friday, September 3, 2010)</li>
+<li>‘longDate’: en_US 地区的形式，等同于 ‘MMMM d, y’ (e.g. September 3, 2010)</li>
+<li>‘mediumDate’: en_US 地区的形式，等同于 ‘MMM d, y’ (e.g. Sep 3, 2010)</li>
+<li>‘shortDate’: en_US 地区的形式，等同于 ‘M/d/yy’ (e.g. 9/3/10)</li>
+<li>‘mediumTime’: en_US 地区的形式，等同于 ‘h:mm:ss a’ (e.g. 12:05:08 PM)</li>
+<li>‘shortTime’: en_US 地区的形式，等同于 ‘h:mm a’ (e.g. 12:05 PM)</li>
+</ul>
+<p>格式字符串可以包含文字。但是需要使用 ‘ 包裹进行转义 (e.g. “h ‘in the morning’”).<br>如果想使用单引号,则需要转义 - 举个例子, 在一行里有两个单引号 (e.g. “h ‘o’’clock’”).</p>
+
+      
+    </div>
+    
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/AngularJS/">AngularJS</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/AngularJS/">AngularJS</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/09/14/ng-filter/"><span>点击阅读</span></a></h3>
+    
+  
+</article>
+
+
+
+
+
+  <article class="article-container ">
+
+  
+    
     <h3 class="article-title"><a href="/2017/04/21/es7bind/"><span>关于es7bind语法的小纪</span></a></h3>
     
   
