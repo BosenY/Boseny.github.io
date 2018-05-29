@@ -1,0 +1,950 @@
+<!DOCTYPE HTML>
+<html>
+<head >
+  <meta charset="utf-8">
+  
+  <title>BosenYのblog</title>
+
+  
+  <meta name="author" content="BosenY">
+  
+
+  
+  <meta name="description" content="除了做前端，我还想拍拍照">
+  
+
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="BosenYのblog"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+  <link rel="manifest" href="/manifest.json">
+  <link href="/favicon.ico" rel="icon">
+
+  <link rel="alternate" href="/atom.xml" title="BosenYのblog" type="application/atom+xml">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    
+
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header page-scroll">
+          <button type="button" id="tglBtn" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">BosenY</a>
+        </div>
+        <div id="bosenyblog-navbar">
+          <div class="navbar-collapse" id="bs-example-navbar-collapse-6">
+            <ul class="nav navbar-nav navbar-right">
+            
+              <li><a href="/">主页</a></li>
+            
+              <li><a href="/archives">归档</a></li>
+            
+              <li><a href="/about">关于</a></li>
+            
+              <li><a href="/tags">标签</a></li>
+            
+            </ul>
+          </div>
+        </div>
+
+    </div>
+ </nav>
+ <div class="gotop-btn">
+
+ </div>
+</header>
+
+        
+        <div class="container ">
+          <div class="row">
+            <main class="site-main posts-loop    col-lg-8 col-lg-offset-1
+                    col-md-8 col-md-offset-1
+                    col-sm-12
+                    col-xs-12">
+            
+  <article class="article-container ">
+
+  
+    
+    <h3 class="article-title"><a href="/2018/04/29/koa-source-code-analysis/"><span>koa源码学习</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/04/29/koa-source-code-analysis/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-04-29T11:52:52.000Z">
+          2018-04-29
+        </time>
+      </a>
+    </span>
+    <br />
+    
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+          <p>最近新开了2个repo，一个用来记录一些常用网站：<a href="https://github.com/BosenY/bookmarks" target="_blank" rel="noopener">bookmarks</a>，另一个记录对koa源码的理解：<a href="https://github.com/BosenY/LearnNodejs-Koa" target="_blank" rel="noopener">LearnNodejs-Koa</a>。 是直接在源码上做的注释。里面还有阅读深入浅出Nodejs的一些理解。</p>
+<p>现在开始看Vue的，尽量在理解完写完注释后把要点记录在博客里。</p>
+<p>自己以前看不懂的东西拿来重新看，就感觉比以前通透了一些，以后还会继续回头看，哈哈。</p>
+<p>五一还是要出去玩玩的，顺便练习一下拍照，毕竟准备要走了，总得把景点赶紧逛完才不留遗憾。</p>
+
+      
+    </div>
+    
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/个人小纪/">个人小纪</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/前端/">前端</a><a href="/tags/后端/">后端.</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2018/04/29/koa-source-code-analysis/"><span>点击阅读</span></a></h3>
+    
+  
+</article>
+
+
+
+
+
+  <article class="article-container ">
+
+  
+    
+    <h3 class="article-title"><a href="/2018/04/16/koa2-compose/"><span>koa2-compose学习</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/04/16/koa2-compose/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-04-15T16:11:08.000Z">
+          2018-04-16
+        </time>
+      </a>
+    </span>
+    <br />
+    
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+         
+        <p>最近在一点一点学习koa源码和深入浅出Node.js那本书，因为现在egg也是基于koa2的，而且自己以前做毕设的时候也用过，<code>async/await</code>真的是太好用了；现在新的中间层用egg搭建，所以想彻底把这部分的东西好好系统看一遍。</p>
+      
+    </div>
+    
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Node-js/">Node.js</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Node-js/">Node.js</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2018/04/16/koa2-compose/"><span>点击阅读</span></a></h3>
+    
+  
+</article>
+
+
+
+
+
+  <article class="article-container ">
+
+  
+    
+    <h3 class="article-title"><a href="/2018/03/28/next-stage/"><span>next-stage</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/03/28/next-stage/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-03-27T16:23:08.000Z">
+          2018-03-28
+        </time>
+      </a>
+    </span>
+    <br />
+    
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+         
+        <p>最近比较忙，也没空弄太多，因为开始搭建和架构公司的一个中间层项目(感觉被委以重任蛮开心的)，用的是阿里开源的<a href="https://eggjs.org/" target="_blank" rel="noopener">eggjs</a>  </p>
+      
+    </div>
+    
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/个人小纪/">个人小纪</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/日常/">日常</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2018/03/28/next-stage/"><span>点击阅读</span></a></h3>
+    
+  
+</article>
+
+
+
+
+
+  <article class="article-container ">
+
+  
+    
+    <h3 class="article-title"><a href="/2018/03/03/React-high-component/"><span>React高阶组件(转)</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/03/03/React-high-component/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-03-03T07:07:56.000Z">
+          2018-03-03
+        </time>
+      </a>
+    </span>
+    <br />
+    
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+         
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>本文代码浅显易懂，思想深入实用。此属于react进阶用法，如果你还不了解react，建议从文档开始看起。</p>
+</blockquote>
+<p>我们都知道高阶函数是什么, 高阶组件其实是差不多的用法，只不过传入的参数变成了react组件，并返回一个新的组件.</p>
+<blockquote>
+<p>A higher-order component is a function that takes a component and returns a new component.<br>
+      
+    </div>
+    
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/react/">react</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/react/">react</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2018/03/03/React-high-component/"><span>点击阅读</span></a></h3>
+    
+  
+</article>
+
+
+
+
+
+  <article class="article-container ">
+
+  
+    
+    <h3 class="article-title"><a href="/2018/02/01/edit-highlight/"><span>edit-highlight</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/02/01/edit-highlight/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-02-01T01:58:04.000Z">
+          2018-02-01
+        </time>
+      </a>
+    </span>
+    <br />
+    
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+          <p>把Lap的highlight风格做了一次大的调整，改成了自己最喜欢的atom-one-dark，只不过ES6的语法好像暂时没办法高亮，因为hexo内置hl渲染方法渲染出来的dom节点根本没办法对ES6部分写样式。<br>下面的是效果的展示，暂时也算满意了，可能以后还会进行一次调整。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">$initHighlight</span>(<span class="params">block, cls</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (cls.search(<span class="regexp">/\bno\-highlight\b/</span>) != <span class="number">-1</span>)</span><br><span class="line">      <span class="keyword">return</span> process(block, <span class="literal">true</span>, <span class="number">0x0F</span>) +</span><br><span class="line">             <span class="string">` class="<span class="subst">$&#123;cls&#125;</span>"`</span>;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="comment">/* handle exception */</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span> / <span class="number">2</span>; i &lt; classes.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (checkCondition(classes[i]) === <span class="literal">undefined</span>)</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'undefined'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> sss = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">export</span>  $initHighlight;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">body &#123;width: 500px;&#125;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"application/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="function"><span class="keyword">function</span> <span class="title">$init</span>(<span class="params"></span>) </span>&#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">checked</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">id</span>=<span class="string">'title'</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- here goes the rest of the page --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2018/02/01/edit-highlight/"><span>点击阅读</span></a></h3>
+    
+  
+</article>
+
+
+
+
+
+  <article class="article-container ">
+
+  
+    
+    <h3 class="article-title"><a href="/2018/01/28/daily-1/"><span>日常随笔</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/01/28/daily-1/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-01-28T14:43:58.000Z">
+          2018-01-28
+        </time>
+      </a>
+    </span>
+    <br />
+    
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+          <h3 id="关于Lap"><a href="#关于Lap" class="headerlink" title="关于Lap"></a>关于Lap</h3><p>这个theme现在还差个人介绍模块和article模块没有进行优化，其他的可能弄完以后暂时先不更新了<br>不过该有的功能和统计的东西肯定是会一点一点全部完成的</p>
+<p>对于disqus，虽然看了一下其他人分享的如何去走代理设置让国内也可以访问，但我觉得这个办法还是不太好，既然无法成为一种更加通用可配置的方案，那就暂时不考虑了，也不是每个人都会去买一个vps进行配置，索性接这样弄: 3s访问不到就提示需要翻墙才可以进行评论。。 我觉得这样的处理方法比较通用吧。</p>
+<h3 id="近期安排"><a href="#近期安排" class="headerlink" title="近期安排"></a>近期安排</h3><p>最近可能要继续开始加班了，毕竟年末，所以写开源和学习的自由时间可能不是很多，但我想起我有一部分文章放在了简书，所以我决定先搬运一波，然后在把自己学Graphql的一些东西稍微写写，最近就是graphql了，别的也没空看了，等年后吧~</p>
+<p>最近一到周末就沉迷pokemon revolution不能自拔，可能要写一篇去安利一发了，毕竟是很多90后乃至80后满满的回忆~（更重要的是能和老外尬英文、PY）</p>
+
+      
+    </div>
+    
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/个人小纪/">个人小纪</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/日常/">日常</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2018/01/28/daily-1/"><span>点击阅读</span></a></h3>
+    
+  
+</article>
+
+
+
+
+
+  <article class="article-container ">
+
+  
+    
+    <h3 class="article-title"><a href="/2018/01/18/关于最近的折腾/"><span>关于最近的折腾</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/01/18/关于最近的折腾/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-01-18T06:44:26.000Z">
+          2018-01-18
+        </time>
+      </a>
+    </span>
+    <br />
+    
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+         
+        <p>其实一直想用这个写博客的，但是出现过一次问题：<br>  我在win上面提交都是正常的，但是把项目搞到mac上之后提交就出现了bug，研究了半天也没找到完美解决的办法，这才自己去搭建了一个自己的博客。。<br>
+      
+    </div>
+    
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/日常/">日常</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2018/01/18/关于最近的折腾/"><span>点击阅读</span></a></h3>
+    
+  
+</article>
+
+
+
+
+
+  <article class="article-container ">
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/15/ng-router/"><span>ng-router</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/15/ng-router/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-15T08:16:28.000Z">
+          2017-09-15
+        </time>
+      </a>
+    </span>
+    <br />
+    
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+          <h1 id="ng-router"><a href="#ng-router" class="headerlink" title="ng-router"></a>ng-router</h1><p>ng-router可以把angular1变成一个spa应用，在页面上的原理就是渲染了不同的controller来实现不同的路由，具体实例代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>AngularJS 路由实例 - 菜鸟教程<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>=<span class="string">'routingDemoApp'</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>AngularJS 路由应用<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/"</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/computers"</span>&gt;</span>电脑<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/printers"</span>&gt;</span>打印机<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/blabla"</span>&gt;</span>其他<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-view</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">            angular.module(<span class="string">'routingDemoApp'</span>,[<span class="string">'ngRoute'</span>])</span></span><br><span class="line"><span class="javascript">            .config([<span class="string">'$routeProvider'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$routeProvider</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">                $routeProvider</span></span><br><span class="line"><span class="javascript">                .when(<span class="string">'/'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是首页页面'</span>&#125;)</span></span><br><span class="line"><span class="javascript">                .when(<span class="string">'/computers'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是电脑分类页面'</span>&#125;)</span></span><br><span class="line"><span class="javascript">                .when(<span class="string">'/printers'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是打印机页面'</span>&#125;)</span></span><br><span class="line"><span class="javascript">                .otherwise(&#123;<span class="attr">redirectTo</span>:<span class="string">'/'</span>&#125;);</span></span><br><span class="line"><span class="undefined">            &#125;]);</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>首先，载入了实现路由的js文件：angular-route.js； 然后，包含了ngRoute模块作为主应用模块的依赖模块。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.module(<span class="string">'routingDemoApp'</span>,[<span class="string">'ngRoute'</span>])</span><br></pre></td></tr></table></figure></p>
+<p>使用ngView指令<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-view&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>该div内html会根据路由的变化来变化。</p>
+<p>然后配置$routeProvider, 用于定义我们的路由规则</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.config([<span class="string">'$routeProvider'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$routeProvider</span>)</span>&#123;</span><br><span class="line">    $routeProvider</span><br><span class="line">        .when(<span class="string">'/'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是首页页面'</span>&#125;)</span><br><span class="line">        .when(<span class="string">'/computers'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是电脑分类页面'</span>&#125;)</span><br><span class="line">        .when(<span class="string">'/printers'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是打印机页面'</span>&#125;)</span><br><span class="line">        .otherwise(&#123;<span class="attr">redirectTo</span>:<span class="string">'/'</span>&#125;);</span><br><span class="line">&#125;]);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/AngularJS/">AngularJS</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/AngularJS/">AngularJS</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/09/15/ng-router/"><span>点击阅读</span></a></h3>
+    
+  
+</article>
+
+
+
+
+
+  <article class="article-container ">
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/15/ngapi/"><span>ngapi</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/15/ngapi/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-15T03:11:07.000Z">
+          2017-09-15
+        </time>
+      </a>
+    </span>
+    <br />
+    
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+          <h1 id="ngApi"><a href="#ngApi" class="headerlink" title="ngApi"></a>ngApi</h1><p>angular JS全局API用于执行常见任务的JS函数集合，如：</p>
+<ul>
+<li>比较对象</li>
+<li>迭代对象</li>
+<li><p>转换对象<br>简单的说就是将一些工作中常用的方法封装到了angular.prototype上了，<br>下面有几个典型的：</p>
+</li>
+<li><p>angular.lowercase() - 转换字符为小写</p>
+</li>
+<li>angular.uppercase() - 转换字符为大写</li>
+<li>angular.isString() - 判断是否是字符串</li>
+<li>angular.isNumber() - 判断是否是数字</li>
+</ul>
+<p>例子： <a src="http://www.runoob.com/try/tryit.php?filename=try_ng_api_lowercase">地址</a></p>
+
+      
+    </div>
+    
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/AngularJS/">AngularJS</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/AngularJS/">AngularJS</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/09/15/ngapi/"><span>点击阅读</span></a></h3>
+    
+  
+</article>
+
+
+
+
+
+  <article class="article-container ">
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/14/ng-filter/"><span>ng过滤器</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/14/ng-filter/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-14T06:40:04.000Z">
+          2017-09-14
+        </time>
+      </a>
+    </span>
+    <br />
+    
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+          <h1 id="ng过滤器"><a href="#ng过滤器" class="headerlink" title="ng过滤器"></a>ng过滤器</h1><p>所有的例子会写在这里：<a src="http://jsbin.com/vigiciresi/edit?html,js,output">例子</a></p>
+<p>首先学习一下ng1的过滤器的一个基本写法：</p>
+<p>一个过滤器，不带参数的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;expression | filter&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>一个过滤器，带参数的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;expression | filter:<span class="built_in">arguments</span>&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>一个过滤器，带多个参数的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;expression | filter: arg1: arg2: ...&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>多个过滤器，不带参数的情况<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;expression | filter1 | filter2 | ...&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>先学习自定义的，现找出来10个：</p>
+<h2 id="1-currency"><a href="#1-currency" class="headerlink" title="1. currency"></a>1. currency</h2><p>顾名思义，用于将数字转换为货币的<br>默认的话，是将数字转化成了当前使用语言环境的符号<br>当然也可以设置自定义符号，格式：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; currency_expression | currency : symbol : fractionSize&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其中symbol代表你要自定义的货币符号，fractionSize代表小数位的取舍量</p>
+<h2 id="2-date"><a href="#2-date" class="headerlink" title="2. date"></a>2. date</h2><p>根据要求将时间转换成字符串，开发当中经常用到，<br>格式化的字符串可以由以下原件组成：</p>
+<ul>
+<li>‘yyyy’: 年份用4位数字表示(e.g. AD 1 =&gt; 0001, AD 2010 =&gt; 2010)</li>
+<li>‘yy’: 年份用2位数字表示, 补全0 (00-99). (e.g. AD 2001 =&gt; 01, AD 2010 =&gt; 10)</li>
+<li>‘y’: 年份用最少位数字表示, e.g. (AD 1 =&gt; 1, AD 199 =&gt; 199)</li>
+<li>‘MMMM’: 月份 (January-December)</li>
+<li>‘MMM’: 月份 (Jan-Dec)</li>
+<li>‘MM’: 月份, 补全0 (01-12)</li>
+<li>‘M’: 月份 (1-12)</li>
+<li>‘dd’: 日期, 补全0 (01-31)</li>
+<li>‘d’: 日期 (1-31)</li>
+<li>‘EEEE’: 星期,(Sunday-Saturday)</li>
+<li>‘EEE’: 星期, (Sun-Sat)</li>
+<li>‘HH’: 小时, 补全0 (00-23)</li>
+<li>‘H’: 补全0 (0-23)</li>
+<li>‘hh’: AM/PM 表示的小时, 补全0 (01-12)</li>
+<li>‘h’: AM/PM 表示的小时, (1-12)</li>
+<li>‘mm’: 分钟, 补全0 (00-59)</li>
+<li>‘m’: 分钟 (0-59)</li>
+<li>‘ss’: 秒, 补全0 (00-59)</li>
+<li>‘s’: 秒 (0-59)</li>
+<li>‘sss’: 毫秒, 补全0 (000-999)</li>
+<li>‘a’: AM/PM 标记</li>
+<li>‘Z’: 用4位表示时区的偏移 (-1200-+1200)</li>
+<li>‘ww’: 周数, 补全0 (00-53). 01周是每年的包含第一个周四的周</li>
+<li>‘w’: Week of year (0-53). 01周是每年的包含第一个周四的周</li>
+<li>‘G’, ‘GG’, ‘GGG’: 时代的简写字符串 (e.g. ‘AD’)</li>
+<li>‘GGGG’: 时代的完整字符串 (e.g. ‘Anno Domini’)</li>
+</ul>
+<p>格式字符串还可以是下列预定义的本地化的格式之一:</p>
+<ul>
+<li>‘medium’: en_US 地区的形式，等同于 ‘MMM d, y h:mm:ss a’ (e.g. Sep 3, 2010 12:05:08 PM)</li>
+<li>‘short’: en_US 地区的形式，等同于 ‘M/d/yy h:mm a’ (e.g. 9/3/10 12:05 PM)</li>
+<li>‘fullDate’: en_US 地区的形式，等同于 ‘EEEE, MMMM d, y’ (e.g. Friday, September 3, 2010)</li>
+<li>‘longDate’: en_US 地区的形式，等同于 ‘MMMM d, y’ (e.g. September 3, 2010)</li>
+<li>‘mediumDate’: en_US 地区的形式，等同于 ‘MMM d, y’ (e.g. Sep 3, 2010)</li>
+<li>‘shortDate’: en_US 地区的形式，等同于 ‘M/d/yy’ (e.g. 9/3/10)</li>
+<li>‘mediumTime’: en_US 地区的形式，等同于 ‘h:mm:ss a’ (e.g. 12:05:08 PM)</li>
+<li>‘shortTime’: en_US 地区的形式，等同于 ‘h:mm a’ (e.g. 12:05 PM)</li>
+</ul>
+<p>格式字符串可以包含文字。但是需要使用 ‘ 包裹进行转义 (e.g. “h ‘in the morning’”).<br>如果想使用单引号,则需要转义 - 举个例子, 在一行里有两个单引号 (e.g. “h ‘o’’clock’”).</p>
+
+      
+    </div>
+    
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/AngularJS/">AngularJS</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/AngularJS/">AngularJS</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/09/14/ng-filter/"><span>点击阅读</span></a></h3>
+    
+  
+</article>
+
+
+
+
+
+
+<nav class="pagination">
+  
+  
+  <a href="/page/2/" class="pagination-next">下一页</a>
+  
+</nav>
+            </main>
+            <div class="sidebar
+                    col-lg-3 col-lg-offset-0
+                    col-md-3 col-md-offset-0
+                    col-sm-12
+                    col-xs-12
+                    sidebar-container
+                ">
+                
+                <div class="sidebar-container">
+
+
+
+<div class="search-container">
+<form class="site-search-form">
+    <span class="glyphicon glyphicon-search"></span><input type="text" id="local-search-input" class="st-search-input" placeholder="Search..." />
+</form>
+<div id="local-search-result" class="local-search-result-cls"></div>
+</div>
+<script type="text/javascript" id="local.search.active">
+var inputArea       = document.querySelector("#local-search-input");
+inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script>
+
+
+
+
+    <div class="categories-container" style="margin-top:40px;">
+        <p>归档:</p>
+            
+                <a href="/categories/AngularJS/" title="AngularJS" rel="3">AngularJS</a>
+            
+                <a href="/categories/JavaScript/" title="JavaScript" rel="1">JavaScript</a>
+            
+                <a href="/categories/Node-js/" title="Node.js" rel="1">Node.js</a>
+            
+                <a href="/categories/react/" title="react" rel="1">react</a>
+            
+                <a href="/categories/个人小纪/" title="个人小纪" rel="3">个人小纪</a>
+            
+    </div>
+
+
+
+
+    <div class="social-container" style="margin-top:40px;">
+        <p>Links:</p>
+            
+                
+                    <li class="social-item"><i class="fa fa-fw fa-github"></i><a href="https://github.com/Boseny">GitHub</a></li>
+                
+            
+                
+                    <li class="social-item"><i class="fa fa-fw fa-weibo"></i><a href="https://weibo.com/boseny">微博</a></li>
+                
+            
+                
+                    <li class="social-item"><i class=" fa fa-fw zhihu-icon"></i><a href="https://www.zhihu.com/people/boseny">知乎</a></li>
+                
+            
+                
+                    <li class="social-item"><i class=" fa fa-fw lofter-icon"></i><a href="http://boseny.lofter.com/">Lofter</a></li>
+                
+            
+    </div>
+
+</div>
+            </div>
+          </div>
+        </div>
+        
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/BosenY/Lap" target="_blank">Lap</a>
+    <br/><span id="busuanzi_container_site_uv"> 
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+    </br>
+    
+      
+        &copy;2016 - 2018 BosenY
+      
+    
+  </p>
+</footer>
+    
+  </div>
+
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/draw-something/dist/draw.min.js"></script>
+  <script>
+    let maxNum = Number.parseInt('10') 
+    let iconText = '❤'
+    let color = 'red'
+    new Draw({maxNum, iconText, color})
+  </script>
+
+<script src="/js/index.js"></script>
+<script src="/js/search.js"></script>
+
+<script>'use strict';'serviceWorker'in navigator&&navigator.serviceWorker.register('service-worker.js').then(function(a){a.onupdatefound=function(){var b=a.installing;b.onstatechange=function(){switch(b.state){case'installed':navigator.serviceWorker.controller?console.log('New or updated content is available.'):console.log('Content is now available offline!');break;case'redundant':console.error('The installing service worker became redundant.');}}}}).catch(function(a){console.error('Error during service worker registration:',a)});
+</script></body></html>
