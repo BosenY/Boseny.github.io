@@ -114,6 +114,80 @@ var _hmt = _hmt || [];
 
   
     
+    <h3 class="article-title"><a href="/2017/09/15/ng-router/"><span>ng-router</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/15/ng-router/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-15T08:16:28.000Z">
+          2017-09-15
+        </time>
+      </a>
+    </span>
+    <br />
+    
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+          <h1 id="ng-router"><a href="#ng-router" class="headerlink" title="ng-router"></a>ng-router</h1><p>ng-router可以把angular1变成一个spa应用，在页面上的原理就是渲染了不同的controller来实现不同的路由，具体实例代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>AngularJS 路由实例 - 菜鸟教程<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>=<span class="string">'routingDemoApp'</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>AngularJS 路由应用<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/"</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/computers"</span>&gt;</span>电脑<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/printers"</span>&gt;</span>打印机<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/blabla"</span>&gt;</span>其他<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-view</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">            angular.module(<span class="string">'routingDemoApp'</span>,[<span class="string">'ngRoute'</span>])</span></span><br><span class="line"><span class="javascript">            .config([<span class="string">'$routeProvider'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$routeProvider</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">                $routeProvider</span></span><br><span class="line"><span class="javascript">                .when(<span class="string">'/'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是首页页面'</span>&#125;)</span></span><br><span class="line"><span class="javascript">                .when(<span class="string">'/computers'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是电脑分类页面'</span>&#125;)</span></span><br><span class="line"><span class="javascript">                .when(<span class="string">'/printers'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是打印机页面'</span>&#125;)</span></span><br><span class="line"><span class="javascript">                .otherwise(&#123;<span class="attr">redirectTo</span>:<span class="string">'/'</span>&#125;);</span></span><br><span class="line"><span class="undefined">            &#125;]);</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>首先，载入了实现路由的js文件：angular-route.js； 然后，包含了ngRoute模块作为主应用模块的依赖模块。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.module(<span class="string">'routingDemoApp'</span>,[<span class="string">'ngRoute'</span>])</span><br></pre></td></tr></table></figure></p>
+<p>使用ngView指令<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-view&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>该div内html会根据路由的变化来变化。</p>
+<p>然后配置$routeProvider, 用于定义我们的路由规则</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.config([<span class="string">'$routeProvider'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$routeProvider</span>)</span>&#123;</span><br><span class="line">    $routeProvider</span><br><span class="line">        .when(<span class="string">'/'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是首页页面'</span>&#125;)</span><br><span class="line">        .when(<span class="string">'/computers'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是电脑分类页面'</span>&#125;)</span><br><span class="line">        .when(<span class="string">'/printers'</span>,&#123;<span class="attr">template</span>:<span class="string">'这是打印机页面'</span>&#125;)</span><br><span class="line">        .otherwise(&#123;<span class="attr">redirectTo</span>:<span class="string">'/'</span>&#125;);</span><br><span class="line">&#125;]);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/AngularJS/">AngularJS</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/AngularJS/">AngularJS</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2017/09/15/ng-router/"><span>点击阅读</span></a></h3>
+    
+  
+</article>
+
+
+
+
+
+  <article class="article-container ">
+
+  
+    
     <h3 class="article-title"><a href="/2017/09/15/ngapi/"><span>ngapi</span></a></h3>
     
   
@@ -430,6 +504,8 @@ inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
                 <a href="/categories/JavaScript/" title="JavaScript" rel="1">JavaScript</a>
             
                 <a href="/categories/Node-js/" title="Node.js" rel="1">Node.js</a>
+            
+                <a href="/categories/React/" title="React" rel="1">React</a>
             
                 <a href="/categories/React-Native/" title="React Native" rel="1">React Native</a>
             
