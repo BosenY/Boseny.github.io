@@ -114,6 +114,78 @@ var _hmt = _hmt || [];
 
   
     
+    <h3 class="article-title"><a href="/2018/08/07/nextjs-config/"><span>Customizing default CommonsChunkPlugin in next.config.js</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/08/07/nextjs-config/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-08-07T15:51:09.000Z">
+          2018-08-07
+        </time>
+      </a>
+    </span>
+    <br />
+    
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+          <p>next.js 是 React 的一个很常用的 ssr（server-side-render）框架， 它内置了很多 webpack 的插件和配置，基本上可以  很简洁的去构建同构项目。</p>
+<p>虽然很简洁，但是很多情况下我们还是想自己去定义一些配置，比方说打包的路径之类的。这里遇到了一个坑： 在打包并  导出静态资源时，发现有一个 common 的 main.js 文件一直带着一个 hash， 由于我们的项目  是容器去自己打包，因为配置文件的不同，所以打包后的 chunk 和本地的一定不同，但我们的静态资源还要上传到 cdn，所以这里就有了问题，想把 hash 去掉，看了半天 issue 没找到结果，最后读了一下源码，找到了解决办法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">webpack: <span class="function">(<span class="params">config, &#123; isServer, buildId &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (isServer) &#123;</span><br><span class="line">    config.plugins = config.plugins.map(<span class="function"><span class="params">plugin</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (plugin.constructor.name === <span class="string">'CommonsChunkPlugin'</span>) &#123;</span><br><span class="line">        plugin.filenameTemplate = <span class="string">'static/commons/main.js'</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> plugin</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在 next.config.js 中的 webpack 方法里这样写。这里注意：如果你是用 config.plugins.push()的话，是不会生效的，原来的依旧会存在，必须找到对应的内置插件的 name 去替换</p>
+
+      
+    </div>
+    
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Next-js/">Next.js</a>, <a href="/categories/Next-js/React/">React</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Next-js/">Next.js</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2018/08/07/nextjs-config/"><span>点击阅读</span></a></h3>
+    
+  
+</article>
+
+
+
+
+
+  <article class="article-container ">
+
+  
+    
     <h3 class="article-title"><a href="/2018/07/25/about-seo-meta/"><span>about-seo-meta</span></a></h3>
     
   
@@ -229,7 +301,7 @@ var _hmt = _hmt || [];
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/React/">React</a><a href="/tags/Next-js/">Next.js</a>
+        <a href="/tags/Next-js/">Next.js</a><a href="/tags/React/">React</a>
     </span>
     
 
@@ -718,78 +790,6 @@ var _hmt = _hmt || [];
 
 
 
-  <article class="article-container ">
-
-  
-    
-    <h3 class="article-title"><a href="/2018/01/28/daily-1/"><span>日常随笔</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/01/28/daily-1/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-01-28T14:43:58.000Z">
-          2018-01-28
-        </time>
-      </a>
-    </span>
-    <br />
-    
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-          <h3 id="关于Lap"><a href="#关于Lap" class="headerlink" title="关于Lap"></a>关于Lap</h3><p>这个theme现在还差个人介绍模块和article模块没有进行优化，其他的可能弄完以后暂时先不更新了<br>不过该有的功能和统计的东西肯定是会一点一点全部完成的</p>
-<p>对于disqus，虽然看了一下其他人分享的如何去走代理设置让国内也可以访问，但我觉得这个办法还是不太好，既然无法成为一种更加通用可配置的方案，那就暂时不考虑了，也不是每个人都会去买一个vps进行配置，索性接这样弄: 3s访问不到就提示需要翻墙才可以进行评论。。 我觉得这样的处理方法比较通用吧。</p>
-<h3 id="近期安排"><a href="#近期安排" class="headerlink" title="近期安排"></a>近期安排</h3><p>最近可能要继续开始加班了，毕竟年末，所以写开源和学习的自由时间可能不是很多，但我想起我有一部分文章放在了简书，所以我决定先搬运一波，然后在把自己学Graphql的一些东西稍微写写，最近就是graphql了，别的也没空看了，等年后吧~</p>
-<p>最近一到周末就沉迷pokemon revolution不能自拔，可能要写一篇去安利一发了，毕竟是很多90后乃至80后满满的回忆~（更重要的是能和老外尬英文、PY）</p>
-
-      
-    </div>
-    
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/个人小纪/">个人小纪</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/日常/">日常</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-  
-    
-    <h3 class="article-read"><a href="/2018/01/28/daily-1/"><span>点击阅读</span></a></h3>
-    
-  
-</article>
-
-
-
-
-
 
 <nav class="pagination">
   
@@ -832,9 +832,13 @@ inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
             
                 <a href="/categories/JavaScript/" title="JavaScript" rel="1">JavaScript</a>
             
+                <a href="/categories/Next-js/" title="Next.js" rel="1">Next.js</a>
+            
                 <a href="/categories/Node-js/" title="Node.js" rel="1">Node.js</a>
             
                 <a href="/categories/React/" title="React" rel="1">React</a>
+            
+                <a href="/categories/Next-js/React/" title="React" rel="1">React</a>
             
                 <a href="/categories/React-Native/" title="React Native" rel="1">React Native</a>
             

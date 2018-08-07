@@ -3,7 +3,7 @@
 <head >
   <meta charset="utf-8">
   
-  <title>Next.js 引入多个style文件上的一些小问题 | BosenYのblog</title>
+  <title>Customizing default CommonsChunkPlugin in next.config.js | BosenYのblog</title>
 
   
   <meta name="author" content="BosenY">
@@ -15,14 +15,14 @@
 
   
   
-  <meta name="keywords" content="Next.js,React">
+  <meta name="keywords" content="Next.js">
   
 
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <meta property="og:title" content="Next.js 引入多个style文件上的一些小问题"/>
+  <meta property="og:title" content="Customizing default CommonsChunkPlugin in next.config.js"/>
 
   <meta property="og:site_name" content="BosenYのblog"/>
 
@@ -115,15 +115,15 @@ var _hmt = _hmt || [];
 
   
     
-    <h3 class="article-title"><span>Next.js 引入多个style文件上的一些小问题</span></h3>
+    <h3 class="article-title"><span>Customizing default CommonsChunkPlugin in next.config.js</span></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2018/07/07/nextjs-multiple-style-file/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-07-07T03:37:08.000Z">
-          2018-07-07
+      <a href="/2018/08/07/nextjs-config/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-08-07T15:51:09.000Z">
+          2018-08-07
         </time>
       </a>
     </span>
@@ -141,20 +141,10 @@ var _hmt = _hmt || [];
   <div class="article-content">
     <div class="entry">
       
-          <p>Next.js 是  一个非常好用，并且极易上手的 React-Server-Side-Render Framework，而且支持了很多的一些玩法和操作，也可以  去配置 router、redux、mobx、ts、flow、immutable、graphql、apollo 等、但是样式引用上却还是没办法有一种类似 vue 的方式。</p>
-<p>目前  大致有几种思路处理样式： css-in-js、webpack 打包 + css module 、自己写完用 gulp 或者 rollup 等打包工具来自行打包</p>
-<a id="more"></a>
-<p>目前  我采用的是  第二种方式，也是最接近 vue scoped css/less/sass/stylus 的方式。</p>
-<p>这个是我的 next.config.js 里面的配置</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> withPlugins = <span class="built_in">require</span>(<span class="string">'next-compose-plugins'</span>)</span><br><span class="line"><span class="keyword">const</span> withLess = <span class="built_in">require</span>(<span class="string">'@zeit/next-less'</span>)</span><br><span class="line"><span class="keyword">const</span> withCss = <span class="built_in">require</span>(<span class="string">'@zeit/next-css'</span>)</span><br><span class="line"><span class="keyword">const</span> withSass = <span class="built_in">require</span>(<span class="string">'@zeit/next-sass'</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = withPlugins([</span><br><span class="line">  [</span><br><span class="line">    withLess,</span><br><span class="line">    &#123;</span><br><span class="line">      cssModules: <span class="literal">false</span>,</span><br><span class="line">      lessLoaderOptions: &#123;</span><br><span class="line">        javascriptEnabled: <span class="literal">true</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  [</span><br><span class="line">    withCss,</span><br><span class="line">    &#123;</span><br><span class="line">      cssModules: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  [</span><br><span class="line">    withSass,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="comment">// cssModules: false</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
-<p>上面的就是用到了一个 compose 的库来完成一个多个 plugins 同时使用的操作（和 koa 里面的 compose 还有 redux 里面的都是一个意思）</p>
-<p>不写 css module 的原因是因为想去引一些第三方的组件，但是发现即时不采用 cssModule，如果我写成类似于 vue 那种一个.vue 文件去引入对应的一个 style 文件，然后一个 component 也对应引入一个 style，最终就除了问题（看 issue 目前  应该是还不能这样写-_-）</p>
-<p> 不能的话，引入组件库，按需引入那种，本质上是没有问题的。可是  我们想引入一下 antd 的个别几个组件时，发现它居然有全局样式，结果和我们的公共组件的样式覆盖了。。。 算了还是自己写吧。</p>
-<p>就只能将所有的样式文件（page 的和 component 的）全部引入到一个文件下，再放到_document.js 当中（建议放_app 当中，我看 issue 里作者说应该放_app.js）</p>
-<p>然后就只能给自己定义一套样式的写法规范，按照 page 名称和 component 名称去命名 style，放在统一的 pages 和 components 文件夹下。</p>
-<p>不知道什么时候写样式能够像 vue 那种，也不是 css module 那种，就类似于</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;style jsx scoped&gt;</span><br><span class="line">  <span class="string">` @import './style.less'; `</span></span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br></pre></td></tr></table></figure>
-<p>欢迎来探讨一下这个问题，可能是我想的还不够仔细，可能会有更好的办法，都欢迎大佬来评论。</p>
+          <p>next.js 是 React 的一个很常用的 ssr（server-side-render）框架， 它内置了很多 webpack 的插件和配置，基本上可以  很简洁的去构建同构项目。</p>
+<p>虽然很简洁，但是很多情况下我们还是想自己去定义一些配置，比方说打包的路径之类的。这里遇到了一个坑： 在打包并  导出静态资源时，发现有一个 common 的 main.js 文件一直带着一个 hash， 由于我们的项目  是容器去自己打包，因为配置文件的不同，所以打包后的 chunk 和本地的一定不同，但我们的静态资源还要上传到 cdn，所以这里就有了问题，想把 hash 去掉，看了半天 issue 没找到结果，最后读了一下源码，找到了解决办法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">webpack: <span class="function">(<span class="params">config, &#123; isServer, buildId &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (isServer) &#123;</span><br><span class="line">    config.plugins = config.plugins.map(<span class="function"><span class="params">plugin</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (plugin.constructor.name === <span class="string">'CommonsChunkPlugin'</span>) &#123;</span><br><span class="line">        plugin.filenameTemplate = <span class="string">'static/commons/main.js'</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> plugin</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在 next.config.js 中的 webpack 方法里这样写。这里注意：如果你是用 config.plugins.push()的话，是不会生效的，原来的依旧会存在，必须找到对应的内置插件的 name 去替换</p>
 
       
     </div>
@@ -169,7 +159,7 @@ var _hmt = _hmt || [];
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/React/">React</a>
+        <a href="/categories/Next-js/">Next.js</a>, <a href="/categories/Next-js/React/">React</a>
     </span>
     
 
@@ -178,7 +168,7 @@ var _hmt = _hmt || [];
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/Next-js/">Next.js</a><a href="/tags/React/">React</a>
+        <a href="/tags/Next-js/">Next.js</a>
     </span>
     
 
@@ -248,7 +238,7 @@ var _hmt = _hmt || [];
 			return "\\u" + RegExp["$1"].charCodeAt(0).toString(16);
 			});
 		}
-		var title = 'Next.js 引入多个style文件上的一些小问题'
+		var title = 'Customizing default CommonsChunkPlugin in next.config.js'
 		var GitHub_id = 'Boseny'
 		var client_id = 'f40c67d0359a2646d2b1'
 		var client_secret = '1cbedbd1a1a2e4b42901aee3d7afe1856c1b7e2d'
